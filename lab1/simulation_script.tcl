@@ -3,7 +3,7 @@ log -r /*
 ### Examples of faults
 
 #stuck-at-0
-#force -freeze /u_ex1/net2 0
+force -freeze /u_ex1/net2 0
 
 #stuck-at-1
 #force -freeze /u_ex1/net2 1
