@@ -9,7 +9,7 @@ END ENTITY circ1;
 
 ARCHITECTURE struc OF circ1 IS
 
-	SIGNAL z1,b1,f,c1,c2,e1,e2: std_logic;
+	SIGNAL z1,b1,f,c1,c2,c3,e1,e2,d,l,h,e: std_logic;
 
 
 BEGIN

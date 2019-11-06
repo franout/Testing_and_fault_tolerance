@@ -2,7 +2,7 @@ set search_path {..}
 
 uplevel #0 source ../../library/pdt2002.dc_setup.tcl
 
-analyze -library work -format vhdl ex5_1_beh.vhd
+analyze -library work -format vhdl circ1_beh.vhd
 elaborate ex5_1
 #create_clock -name "clk" -period 200 -waveform { 100 200 } { clk }
 #create_clock -name "rst" -period 200 -waveform { 100 200 } { rst }

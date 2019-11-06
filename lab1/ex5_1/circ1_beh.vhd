@@ -17,4 +17,4 @@ w<=(not(b)) and c;
 
 
 
-END struc;
+END beh;

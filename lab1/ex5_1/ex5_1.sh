@@ -1,10 +1,12 @@
-#!/bin/bash
-
-
-#producing fault list ( collapsed and full )
+#!/bin/sh
+mkdir run
+echo "" > ./run/inject_fault.tcl
 ./tmax.sh
 
-circuit="ex5_1_beh.vhd"
+#producing fault list ( collapsed and full )
+
+circuit="circ1_beh.vhd"
+export circuit
 # simulatin the fault free circuit 
 ./simulation.sh
 mv ./run/monitor.txt ./run/monitor_gold.txt
@@ -15,7 +17,7 @@ mv ./run/monitor.txt ./run/monitor_gold.txt
 #synthesis 
 ./synthesis.sh
 #synthesis simulation 
-circuit="ex5_1_struc.vhd"
+circuit="circ1_struct.vhd"
 ./simulation.sh
 
 diff -y ./run/monitor.txt ./run/monitor_gold.txt

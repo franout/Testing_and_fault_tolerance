@@ -1,17 +1,19 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
+
+library std;
+use std.env.all;
 use std.textio.all;
+
 
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_textio.all;
 
-entity tb_ex1 is
-end tb_ex1;
+entity tb_ex_5_1 is
+end tb_ex_5_1;
 
 
-architecture tb of tb_ex1 is
+architecture tb of tb_ex_5_1 is
 
 COMPONENT  circ1 IS
 PORT (a,b,c:IN std_logic;
@@ -37,7 +39,7 @@ END COMPONENT circ1;
 
 begin
 
-    u_ex1 : ex1
+    cut : circ1
     port map (A => A,
               B => B,
               W=>W,
@@ -111,7 +113,7 @@ begin
 		wait for strobe_offset;
 
 		loop
-			pis := A & B $C;
+			pis := A & B &C;
 			pos := W & Z;
 			write(outline, "pattern:" & integer'image(counter) & " PIs:" &  vec2str(pis) & " POs:" &  vec2str(pos));
 			tee(outfile, outline);
@@ -127,7 +129,7 @@ end tb;
 
 
 
-configuration cfg_tb_ex1 of tb_ex1 is
+configuration cfg_tb_ex_5_1 of tb_ex_5_1 is
     for tb
     end for;
-end cfg_tb_ex1;
+end cfg_tb_ex_5_1;

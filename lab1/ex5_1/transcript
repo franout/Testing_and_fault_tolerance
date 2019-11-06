@@ -1,0 +1,9 @@
+# vsim -c -novopt work.tb_ex_5_1 -do "../simulation_script.tcl" -wlf sim.wlf 
+# Start time: 12:35:18 on Nov 06,2019
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# ** Error: (vsim-3170) Could not find 'tb_ex_5_1'.
+#         Searched libraries:
+#             /home/s262620/lab1/ex5_1/work
+# Error loading design
+# End time: 12:35:18 on Nov 06,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
