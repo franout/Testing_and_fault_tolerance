@@ -1,19 +1,15 @@
-CIRCUIT=
-LIB_PATH=
-EXE_N=
-.PHONY: all 
-
-all: atpg simulation synthesis 
-
-
+CIRCUIT=circ2
+LIB_PATH=../../library
+EXE_N=ex5_2
+.PHONY: test
 
 simulation:
 	cd run
 	# Build the files
-	vlog ../../library/pdt2002.v 
-	vcom -2008 -suppress 1141 ../$(CIRCUIT) ../ex5_1_tb.vhd 
+	vlog $(LIB_PATH)/pdt2002.v 
+	vcom -2008 -suppress 1141 ../$(CIRCUIT) ../$(EXE_N)_tb.vhd 
 	# Invoke QuestaSim shell and run the TCL script
-	vsim -c -novopt work.tb_ex_5_1 -do ../simulation_script.tcl -wlf sim.wlf
+	vsim -c -novopt work.tb_$(EXE_N) -do ../simulation_script.tcl -wlf sim.wlf
 	# Alternative: Invoke QuestaSim GUI
 	#vsim -novopt work.tb_ex1
 synthesis:
@@ -30,40 +26,40 @@ atpg:
 clear:
 	rm -rf ./run 
 	rm -rf ./work
-#!/bin/sh
-mkdir run
-echo "" > ./run/inject_fault.tcl
-./tmax.sh
 
-#producing fault list ( collapsed and full )
 
-circuit="circ1_beh.vhd"
-export circuit
-# simulatin the fault free circuit 
-./simulation.sh
-mv ./run/monitor.txt ./run/monitor_gold.txt
+test:
+	echo "" > ./run/inject_fault.tcl
+	export CIRCUIT
+	export LIB_PATH
+	export EXE_N
+	export ARCH="beh"	
+	#producing fault list ( collapsed and full )
+	make atpg
+	# simulatin the fault free circuit and save golden model 
+	make simulation
+	mv ./run/monitor.txt ./run/monitor_gold.txt
+	export ARCH="struct"
+	#injects faults  and check output 
+	 make fault_injection_campaign
+	
+	#synthesis 
+	make synthesis
+	#synthesis simulation 
+	export CIRCUIT=$(EXE_N)_synth.v
+	make simulation 
+	
+	diff -y ./run/monitor.txt ./run/monitor_gold.txt
+	make clear
+	
+fault_injection_campaign:
+	i=0 \
+	while read $line \
+	do \
+	 ./scripts/convert_faults.sh run/fault_list_stuckat_full.txt $i > run/inject_fault.tcl \
+	let i=$i+1 \
+	make simulation \
+	diff -y ./run/monitor_gold.txt ./run/monitor.txt | less \
+	done < ./run/fault_list_stuckat_full.txt
 
-#injects faults 
- ./fault_injection_campaign.sh
 
-#synthesis 
-./synthesis.sh
-#synthesis simulation 
-circuit="circ1_struct.vhd"
-./simulation.sh
-
-diff -y ./run/monitor.txt ./run/monitor_gold.txt
-
-#cleaning up
-rm -rf work 
-rm -rf run 
-#!/bin/bash
-
-i=0
-while read $line 
-do
- ./convert_faults.sh run/fault_list_stuckat_full.txt $i > run/inject_fault.tcl
-let i=$i+1 
-./simulation.sh
-diff -y ./run/monitor_gold.txt ./run/monitor.txt | less
-done < ./run/fault_list_stuckat_full.txt
