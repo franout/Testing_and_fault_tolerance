@@ -4,24 +4,22 @@ EXE_N=ex5_2
 .PHONY: test
 
 simulation:
-	cd run
 	# Build the files
-	vlog $(LIB_PATH)/pdt2002.v 
-	vcom -2008 -suppress 1141 ../$(CIRCUIT) ../$(EXE_N)_tb.vhd 
-	# Invoke QuestaSim shell and run the TCL script
-	vsim -c -novopt work.tb_$(EXE_N) -do ../simulation_script.tcl -wlf sim.wlf
-	# Alternative: Invoke QuestaSim GUI
-	#vsim -novopt work.tb_ex1
+	cd run \
+	vlog $(LIB_PATH)/pdt2002.v \
+	vcom -2008 -suppress 1141 ../$(CIRCUIT) ../$(EXE_N)_tb.vhd \
+	vsim -c -novopt work.tb_$(EXE_N) -do ../scripts/simulation_script.tcl -wlf sim.wlf
+
 synthesis:
-	cd run
 	# Invoke DesignCompiler and run the TCL script
+	cd run \
 	dc_shell-xg-t -64 -f ../synthesis_script.tcl
 
 atpg:
-	mkdir run 
-	cd run
-	# Invoke TetraMAX and run the TCL script	
-	tmax -shell ../tmax_script.tcl
+	mkdir run
+	echo "" > ./run/inject_fault.tcl
+	cd run \
+	tmax -shell ./../scripts/tmax_script.tcl
 
 clear:
 	rm -rf ./run 
@@ -29,7 +27,6 @@ clear:
 
 
 test:
-	echo "" > ./run/inject_fault.tcl
 	export CIRCUIT
 	export LIB_PATH
 	export EXE_N
