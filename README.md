@@ -1,2 +1,2 @@
-# Testing_and_fault_tollerace
-Testing and fault tollerance labs @ Polito, Turin
+# Testing and fault tolerace
+Testing and fault tolerance labs @ Polito, Turin
