@@ -1,6 +1,6 @@
 set search_path {..}
 
-uplevel #0 source ../pdt2002.dc_setup.tcl
+uplevel #0 source ../../library/pdt2002.dc_setup.tcl
 
 analyze -library work -format vhdl ex1_dataflow.vhd
 elaborate ex1

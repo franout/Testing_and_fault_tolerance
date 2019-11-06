@@ -4,12 +4,10 @@
 cd run
 
 # Build the files
-vlog ../pdt2002.v 
-vcom -2008 -suppress 1141 ../ex1_structural.vhd ../ex1_testbench.vhd 
-
+vlog ../../library/pdt2002.v 
+vcom -2008 -suppress 1141 ../"$circuit" ../ex5_1_tb.vhd 
 # Invoke QuestaSim shell and run the TCL script
-vsim -c -novopt work.tb_ex1 -do ../simulation_script.tcl -wlf sim.wlf
-
+vsim -c -novopt work.tb_ex_5_1 -do ../simulation_script.tcl -wlf sim.wlf
 # Alternative: Invoke QuestaSim GUI
 #vsim -novopt work.tb_ex1
 

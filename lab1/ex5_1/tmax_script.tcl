@@ -1,5 +1,5 @@
-read_netlist ../pdt2002.v -format verilog -insensitive -library
-read_netlist ../ex1_structural_tmax.vhd -format vhdl -insensitive
+read_netlist ../..library/pdt2002.v -format verilog -insensitive -library
+read_netlist ../ex5_1_struct.vhd -format vhdl -insensitive
 run_build_model ex1
 run_drc
 set_faults -equiv_code --
