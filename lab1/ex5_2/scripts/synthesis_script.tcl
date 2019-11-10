@@ -1,9 +1,9 @@
 set search_path {..}
 
-uplevel #0 source "$LIB_PATH"/pdt2002.dc_setup.tcl
+uplevel #0 source $env(LIB_PATH)/pdt2002.dc_setup.tcl
 
-analyze -library work -format vhdl "$CIRCUIT"_"$ARCH".vhd
-elaborate "$EXE_N"
+analyze -library work -format vhdl $env(CIRCUIT)_$env(ARC).vhd
+elaborate $env(EXE_N)
 #create_clock -name "clk" -period 200 -waveform { 100 200 } { clk }
 #create_clock -name "rst" -period 200 -waveform { 100 200 } { rst }
 
@@ -14,7 +14,7 @@ report_design
 report_area -nosplit
 #report_clock -nosplit
 
-write -hierarchy -format verilog -output ../"$EXE_N"_synth.v
-write -hierarchy -format vhdl -output ../"$EXE_N"_synth.vhd
+write -hierarchy -format verilog -output ../$env(EXE_N)_synth.v
+write -hierarchy -format vhdl -output ../$env(EXE_N)_synth.vhd
 
 quit

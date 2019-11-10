@@ -1,6 +1,6 @@
-read_netlist "$LIB_PATH"/pdt2002.v -format verilog -insensitive -library
-read_netlist ../"$CIRCUIT"_"$ARCH".vhd -format vhdl -insensitive
-run_build_model $CIRCUIT
+read_netlist $env(LIB_PATH)/pdt2002.v -format verilog -insensitive -library
+read_netlist ../$env(CIRCUIT)_$env(ARC).vhd -format vhdl -insensitive
+run_build_model $env(CIRCUIT)
 run_drc
 set_faults -equiv_code --
 set_faults -model stuck
