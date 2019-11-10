@@ -1,7 +1,4 @@
 #!/bin/sh
-
-
-
 export CIRCUIT=circ2
 export LIB_PATH=../../library
 export EXE_N=ex5_2
@@ -22,8 +19,8 @@ cd ..
 cd run 
 
 vlog "$LIB_PATH"/pdt2002.v 
-vcom -2008 -suppress 1141 ../"$CIRCUIT"_"$ARC" ../"$EXE_N"_tb.vhd 
-vsim -c -novopt work.cfg_tb_"$EXE_N" -do ../scripts/simulation_script.tcl -wlf sim.wlf
+vcom -2008 -suppress 1141 ../"$CIRCUIT"_"$ARC".vhd ../"$EXE_N"_tb.vhd 
+vsim -c -novopt work.tb_"$EXE_N" -do ../scripts/simulation_script.tcl -wlf sim.wlf
 
 
 
@@ -33,6 +30,9 @@ cd ..
 export ARC="struct"
 #injects faults  and check output 
 echo "######## fault_injection_campaign ##########"
+vlog "$LIB_PATH"/pdt2002.v 
+vcom -2008 -suppress 1141 ../"$CIRCUIT"_"$ARC".vhd ../"$EXE_N"_tb.vhd 
+
 i=0 
 while read $line
 do 
@@ -42,13 +42,9 @@ let i=$i+1
 cd run 
 echo "injecthed fault:"
 cat ./inject_fault.tcl
-vlog "$LIB_PATH"/pdt2002.v 
-vcom -2008 -suppress 1141 ../"$CIRCUIT"_"$ARC" ../"$EXE_N"_tb.vhd 
 vsim -c -novopt work.tb_"$EXE_N" -do ../scripts/simulation_script.tcl -wlf sim.wlf
-
+diff -y ./run/monitor_gold.txt ./run/monitor.txt | less
 cd ..
-
-diff -y ./run/monitor_gold.txt ./run/monitor.txt
 done < ./run/fault_list_stuckat_full.txt
 #synthesis 
 # Invoke DesignCompiler and run the TCL script
@@ -64,7 +60,7 @@ vcom -2008 -suppress 1141 ../"$CIRCUIT" ../"$EXE_N"_tb.vhd
 vsim -c -novopt work.tb_"$EXE_N" -do ../scripts/simulation_script.tcl -wlf sim.wlf
 
 
-diff -y ./run/monitor.txt ./run/monitor_gold.txt
+diff -y ./run/monitor.txt ./run/monitor_gold.txt | less
 cd ..
 #clear
 
