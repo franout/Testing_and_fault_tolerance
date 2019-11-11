@@ -13,7 +13,7 @@ BEGIN
 
 y<=not(not(not(a and c) and f) and not(not(c and a) and b));
 
-z<= not ( (not(a and c) and (not( b and ( not  ( a and c ) ) )) );
+z<= not ( (not(a and c) and (not( b and ( not  ( a and c ) ) )) ));
 
 
 END beh;

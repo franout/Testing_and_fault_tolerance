@@ -1,0 +1,37 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+
+ENTITY  circ4 IS
+PORT ( clk, reset, cnt: IN std_logic;
+		y: OUT std_logic);
+END ENTITY circ4;
+
+ARCHITECTURE beh OF circ4 IS
+SIGNAL ffS: std_logic_vector(1 DOWNTO 0);
+SIGNAL d1,d2: std_logic_vector;
+
+BEGIN
+
+
+regs:PROCESS(clk,reset) 
+BEGIN
+IF(reset='1') THEN
+ffs<="00";
+ELSE
+	IF(CLK='1' AND clk'EVENT) THEN
+	ffs(1)<=d1;
+	ffs(0)<=d2;
+
+	END IF;
+END IF;
+END PROCESS regs;
+
+
+y<= ffs(0) and ffs(1);
+
+d1<= cnt xor ffs(1);
+
+d2<=(not(cnt) and ffs(0))xor (not(ffs(1)) and ffs(0) and cnt )) xor( not (ffs(0) and ffs(1) and cnt);
+
+END beh;

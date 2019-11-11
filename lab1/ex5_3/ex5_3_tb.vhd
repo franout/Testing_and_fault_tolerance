@@ -155,7 +155,7 @@ end tb;
 
 
 
-configuration cfg_tb_ex5_2 of tb_ex5_2 is
+configuration cfg_tb_ex5_3 of tb_ex5_3 is
     for tb
     end for;
-end cfg_tb_ex5_2;
+end cfg_tb_ex5_3;
