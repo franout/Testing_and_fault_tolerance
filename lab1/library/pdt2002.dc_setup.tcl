@@ -1,5 +1,5 @@
-set link_library {pdt2002.db}
-set target_library {pdt2002.db}
+set link_library [ list "$env(LIB_PATH)/pdt2002.db" ]
+set target_library [ list "$env(LIB_PATH)/pdt2002.db"]
 
 
 set_dont_use "pdt2002/FLIP_FLOP_D_SCAN"
