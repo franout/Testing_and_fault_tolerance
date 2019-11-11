@@ -14,7 +14,7 @@ report_design
 report_area -nosplit
 #report_clock -nosplit
 
-write -hierarchy -format verilog -output ../$env(EXE_N)_synth.v
-write -hierarchy -format vhdl -output ../$env(EXE_N)_synth.vhd
+write -hierarchy -format verilog -output ../$env(CIRCUIT)_synth.v
+write -hierarchy -format vhdl -output ../$env(CIRCUIT)_synth.vhd
 
 quit
