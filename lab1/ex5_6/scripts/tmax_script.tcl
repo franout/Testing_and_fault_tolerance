@@ -5,7 +5,7 @@ set i_format  "verilog"
 set i_format "vhdl"
 }
 
-read_netlist ../$env(CIRCUIT)_$env(ARC).$env(FORMAT) -format $i_format -insensitive
+read_netlist ../$env(CIRCUIT)_$env(ARC)_noff.$env(FORMAT) -format $i_format -insensitive
 run_build_model $env(CIRCUIT)
 run_drc
 set_faults -equiv_code --

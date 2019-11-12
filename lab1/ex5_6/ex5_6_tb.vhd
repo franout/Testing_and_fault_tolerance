@@ -36,7 +36,7 @@ END COMPONENT circ6;
 begin
 
     cut : circ6
-    port map (clk=>tester_clock,reset=>reset,x=>X);
+    port map (clk=>tester_clock,reset=>reset,x=>X,y=>Y);
 
 -- ***** CLOCK ***********************************
 
@@ -86,7 +86,7 @@ begin
 	
 	monitor : process
 		variable counter  : integer := 0;
-		variable pis      : std_logic_vector(4 downto 0);
+		variable pis      : std_logic_vector(1 downto 0);
 		variable pos      : std_logic_vector(1 downto 0);
 		file     outfile  : text open WRITE_MODE is "monitor.txt";
 		variable outline  : line;
@@ -103,7 +103,7 @@ begin
 
 		loop
 			pis := X & reset ;
-			pos := Y ;
+			pos := Y & "Z" ;
 			write(outline, "pattern:" & integer'image(counter) & " PIs:" &  vec2str(pis) & " POs:" &  vec2str(pos));
 			tee(outfile, outline);
 			counter := counter + 1;

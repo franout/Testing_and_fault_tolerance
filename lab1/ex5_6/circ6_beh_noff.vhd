@@ -15,20 +15,6 @@ SIGNAL q1,q2,q0,y_i,q11,q22: std_logic;
 
 BEGIN
 
-
-regs: PROCESS (reset,clk)
-BEGIN 
-IF ( reset='1')THEN
-
-ffs<="00";
-
-ELSE 
-	IF ( clk='1' and clk'EVENT) THEN 
-	ffs<=  q1 & q0;
-	END IF;
-END IF ;
-END PROCESS regs;
-
 y<= ffs(1) and x and (not ( ffs(0)));
 
 
