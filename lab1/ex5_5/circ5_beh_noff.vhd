@@ -12,22 +12,7 @@ ARCHITECTURE beh OF circ5 IS
 SIGNAL ffs: std_logic_vector(2 DOWNTO 0 );
 SIGNAL q1,q2,q0,y_i,q11,q22: std_logic;
 
-
- BEGIN
-regs: PROCESS (reset,clk)
 BEGIN
-IF ( reset='1')THEN
-
-ffs<="000";
-
-ELSE 
-	IF ( clk='1' and clk'EVENT) THEN 
-	ffs<= q2 & q1 & q0;
-	END IF;
-END IF ;
-END PROCESS regs;
-
-
 
 q2<= y_i;
 q1<= not ( b  or q11);
