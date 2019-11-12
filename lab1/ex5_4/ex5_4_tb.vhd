@@ -12,8 +12,7 @@ use ieee.std_logic_textio.all;
 entity tb_ex5_4 is
 end tb_ex5_4;
 
-
-architecture tb of tb_ex5_4 is
+ARCHITECTURE tb of tb_ex5_4 is
 COMPONENT  circ4 IS
 PORT ( clk, reset, cnt: IN std_logic;
 		y: OUT std_logic);
@@ -86,8 +85,8 @@ begin
 	
 	monitor : process
 		variable counter  : integer := 0;
-		variable pis      : std_logic_vector(4 downto 0);
-		variable pos      : std_logic_vector(1 downto 0);
+		variable pis      : std_logic_vector(1 downto 0);
+		variable pos      : std_logic_vector(1 DOWNTO 0);
 		file     outfile  : text open WRITE_MODE is "monitor.txt";
 		variable outline  : line;
 
@@ -103,7 +102,7 @@ begin
 
 		loop
 			pis := A & B ;
-			pos := Y ;
+			pos := Y & 'Z' ;
 			write(outline, "pattern:" & integer'image(counter) & " PIs:" &  vec2str(pis) & " POs:" &  vec2str(pos));
 			tee(outfile, outline);
 			counter := counter + 1;
@@ -118,7 +117,7 @@ end tb;
 
 
 
-configuration cfg_tb_ex5_3 of tb_ex5_3 is
+configuration cfg_tb_ex5_4 of tb_ex5_4 is
     for tb
     end for;
-end cfg_tb_ex5_3;
+end cfg_tb_ex5_4;
