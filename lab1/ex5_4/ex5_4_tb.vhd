@@ -37,7 +37,7 @@ END COMPONENT circ4;
 begin
 
     cut : circ4
-    port map (clk=>tester_clock,reset=>B,cnt=>A);
+    port map (clk=>tester_clock,reset=>B,cnt=>A,y=>y);
 
 -- ***** CLOCK ***********************************
 

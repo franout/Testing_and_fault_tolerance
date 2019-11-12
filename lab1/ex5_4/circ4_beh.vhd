@@ -28,12 +28,10 @@ BEGIN
 IF(reset='1') THEN
 ffs(1)<='0';
 ffs(0)<='0';
-ELSE
-	IF(CLK='1' AND clk'EVENT) THEN
+ELSE IF(CLK='1' AND clk'EVENT and reset='0') THEN
 	ffs(1)<=d1;
 	ffs(0)<=d2;
-	ELSE 
-	
+		
 	END IF;
 END IF;
 END PROCESS regs ;
