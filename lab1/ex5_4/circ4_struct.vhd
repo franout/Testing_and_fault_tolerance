@@ -30,7 +30,7 @@ q13<=q11;
 
 
 a<=q12 xor cnt1;
-y<= q2 and q21;
+y<= q12 and q21;
 
 q21<=q2;
 q22<=q2;

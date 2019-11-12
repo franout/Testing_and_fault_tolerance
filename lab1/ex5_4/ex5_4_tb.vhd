@@ -67,8 +67,7 @@ begin
         
 		wait for apply_offset;
 
-		apply_pattern('0', '0', A, B);
-		apply_pattern('0', '1', A, B);
+				apply_pattern('0', '1', A, B);
 			apply_pattern('1', '0', A, B);
 			apply_pattern('1', '0', A, B);
 			apply_pattern('1', '0', A, B);
