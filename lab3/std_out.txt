@@ -1,0 +1,1315 @@
+** Warning: (vlib-34) Library already exists at "work_gate".
+QuestaSim-64 vlog 10.5c_4 Compiler 2016.11 Nov 30 2016
+Start time: 18:31:06 on Nov 14,2019
+vlog -work work_gate "+define+functional" /home/s262620/lab3/gate/NangateOpenCellLibrary.v 
+-- Compiling module AND2_X1
+-- Compiling module AND2_X2
+-- Compiling module AND2_X4
+-- Compiling module AND3_X1
+-- Compiling module AND3_X2
+-- Compiling module AND3_X4
+-- Compiling module AND4_X1
+-- Compiling module AND4_X2
+-- Compiling module AND4_X4
+-- Compiling module ANTENNA_X1
+-- Compiling module AOI211_X1
+-- Compiling module AOI211_X2
+-- Compiling module AOI211_X4
+-- Compiling module AOI21_X1
+-- Compiling module AOI21_X2
+-- Compiling module AOI21_X4
+-- Compiling module AOI221_X1
+-- Compiling module AOI221_X2
+-- Compiling module AOI221_X4
+-- Compiling module AOI222_X1
+-- Compiling module AOI222_X2
+-- Compiling module AOI222_X4
+-- Compiling module AOI22_X1
+-- Compiling module AOI22_X2
+-- Compiling module AOI22_X4
+-- Compiling module BUF_X1
+-- Compiling module BUF_X16
+-- Compiling module BUF_X2
+-- Compiling module BUF_X32
+-- Compiling module BUF_X4
+-- Compiling module BUF_X8
+-- Compiling module CLKBUF_X1
+-- Compiling module CLKBUF_X2
+-- Compiling module CLKBUF_X3
+-- Compiling UDP seq_CLKGATETST_X1
+-- Compiling module CLKGATETST_X1
+-- Compiling UDP seq_CLKGATETST_X2
+-- Compiling module CLKGATETST_X2
+-- Compiling UDP seq_CLKGATETST_X4
+-- Compiling module CLKGATETST_X4
+-- Compiling UDP seq_CLKGATETST_X8
+-- Compiling module CLKGATETST_X8
+-- Compiling UDP seq_CLKGATE_X1
+-- Compiling module CLKGATE_X1
+-- Compiling UDP seq_CLKGATE_X2
+-- Compiling module CLKGATE_X2
+-- Compiling UDP seq_CLKGATE_X4
+-- Compiling module CLKGATE_X4
+-- Compiling UDP seq_CLKGATE_X8
+-- Compiling module CLKGATE_X8
+-- Compiling UDP seq_DFFRS_X1
+-- Compiling module DFFRS_X1
+-- Compiling UDP seq_DFFRS_X2
+-- Compiling module DFFRS_X2
+-- Compiling UDP seq_DFFR_X1
+-- Compiling module DFFR_X1
+-- Compiling UDP seq_DFFR_X2
+-- Compiling module DFFR_X2
+-- Compiling UDP seq_DFFS_X1
+-- Compiling module DFFS_X1
+-- Compiling UDP seq_DFFS_X2
+-- Compiling module DFFS_X2
+-- Compiling UDP seq_DFF_X1
+-- Compiling module DFF_X1
+-- Compiling UDP seq_DFF_X2
+-- Compiling module DFF_X2
+-- Compiling UDP seq_DLH_X1
+-- Compiling module DLH_X1
+-- Compiling UDP seq_DLH_X2
+-- Compiling module DLH_X2
+-- Compiling UDP seq_DLL_X1
+-- Compiling module DLL_X1
+-- Compiling UDP seq_DLL_X2
+-- Compiling module DLL_X2
+-- Compiling module FA_X1
+-- Compiling module FILLCELL_X1
+-- Compiling module FILLCELL_X2
+-- Compiling module FILLCELL_X4
+-- Compiling module FILLCELL_X8
+-- Compiling module FILLCELL_X16
+-- Compiling module FILLCELL_X32
+-- Compiling module HA_X1
+-- Compiling module INV_X1
+-- Compiling module INV_X16
+-- Compiling module INV_X2
+-- Compiling module INV_X32
+-- Compiling module INV_X4
+-- Compiling module INV_X8
+-- Compiling module LOGIC0_X1
+-- Compiling module LOGIC1_X1
+-- Compiling module MUX2_X1
+-- Compiling module MUX2_X2
+-- Compiling module NAND2_X1
+-- Compiling module NAND2_X2
+-- Compiling module NAND2_X4
+-- Compiling module NAND3_X1
+-- Compiling module NAND3_X2
+-- Compiling module NAND3_X4
+-- Compiling module NAND4_X1
+-- Compiling module NAND4_X2
+-- Compiling module NAND4_X4
+-- Compiling module NOR2_X1
+-- Compiling module NOR2_X2
+-- Compiling module NOR2_X4
+-- Compiling module NOR3_X1
+-- Compiling module NOR3_X2
+-- Compiling module NOR3_X4
+-- Compiling module NOR4_X1
+-- Compiling module NOR4_X2
+-- Compiling module NOR4_X4
+-- Compiling module OAI211_X1
+-- Compiling module OAI211_X2
+-- Compiling module OAI211_X4
+-- Compiling module OAI21_X1
+-- Compiling module OAI21_X2
+-- Compiling module OAI21_X4
+-- Compiling module OAI221_X1
+-- Compiling module OAI221_X2
+-- Compiling module OAI221_X4
+-- Compiling module OAI222_X1
+-- Compiling module OAI222_X2
+-- Compiling module OAI222_X4
+-- Compiling module OAI22_X1
+-- Compiling module OAI22_X2
+-- Compiling module OAI22_X4
+-- Compiling module OAI33_X1
+-- Compiling module OR2_X1
+-- Compiling module OR2_X2
+-- Compiling module OR2_X4
+-- Compiling module OR3_X1
+-- Compiling module OR3_X2
+-- Compiling module OR3_X4
+-- Compiling module OR4_X1
+-- Compiling module OR4_X2
+-- Compiling module OR4_X4
+-- Compiling UDP seq_SDFFRS_X1
+-- Compiling module SDFFRS_X1
+-- Compiling UDP seq_SDFFRS_X2
+-- Compiling module SDFFRS_X2
+-- Compiling UDP seq_SDFFR_X1
+-- Compiling module SDFFR_X1
+-- Compiling UDP seq_SDFFR_X2
+-- Compiling module SDFFR_X2
+-- Compiling UDP seq_SDFFS_X1
+-- Compiling module SDFFS_X1
+-- Compiling UDP seq_SDFFS_X2
+-- Compiling module SDFFS_X2
+-- Compiling UDP seq_SDFF_X1
+-- Compiling module SDFF_X1
+-- Compiling UDP seq_SDFF_X2
+-- Compiling module SDFF_X2
+-- Compiling module TBUF_X1
+-- Compiling module TBUF_X16
+-- Compiling module TBUF_X2
+-- Compiling module TBUF_X4
+-- Compiling module TBUF_X8
+-- Compiling module TINV_X1
+-- Compiling UDP seq_TLAT_X1
+-- Compiling module TLAT_X1
+-- Compiling module XNOR2_X1
+-- Compiling module XNOR2_X2
+-- Compiling module XOR2_X1
+-- Compiling module XOR2_X2
+-- Compiling UDP ng_xbuf
+
+Top level modules:
+	AND2_X1
+	AND2_X2
+	AND2_X4
+	AND3_X1
+	AND3_X2
+	AND3_X4
+	AND4_X1
+	AND4_X2
+	AND4_X4
+	ANTENNA_X1
+	AOI211_X1
+	AOI211_X2
+	AOI211_X4
+	AOI21_X1
+	AOI21_X2
+	AOI21_X4
+	AOI221_X1
+	AOI221_X2
+	AOI221_X4
+	AOI222_X1
+	AOI222_X2
+	AOI222_X4
+	AOI22_X1
+	AOI22_X2
+	AOI22_X4
+	BUF_X1
+	BUF_X16
+	BUF_X2
+	BUF_X32
+	BUF_X4
+	BUF_X8
+	CLKBUF_X1
+	CLKBUF_X2
+	CLKBUF_X3
+	CLKGATETST_X1
+	CLKGATETST_X2
+	CLKGATETST_X4
+	CLKGATETST_X8
+	CLKGATE_X1
+	CLKGATE_X2
+	CLKGATE_X4
+	CLKGATE_X8
+	DFFRS_X1
+	DFFRS_X2
+	DFFR_X1
+	DFFR_X2
+	DFFS_X1
+	DFFS_X2
+	DFF_X1
+	DFF_X2
+	DLH_X1
+	DLH_X2
+	DLL_X1
+	DLL_X2
+	FA_X1
+	FILLCELL_X1
+	FILLCELL_X2
+	FILLCELL_X4
+	FILLCELL_X8
+	FILLCELL_X16
+	FILLCELL_X32
+	HA_X1
+	INV_X1
+	INV_X16
+	INV_X2
+	INV_X32
+	INV_X4
+	INV_X8
+	LOGIC0_X1
+	LOGIC1_X1
+	MUX2_X1
+	MUX2_X2
+	NAND2_X1
+	NAND2_X2
+	NAND2_X4
+	NAND3_X1
+	NAND3_X2
+	NAND3_X4
+	NAND4_X1
+	NAND4_X2
+	NAND4_X4
+	NOR2_X1
+	NOR2_X2
+	NOR2_X4
+	NOR3_X1
+	NOR3_X2
+	NOR3_X4
+	NOR4_X1
+	NOR4_X2
+	NOR4_X4
+	OAI211_X1
+	OAI211_X2
+	OAI211_X4
+	OAI21_X1
+	OAI21_X2
+	OAI21_X4
+	OAI221_X1
+	OAI221_X2
+	OAI221_X4
+	OAI222_X1
+	OAI222_X2
+	OAI222_X4
+	OAI22_X1
+	OAI22_X2
+	OAI22_X4
+	OAI33_X1
+	OR2_X1
+	OR2_X2
+	OR2_X4
+	OR3_X1
+	OR3_X2
+	OR3_X4
+	OR4_X1
+	OR4_X2
+	OR4_X4
+	SDFFRS_X1
+	SDFFRS_X2
+	SDFFR_X1
+	SDFFR_X2
+	SDFFS_X1
+	SDFFS_X2
+	SDFF_X1
+	SDFF_X2
+	TBUF_X1
+	TBUF_X16
+	TBUF_X2
+	TBUF_X4
+	TBUF_X8
+	TINV_X1
+	TLAT_X1
+	XNOR2_X1
+	XNOR2_X2
+	XOR2_X1
+	XOR2_X2
+End time: 18:31:06 on Nov 14,2019, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+QuestaSim-64 vlog 10.5c_4 Compiler 2016.11 Nov 30 2016
+Start time: 18:31:06 on Nov 14,2019
+vlog -sv -work work_gate -cover t -novopt -timescale 1 ns/ 1 ps -pedanticerrors -suppress 2577 -suppress 2583 /home/s262620/lab3/gate/riscv_core.v /home/s262620/lab3/rtl/include/riscv_config.sv /home/s262620/lab3/tb/core/fpnew/src/fpnew_pkg.sv /home/s262620/lab3/rtl/include/apu_core_package.sv /home/s262620/lab3/rtl/include/riscv_defines.sv /home/s262620/lab3/rtl/include/riscv_tracer_defines.sv /home/s262620/lab3/tb/tb_riscv/include/perturbation_defines.sv /home/s262620/lab3/tb/tb_riscv/riscv_perturbation.sv /home/s262620/lab3/tb/tb_riscv/riscv_random_stall.sv /home/s262620/lab3/tb/tb_riscv/riscv_random_interrupt_generator.sv /home/s262620/lab3/tb/core/riscv_wrapper_gate.sv /home/s262620/lab3/tb/core/dp_ram.sv /home/s262620/lab3/tb/core/cluster_clock_gating.sv /home/s262620/lab3/tb/core/tb_top.sv /home/s262620/lab3/tb/core/mm_ram.sv /home/s262620/lab3/tb/verilator-model/ram.sv 
+-- Compiling module cluster_clock_gating_32
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_3
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_2
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_1
+-- Compiling module riscv_L0_buffer_RDATA_IN_WIDTH128
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_prefetch_L0_buffer_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_prefetch_L0_buffer_1
+-- Compiling module riscv_prefetch_L0_buffer
+-- Compiling module riscv_hwloop_controller_N_REGS2
+-- Compiling module riscv_compressed_decoder_FPU0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_if_stage_2_128_0_1a110800
+-- Compiling module riscv_if_stage_2_128_0_1a110800
+-- Compiling module cluster_clock_gating_31
+-- Compiling module cluster_clock_gating_30
+-- Compiling module cluster_clock_gating_29
+-- Compiling module cluster_clock_gating_28
+-- Compiling module cluster_clock_gating_27
+-- Compiling module cluster_clock_gating_26
+-- Compiling module cluster_clock_gating_25
+-- Compiling module cluster_clock_gating_24
+-- Compiling module cluster_clock_gating_23
+-- Compiling module cluster_clock_gating_22
+-- Compiling module cluster_clock_gating_21
+-- Compiling module cluster_clock_gating_20
+-- Compiling module cluster_clock_gating_19
+-- Compiling module cluster_clock_gating_18
+-- Compiling module cluster_clock_gating_17
+-- Compiling module cluster_clock_gating_16
+-- Compiling module cluster_clock_gating_15
+-- Compiling module cluster_clock_gating_14
+-- Compiling module cluster_clock_gating_13
+-- Compiling module cluster_clock_gating_12
+-- Compiling module cluster_clock_gating_11
+-- Compiling module cluster_clock_gating_10
+-- Compiling module cluster_clock_gating_9
+-- Compiling module cluster_clock_gating_8
+-- Compiling module cluster_clock_gating_7
+-- Compiling module cluster_clock_gating_6
+-- Compiling module cluster_clock_gating_5
+-- Compiling module cluster_clock_gating_4
+-- Compiling module cluster_clock_gating_3
+-- Compiling module cluster_clock_gating_2
+-- Compiling module cluster_clock_gating_1
+-- Compiling module cluster_clock_gating_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_1
+-- Compiling module riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0
+-- Compiling module register_file_test_wrap_ADDR_WIDTH6_FPU0_Zfinx0
+-- Compiling module riscv_decoder_FPU0_FP_DIVSQRT0_PULP_SECURE1_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_WOP_CPU6
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_controller_FPU0
+-- Compiling module riscv_controller_FPU0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_int_controller_PULP_SECURE1
+-- Compiling module riscv_int_controller_PULP_SECURE1
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_5
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_4
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_3
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_2
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_1
+-- Compiling module riscv_hwloop_regs_N_REGS2
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_12
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_11
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_10
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_9
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_8
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_7
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_6
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_5
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_4
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_3
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_2
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_1
+-- Compiling module riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5
+-- Compiling module alu_popcnt
+-- Compiling module alu_ff
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_alu_div_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_alu_div_3
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_alu_div_2
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_alu_div_1
+-- Compiling module riscv_alu_div
+-- Compiling module riscv_alu_SHARED_INT_DIV0_FPU0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_mult_SHARED_DSP_MULT0
+-- Compiling module riscv_mult_SHARED_DSP_MULT0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_ex_stage_FPU0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5
+-- Compiling module riscv_ex_stage_FPU0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_load_store_unit_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_load_store_unit_1
+-- Compiling module riscv_load_store_unit
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_0
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_33
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_32
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_31
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_30
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_29
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_28
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_27
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_26
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_25
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_24
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_23
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_22
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_21
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_20
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_19
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_18
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_17
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_16
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_15
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_14
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_13
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_12
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_11
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_10
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_9
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_8
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_7
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_6
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_5
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_4
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_3
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_2
+-- Compiling module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_1
+-- Compiling module riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16
+-- Compiling module riscv_pmp_N_PMP_ENTRIES16
+-- Compiling module riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800
+-- Compiling package fpnew_pkg
+-- Compiling package apu_core_package
+-- Compiling package riscv_defines
+-- Importing package fpnew_pkg
+-- Compiling package riscv_tracer_defines
+-- Importing package riscv_defines
+-- Compiling package perturbation_defines
+-- Compiling package riscv_perturbation_sv_unit
+-- Importing package riscv_defines
+-- Importing package fpnew_pkg
+-- Compiling module riscv_perturbation
+-- Compiling package riscv_random_stall_sv_unit
+-- Importing package riscv_defines
+-- Importing package fpnew_pkg
+-- Importing package perturbation_defines
+-- Compiling module riscv_random_stall
+-- Compiling package riscv_random_interrupt_generator_sv_unit
+-- Importing package riscv_defines
+-- Importing package fpnew_pkg
+-- Importing package perturbation_defines
+-- Compiling module riscv_random_interrupt_generator
+-- Compiling module riscv_wrapper
+-- Compiling module dp_ram
+-- Compiling module cluster_clock_gating
+-- Compiling module tb_top
+-- Compiling module mm_ram
+-- Compiling module ram
+
+Top level modules:
+	riscv_perturbation
+	cluster_clock_gating
+	tb_top
+	ram
+End time: 18:31:08 on Nov 14,2019, Elapsed time: 0:00:02
+Errors: 0, Warnings: 0, Suppressed Warnings: 2
+QuestaSim-64 vopt 10.5c_4 Compiler 2016.11 Nov 30 2016
+Start time: 18:31:08 on Nov 14,2019
+vopt -work work_gate -debugdb -fsmdebug -pedanticerrors "+acc" tb_top -o tb_top_vopt 
+
+Top level modules:
+	tb_top
+
+Analyzing design...
+-- Loading module tb_top
+-- Loading module riscv_wrapper
+-- Loading module riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800
+-- Loading module cluster_clock_gating_32
+-- Loading module CLKGATETST_X1
+-- Loading UDP seq_CLKGATETST_X1
+-- Loading module riscv_if_stage_2_128_0_1a110800
+-- Loading module riscv_prefetch_L0_buffer
+-- Loading module riscv_L0_buffer_RDATA_IN_WIDTH128
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_3
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_2
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_1
+-- Loading module DFFR_X1
+-- Loading UDP seq_DFFR_X1
+-- Loading UDP ng_xbuf
+-- Loading module INV_X1
+-- Loading module DFFR_X2
+-- Loading UDP seq_DFFR_X2
+-- Loading module OAI21_X2
+-- Loading module MUX2_X1
+-- Loading module INV_X4
+-- Loading module BUF_X2
+-- Loading module BUF_X1
+-- Loading module NOR2_X1
+-- Loading module OAI21_X1
+-- Loading module NAND2_X1
+-- Loading module OAI211_X1
+-- Loading module AOI22_X1
+-- Loading module AND2_X1
+-- Loading module NOR3_X2
+-- Loading module INV_X2
+-- Loading module OR2_X2
+-- Loading module OR2_X1
+-- Loading module NAND3_X1
+-- Loading module NAND2_X2
+-- Loading module OAI22_X1
+-- Loading module AOI222_X1
+-- Loading module AOI21_X1
+-- Loading module AND3_X1
+-- Loading module AOI211_X1
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_prefetch_L0_buffer_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_prefetch_L0_buffer_1
+-- Loading module NOR2_X4
+-- Loading module CLKBUF_X1
+-- Loading module AND2_X2
+-- Loading module CLKBUF_X2
+-- Loading module OR3_X2
+-- Loading module OR3_X1
+-- Loading module NOR2_X2
+-- Loading module XNOR2_X1
+-- Loading module NOR3_X1
+-- Loading module NAND4_X1
+-- Loading module NOR4_X1
+-- Loading module AND4_X1
+-- Loading module XOR2_X1
+-- Loading module HA_X1
+-- Loading module riscv_hwloop_controller_N_REGS2
+-- Loading module OAI221_X1
+-- Loading module AOI221_X1
+-- Loading module riscv_compressed_decoder_FPU0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_if_stage_2_128_0_1a110800
+-- Loading module DFFS_X1
+-- Loading UDP seq_DFFS_X1
+-- Loading module OR4_X1
+-- Loading module riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5
+-- Loading module register_file_test_wrap_ADDR_WIDTH6_FPU0_Zfinx0
+-- Loading module riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0
+-- Loading module cluster_clock_gating_31
+-- Loading module cluster_clock_gating_30
+-- Loading module cluster_clock_gating_29
+-- Loading module cluster_clock_gating_28
+-- Loading module cluster_clock_gating_27
+-- Loading module cluster_clock_gating_26
+-- Loading module cluster_clock_gating_25
+-- Loading module cluster_clock_gating_24
+-- Loading module cluster_clock_gating_23
+-- Loading module cluster_clock_gating_22
+-- Loading module cluster_clock_gating_21
+-- Loading module cluster_clock_gating_20
+-- Loading module cluster_clock_gating_19
+-- Loading module cluster_clock_gating_18
+-- Loading module cluster_clock_gating_17
+-- Loading module cluster_clock_gating_16
+-- Loading module cluster_clock_gating_15
+-- Loading module cluster_clock_gating_14
+-- Loading module cluster_clock_gating_13
+-- Loading module cluster_clock_gating_12
+-- Loading module cluster_clock_gating_11
+-- Loading module cluster_clock_gating_10
+-- Loading module cluster_clock_gating_9
+-- Loading module cluster_clock_gating_8
+-- Loading module cluster_clock_gating_7
+-- Loading module cluster_clock_gating_6
+-- Loading module cluster_clock_gating_5
+-- Loading module cluster_clock_gating_4
+-- Loading module cluster_clock_gating_3
+-- Loading module cluster_clock_gating_2
+-- Loading module cluster_clock_gating_1
+-- Loading module cluster_clock_gating_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_1
+-- Loading module DLH_X1
+-- Loading UDP seq_DLH_X1
+-- Loading module riscv_decoder_FPU0_FP_DIVSQRT0_PULP_SECURE1_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_WOP_CPU6
+-- Loading module NAND3_X2
+-- Loading module riscv_controller_FPU0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_controller_FPU0
+-- Loading module riscv_int_controller_PULP_SECURE1
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_int_controller_PULP_SECURE1
+-- Loading module riscv_hwloop_regs_N_REGS2
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_5
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_4
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_3
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_2
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_1
+-- Loading module DFFRS_X1
+-- Loading UDP seq_DFFRS_X1
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_12
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_11
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_10
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_9
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_8
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_7
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_6
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_5
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_4
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_3
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_2
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_1
+-- Loading module NOR3_X4
+-- Loading module FA_X1
+-- Loading module OAI222_X1
+-- Loading module riscv_ex_stage_FPU0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5
+-- Loading module riscv_alu_SHARED_INT_DIV0_FPU0
+-- Loading module alu_popcnt
+-- Loading module alu_ff
+-- Loading module NOR4_X4
+-- Loading module riscv_alu_div
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_alu_div_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_alu_div_3
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_alu_div_2
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_alu_div_1
+-- Loading module BUF_X4
+-- Loading module AOI21_X2
+-- Loading module riscv_mult_SHARED_DSP_MULT0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_mult_SHARED_DSP_MULT0
+-- Loading module AND3_X2
+-- Loading module XNOR2_X2
+-- Loading module AOI22_X2
+-- Loading module MUX2_X2
+-- Loading module XOR2_X2
+-- Loading module AOI22_X4
+-- Loading module AOI221_X4
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_ex_stage_FPU0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5
+-- Loading module riscv_load_store_unit
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_load_store_unit_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_load_store_unit_1
+-- Loading module OAI211_X2
+-- Loading module riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_0
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_33
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_32
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_31
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_30
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_29
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_28
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_27
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_26
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_25
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_24
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_23
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_22
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_21
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_20
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_19
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_18
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_17
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_16
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_15
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_14
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_13
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_12
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_11
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_10
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_9
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_8
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_7
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_6
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_5
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_4
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_3
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_2
+-- Loading module SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_1
+-- Loading module OAI21_X4
+-- Loading module riscv_pmp_N_PMP_ENTRIES16
+-- Loading module mm_ram
+-- Loading module dp_ram
+-- Loading module riscv_random_stall
+-- Loading module riscv_random_interrupt_generator
+Incremental compilation check found no design-units have changed.
+Optimized design name is tb_top_vopt
+End time: 18:31:09 on Nov 14,2019, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+make: Nothing to be done for `all'.
+Reading pref.tcl
+
+# 10.5c_4
+
+# vsim -c tb_top_vopt "+firmware=/home/s262620/lab3/./sbst_c/sbst.hex" "+dumpports+nocollapse" -suppress 3015 -do "/home/s262620/lab3/vsim.tcl" 
+# Start time: 18:31:10 on Nov 14,2019
+# Loading /tmp/s262620@po.polito.it_dpi_19785/linux_x86_64_gcc-4.7.4/export_tramp.so
+# //  Questa Sim-64
+# //  Version 10.5c_4 linux_x86_64 Nov 30 2016
+# //
+# //  Copyright 1991-2016 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_top(fast)
+# Loading work.riscv_wrapper(fast)
+# Loading work.riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800(fast)
+# Loading work.cluster_clock_gating_32(fast)
+# Loading work.CLKGATETST_X1(fast)
+# Loading work.riscv_if_stage_2_128_0_1a110800(fast)
+# Loading work.riscv_prefetch_L0_buffer(fast)
+# Loading work.riscv_L0_buffer_RDATA_IN_WIDTH128(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_3(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_2(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_1(fast)
+# Loading work.DFFR_X1(fast)
+# Loading work.INV_X1(fast)
+# Loading work.DFFR_X2(fast)
+# Loading work.OAI21_X2(fast)
+# Loading work.MUX2_X1(fast)
+# Loading work.INV_X4(fast)
+# Loading work.BUF_X2(fast)
+# Loading work.BUF_X1(fast)
+# Loading work.NOR2_X1(fast)
+# Loading work.OAI21_X1(fast)
+# Loading work.NAND2_X1(fast)
+# Loading work.OAI211_X1(fast)
+# Loading work.AOI22_X1(fast)
+# Loading work.AND2_X1(fast)
+# Loading work.NOR3_X2(fast)
+# Loading work.INV_X2(fast)
+# Loading work.OR2_X2(fast)
+# Loading work.OR2_X1(fast)
+# Loading work.NAND3_X1(fast)
+# Loading work.NAND2_X2(fast)
+# Loading work.OAI22_X1(fast)
+# Loading work.AOI222_X1(fast)
+# Loading work.AOI21_X1(fast)
+# Loading work.AND3_X1(fast)
+# Loading work.AOI211_X1(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_prefetch_L0_buffer_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_prefetch_L0_buffer_1(fast)
+# Loading work.NOR2_X4(fast)
+# Loading work.CLKBUF_X1(fast)
+# Loading work.AND2_X2(fast)
+# Loading work.CLKBUF_X2(fast)
+# Loading work.OR3_X2(fast)
+# Loading work.OR3_X1(fast)
+# Loading work.NOR2_X2(fast)
+# Loading work.XNOR2_X1(fast)
+# Loading work.NOR3_X1(fast)
+# Loading work.NAND4_X1(fast)
+# Loading work.NOR4_X1(fast)
+# Loading work.AND4_X1(fast)
+# Loading work.XOR2_X1(fast)
+# Loading work.HA_X1(fast)
+# Loading work.riscv_hwloop_controller_N_REGS2(fast)
+# Loading work.OAI221_X1(fast)
+# Loading work.AOI221_X1(fast)
+# Loading work.riscv_compressed_decoder_FPU0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_if_stage_2_128_0_1a110800(fast)
+# Loading work.DFFS_X1(fast)
+# Loading work.OR4_X1(fast)
+# Loading work.riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5(fast)
+# Loading work.register_file_test_wrap_ADDR_WIDTH6_FPU0_Zfinx0(fast)
+# Loading work.riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0(fast)
+# Loading work.cluster_clock_gating_31(fast)
+# Loading work.cluster_clock_gating_30(fast)
+# Loading work.cluster_clock_gating_29(fast)
+# Loading work.cluster_clock_gating_28(fast)
+# Loading work.cluster_clock_gating_27(fast)
+# Loading work.cluster_clock_gating_26(fast)
+# Loading work.cluster_clock_gating_25(fast)
+# Loading work.cluster_clock_gating_24(fast)
+# Loading work.cluster_clock_gating_23(fast)
+# Loading work.cluster_clock_gating_22(fast)
+# Loading work.cluster_clock_gating_21(fast)
+# Loading work.cluster_clock_gating_20(fast)
+# Loading work.cluster_clock_gating_19(fast)
+# Loading work.cluster_clock_gating_18(fast)
+# Loading work.cluster_clock_gating_17(fast)
+# Loading work.cluster_clock_gating_16(fast)
+# Loading work.cluster_clock_gating_15(fast)
+# Loading work.cluster_clock_gating_14(fast)
+# Loading work.cluster_clock_gating_13(fast)
+# Loading work.cluster_clock_gating_12(fast)
+# Loading work.cluster_clock_gating_11(fast)
+# Loading work.cluster_clock_gating_10(fast)
+# Loading work.cluster_clock_gating_9(fast)
+# Loading work.cluster_clock_gating_8(fast)
+# Loading work.cluster_clock_gating_7(fast)
+# Loading work.cluster_clock_gating_6(fast)
+# Loading work.cluster_clock_gating_5(fast)
+# Loading work.cluster_clock_gating_4(fast)
+# Loading work.cluster_clock_gating_3(fast)
+# Loading work.cluster_clock_gating_2(fast)
+# Loading work.cluster_clock_gating_1(fast)
+# Loading work.cluster_clock_gating_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_1(fast)
+# Loading work.DLH_X1(fast)
+# Loading work.riscv_decoder_FPU0_FP_DIVSQRT0_PULP_SECURE1_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_WOP_CPU6(fast)
+# Loading work.NAND3_X2(fast)
+# Loading work.riscv_controller_FPU0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_controller_FPU0(fast)
+# Loading work.riscv_int_controller_PULP_SECURE1(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_int_controller_PULP_SECURE1(fast)
+# Loading work.riscv_hwloop_regs_N_REGS2(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_5(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_4(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_3(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_2(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_1(fast)
+# Loading work.DFFRS_X1(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_12(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_11(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_10(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_9(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_8(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_7(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_6(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_5(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_4(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_3(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_2(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_id_stage_N_HWLP2_PULP_SECURE1_APU0_FPU0_Zfinx0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_MULT0_SHARED_INT_DIV0_SHARED_FP_DIVSQRT0_WAPUTYPE0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5_1(fast)
+# Loading work.NOR3_X4(fast)
+# Loading work.FA_X1(fast)
+# Loading work.OAI222_X1(fast)
+# Loading work.riscv_ex_stage_FPU0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5(fast)
+# Loading work.riscv_alu_SHARED_INT_DIV0_FPU0(fast)
+# Loading work.alu_popcnt(fast)
+# Loading work.alu_ff(fast)
+# Loading work.NOR4_X4(fast)
+# Loading work.riscv_alu_div(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_alu_div_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_alu_div_3(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_alu_div_2(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_alu_div_1(fast)
+# Loading work.BUF_X4(fast)
+# Loading work.AOI21_X2(fast)
+# Loading work.riscv_mult_SHARED_DSP_MULT0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_mult_SHARED_DSP_MULT0(fast)
+# Loading work.AND3_X2(fast)
+# Loading work.XNOR2_X2(fast)
+# Loading work.AOI22_X2(fast)
+# Loading work.MUX2_X2(fast)
+# Loading work.XOR2_X2(fast)
+# Loading work.AOI22_X4(fast)
+# Loading work.AOI221_X4(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_ex_stage_FPU0_FP_DIVSQRT0_SHARED_FP0_SHARED_DSP_MULT0_SHARED_INT_DIV0_APU_NARGS_CPU3_APU_WOP_CPU6_APU_NDSFLAGS_CPU15_APU_NUSFLAGS_CPU5(fast)
+# Loading work.riscv_load_store_unit(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_load_store_unit_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_load_store_unit_1(fast)
+# Loading work.OAI211_X2(fast)
+# Loading work.riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_0(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_33(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_32(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_31(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_30(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_29(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_28(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_27(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_26(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_25(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_24(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_23(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_22(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_21(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_20(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_19(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_18(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_17(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_16(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_15(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_14(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_13(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_12(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_11(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_10(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_9(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_8(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_7(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_6(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_5(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_4(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_3(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_2(fast)
+# Loading work.SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_1(fast)
+# Loading work.OAI21_X4(fast)
+# Loading work.riscv_pmp_N_PMP_ENTRIES16(fast)
+# Loading work.mm_ram(fast)
+# Loading work.dp_ram(fast)
+# Loading work.perturbation_defines(fast)
+# Loading work.fpnew_pkg(fast)
+# Loading work.riscv_defines(fast)
+# Loading work.riscv_random_stall_sv_unit(fast)
+# Loading work.riscv_random_stall(fast)
+# Loading work.riscv_random_stall(fast__1)
+# Loading work.riscv_random_interrupt_generator_sv_unit(fast)
+# Loading work.riscv_random_interrupt_generator(fast)
+# Compiling /tmp/s262620@po.polito.it_dpi_19785/linux_x86_64_gcc-4.7.4/exportwrapper.c
+# Loading /tmp/s262620@po.polito.it_dpi_19785/linux_x86_64_gcc-4.7.4/vsim_auto_compile.so
+# do /home/s262620/lab3/vsim.tcl
+# 1
+# EXIT SUCCESS
+# ** Note: $finish    : /home/s262620/lab3/tb/core/tb_top.sv(137)
+#    Time: 5900 ns  Iteration: 1  Instance: /tb_top
+# 1
+# Break in Module tb_top at /home/s262620/lab3/tb/core/tb_top.sv line 137
+# Stopped at /home/s262620/lab3/tb/core/tb_top.sv line 137
+# End time: 18:31:12 on Nov 14,2019, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+‘/tmp/tmp.KCRsehSFlV/fixed.evcd’ -> ‘dumpports_gate.evcd.fixed’
+
+                                  TetraMAX(R) 
+
+
+                 Version M-2016.12 for linux64 - Nov 21, 2016  
+
+                    Copyright (c) 1996 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+ Tcl mode is on by default. Use -notcl to run in native mode.
+ Executing startup file "/eda/synopsys/2016-17/RHELx86/TMAX_2016.12/admin/setup/tmaxtcl.rc".
+# Setup
+set_environment_viewer -instance_names
+set_messages -log tmax.log -replace
+## Build and DRC
+read_netlist ../gate/NangateOpenCellLibrary.tlib -library
+ Begin reading netlist ( ../gate/NangateOpenCellLibrary.tlib )...
+ End parsing Verilog file ../gate/NangateOpenCellLibrary.tlib with 0 errors.
+ End reading netlist: #modules=181, top=AND2_X1, #lines=2744, CPU_time=0.01 sec, Memory=0MB
+read_netlist ../gate/riscv_core.v
+ Begin reading netlist ( ../gate/riscv_core.v )...
+ End parsing Verilog file ../gate/riscv_core.v with 0 errors.
+ End reading netlist: #modules=127, top=riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800, #lines=53910, CPU_time=0.17 sec, Memory=18MB
+run_build_model riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800
+ ------------------------------------------------------------------------------
+ Begin build model for topcut = riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800 ...
+ ------------------------------------------------------------------------------
+ Warning: There were 72 faultable pins lost due to tied gate optimizations. (M126)
+ There were 104908 primitives and 1725 faultable pins removed during model optimizations
+ Warning: Rule B7 (undriven module output pin) was violated 463 times.
+ Warning: Rule B8 (unconnected module input pin) was violated 429 times.
+ Warning: Rule B9 (undriven module internal net) was violated 31 times.
+ Warning: Rule B10 (unconnected module internal net) was violated 459 times.
+ Warning: Rule N20 (underspecified UDP) was violated 7 times.
+ End build model: #primitives=65718, CPU_time=0.35 sec, Memory=30MB
+ ------------------------------------------------------------------------------
+ Begin learning analyses...
+ End learning analyses, total learning CPU time=0.54 sec.
+ ------------------------------------------------------------------------------
+run_drc
+ ------------------------------------------------------------------------------
+ Begin scan design rules checking...
+ ------------------------------------------------------------------------------
+ Begin simulating test protocol procedures...
+ Test protocol simulation completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin scan chain operation checking...
+ Scan chain operation checking completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin clock rules checking...
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 2130 times.
+ Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 3225 times.
+ Clock rules checking completed, CPU time=0.24 sec.
+ ------------------------------------------------------------------------------
+ Begin nonscan rules checking...
+ Nonscan cell summary: #DFF=2130  #DLAT=1097  #RAM_outs=0  tla_usage_type=no_clock_tla
+ Nonscan behavior:  #CU=2130  #TLA=1097
+ Nonscan rules checking completed, CPU time=0.00 sec.
+ ------------------------------------------------------------------------------
+ Begin DRC dependent learning...
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.01 sec
+ DRC dependent learning completed, CPU time=0.14 sec.
+ ------------------------------------------------------------------------------
+ DRC Summary Report
+ ------------------------------------------------------------------------------
+ Warning: Rule C2 (unstable nonscan DFF when clocks off) was violated 2130 times.
+ Warning: Rule C25 (unstable cell clock input connected from multiple sources) was violated 3225 times.
+ There were 5355 violations that occurred during DRC process.
+ Design rules checking was successful, total CPU time=0.39 sec.
+ ------------------------------------------------------------------------------
+## Load and check patterns
+set_patterns -external dumpports_gate.evcd.fixed  -sensitive -strobe_period { 10 ns } -strobe_offset { 59 ns }
+ End reading 586 patterns, CPU_time = 0.02 sec, Memory = 0MB
+run_simulation -sequential
+ Begin sequential simulation of 586 external patterns.
+  479  data_wdata_o[31]  (exp=0, got=X)
+  479  data_wdata_o[30]  (exp=0, got=X)
+  479  data_wdata_o[29]  (exp=0, got=X)
+  479  data_wdata_o[28]  (exp=0, got=X)
+  479  data_wdata_o[27]  (exp=0, got=X)
+  479  data_wdata_o[26]  (exp=0, got=X)
+  479  data_wdata_o[25]  (exp=0, got=X)
+  479  data_wdata_o[24]  (exp=0, got=X)
+  479  data_wdata_o[23]  (exp=0, got=X)
+  479  data_wdata_o[22]  (exp=0, got=X)
+  479  data_wdata_o[21]  (exp=0, got=X)
+  479  data_wdata_o[20]  (exp=0, got=X)
+  479  data_wdata_o[19]  (exp=0, got=X)
+  479  data_wdata_o[18]  (exp=0, got=X)
+  479  data_wdata_o[17]  (exp=0, got=X)
+  479  data_wdata_o[16]  (exp=0, got=X)
+  479  data_wdata_o[15]  (exp=0, got=X)
+  479  data_wdata_o[14]  (exp=0, got=X)
+  479  data_wdata_o[13]  (exp=0, got=X)
+  479  data_wdata_o[12]  (exp=0, got=X)
+  479  data_wdata_o[11]  (exp=0, got=X)
+  479  data_wdata_o[10]  (exp=0, got=X)
+  479  data_wdata_o[9]  (exp=0, got=X)
+  479  data_wdata_o[8]  (exp=0, got=X)
+  479  data_wdata_o[7]  (exp=1, got=X)
+  479  data_wdata_o[6]  (exp=0, got=X)
+  479  data_wdata_o[5]  (exp=1, got=X)
+  479  data_wdata_o[4]  (exp=1, got=X)
+  479  data_wdata_o[3]  (exp=1, got=X)
+  479  data_wdata_o[2]  (exp=1, got=X)
+  479  data_wdata_o[1]  (exp=1, got=X)
+  479  data_wdata_o[0]  (exp=0, got=X)
+ Simulation completed: #patterns=586/1181, #fail_pats=1(1), #failing_meas=32(32), #rejected_pats=0, CPU time=0.31
+## Fault list (select one of the following)
+#add_faults -all
+#add_faults ex_stage_i/alu_i
+add_faults ex_stage_i/alu_i/int_div_div_i
+ 5280 faults were added to fault list.
+#add_faults ex_stage_i/mult_i
+#add_faults id_stage_i/registers_i/riscv_register_file_i
+#read_faults previous_fsim_faults.txt -force_retain_code -add
+## Fault simulation
+run_fault_sim -sequential
+ ------------------------------------------------------------------------------
+ Begin sequential fault simulation of 5279 faults on 586 external patterns.
+ -----------------------------------------------------------
+ #faults    pass #faults   cum. #faults     test    process
+ simulated  detect/total   detect/active  coverage  CPU time
+ ---------  -------------  -------------  --------  --------
+ 1758          703   1758     703   4576    13.33%      2.53
+ 3380         1110   1622    1813   3466    34.36%      4.64
+ 5062         1157   1682    2970   2309    56.29%      6.77
+ 5279          171    217    3141   2138    59.55%      8.09
+ Fault simulation completed: #faults_simulated=5279, test_coverage=59.55%, CPU time=8.09
+## Reports
+set_faults -fault_coverage
+ Warning: Unused gate deletion affects fault coverage calculation. (M245)
+report_faults -level {5 100} > report_faults_hierarchy.txt
+report_faults -level {100 1} -verbose > report_faults_verbose.txt
+report_summaries > report_summaries.txt
+write_faults fsim_faults.txt -replace -all
+ Write faults completed: 5280 faults were written into file "fsim_faults.txt".
+quit
+removed ‘/home/s262620/lab3/run/dumpports_gate.evcd’
+removed ‘/home/s262620/lab3/run/work_gate/_lib1_1.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/_vmake’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_9_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284498_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/28449f0_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_hwloop_controller_N_REGS2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NAND2_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_11_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_19_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_7_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_mult_SHARED_DSP_MULT0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_10_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_32_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_INV_X4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NOR4_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NOR2_X4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_mm_ram_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NOR3_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_22_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_FA_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_DFFRS_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_random_stall_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_14_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284497_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_random_stall_fast__1_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_15_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_20_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_25_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_controller_FPU0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_CLKBUF_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_5_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_13_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_3_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_19_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_BUF_X4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_if_stage_2_128_0_1a110800_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_dp_ram_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_pmp_N_PMP_ENTRIES16_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_9_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_controller_FPU0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_CLKGATETST_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OAI22_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI21_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/dbg_short_1_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_22_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AND2_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_20_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_alu_div_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_24_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OR3_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AND3_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_27_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_32_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/46a0bb5_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_MUX2_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_3_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_alu_div_2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AND4_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_register_file_ADDR_WIDTH6_DATA_WIDTH32_FPU0_Zfinx0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_XOR2_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284492_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_alu_div_3_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_hwloop_regs_N_REGS2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_28_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OR3_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284494_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AND2_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_29_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_prefetch_L0_buffer_1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_tb_top_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/dbg_short_0_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI21_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NAND3_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_BUF_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_register_file_test_wrap_ADDR_WIDTH6_FPU0_Zfinx0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_17_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_mult_SHARED_DSP_MULT0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_alu_div_1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_16_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_HA_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_wrapper_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_BUF_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_23_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_29_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/28449f2_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI22_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_alu_div_0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_31_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/__mti.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_load_store_unit_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_load_store_unit_1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI222_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NAND4_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_5_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NAND3_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AND3_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_prefetch_L0_buffer_0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284496_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_6_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_30_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OR4_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_24_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_30_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_alu_popcnt_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_15_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_21_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OAI221_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284491_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_14_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI221_X4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_18_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_5_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_INV_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_12_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI211_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_prefetch_L0_buffer_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_12_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_8_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_load_store_unit_0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_11_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_DFFS_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_int_controller_PULP_SECURE1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_7_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_26_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_DFFR_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI22_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NOR4_X4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_21_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_18_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_6_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_31_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NAND2_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OR2_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_if_stage_2_128_0_1a110800_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284490_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_XOR2_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284499_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_28_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_13_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_8_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_27_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_int_controller_PULP_SECURE1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_17_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_INV_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_26_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_25_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OR2_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_alu_SHARED_INT_DIV0_FPU0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NOR3_X4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OAI211_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/4417225_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_L0_buffer_RDATA_IN_WIDTH128_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NOR2_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_alu_ff_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_3_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284495_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OAI211_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_DFFR_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_XNOR2_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_3_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_23_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OAI222_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_random_interrupt_generator_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NOR2_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_MUX2_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_L0_buffer_RDATA_IN_WIDTH128_2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI221_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_XNOR2_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_10_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OAI21_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OAI21_X4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/b284493_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_cs_registers_N_EXT_CNT0_APU0_FPU0_PULP_SECURE1_USE_PMP1_N_PMP_ENTRIES16_33_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_OAI21_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_AOI22_X4_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_riscv_compressed_decoder_FPU0_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_CLKBUF_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_cluster_clock_gating_16_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/28449f1_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_DLH_X1_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_NOR3_X2_fast_0.dbg’
+removed ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt/work_SNPS_CLOCK_GATE_HIGH_riscv_hwloop_regs_N_REGS2_1_fast_0.dbg’
+removed directory: ‘/home/s262620/lab3/run/work_gate/_dbcontainer/tb_top_vopt’
+removed directory: ‘/home/s262620/lab3/run/work_gate/_dbcontainer’
+removed ‘/home/s262620/lab3/run/work_gate/_lib1_1.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib6_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib7_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib9_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib2_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib1_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib5_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib9_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib4_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib7_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib2_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib4_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib4_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib2_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib5_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib3_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib3_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib5_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib3_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib9_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib8_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib6_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib8_0.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib6_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib7_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib1_0.qpg’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib1_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_lib8_0.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_dpi/dpi.tfdb’
+removed directory: ‘/home/s262620/lab3/run/work_gate/tb_top_vopt/_dpi’
+removed directory: ‘/home/s262620/lab3/run/work_gate/tb_top_vopt’
+removed directory: ‘/home/s262620/lab3/run/work_gate/_tempmsg’
+removed ‘/home/s262620/lab3/run/work_gate/_lib.qdb’
+removed ‘/home/s262620/lab3/run/work_gate/_lib1_1.qtl’
+removed ‘/home/s262620/lab3/run/work_gate/_info’
+removed ‘/home/s262620/lab3/run/work_gate/_dpi/dpi.tfdb’
+removed directory: ‘/home/s262620/lab3/run/work_gate/_dpi’
+removed directory: ‘/home/s262620/lab3/run/work_gate’
+removed ‘/home/s262620/lab3/run/tmax.log’
+removed ‘/home/s262620/lab3/run/transcript’
+removed ‘/home/s262620/lab3/run/report_faults_verbose.txt’
+removed ‘/home/s262620/lab3/run/dumpports_gate.evcd.fixed’
+removed ‘/home/s262620/lab3/run/report_faults_hierarchy.txt’
+removed ‘/home/s262620/lab3/run/fsim_faults.txt’
+removed ‘/home/s262620/lab3/run/report_summaries.txt’
+removed directory: ‘/home/s262620/lab3/run’
+rm -rf sbst.elf sbst.hex
+rm -rf sbst.elf sbst.hex
