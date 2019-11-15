@@ -1,7 +1,7 @@
 #|/bin/sh
 
 PATH_CORE="./../riscv_testing/"
-PATH_SBST="./"
+PATH_SBST="./../riscv_testing/sbst_c../riscv_testing/sbst_c//"
 #preparing tb
 "$PATH_CORE"compile_testbench.sh
 

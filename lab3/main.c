@@ -1,27 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+#define N 24
+
+/*software base self test for the integer division*/
 
 int main(int argc, char *argv[])
 {
-	int a[5] = { 1323, 234, 43, 545343, 1000 };
-	int b[5] = { 13, 2, 4, 54, 10 };
-	volatile int c[5];
-	volatile int expected [5]= { 101 , 117,10 , 10098 ,10  }
+	int a[N] = {0x7777,0x5555, 0xAAAA,0xAAAA,0x5555,INT_MIN,INT_MAX,1024,1024,555,555,5,INT_MAX,INT_MIN,INT_MAX,INT_MIN,2, 1323, 234, 43, 545343, 1000,1 ,0};
+	int b[N] = {0x1234,0xAAAA,0x5555,7456,798,465,1234,5,4,13,10,0,INT_MAX,INT_MIN,1,1,2, 1,13, 2, 4, 54, 10 ,1,5};
+	volatile int c[N];
 	int i;
 
-	for(i=0; i<5; i++) {
+	for(i=0; i<N; i++) {
 		c[i] = a[i] / b[i];
 	}
-	for(i=0;i<5;i++) {
-	if( c[i]!= expected[i]) {
-	return EXIT_FAILURE;
-	}
-	
-	}
-
-    /* inline assembly */
-    //asm volatile("ecall");
-    /* write something to stdout */
-    //printf("hello mondo world!\n");
     return EXIT_SUCCESS;
 }
