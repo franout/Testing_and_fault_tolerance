@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define N_REGS 31  // for integer and for floating point operation 
+#define N_PATT 10  // for integer and for floating point operation 
 
 /*The register file can be successfully tested by means of the March-C algorithm. 
  * In the following, the algorithm pseudo-code is reported:
@@ -25,20 +25,20 @@
 
 int main(int argc, char *argv[])
 {
-	int pattern [6] = {0x00000000, 0x0000FFFF, 0x00FF00FF, 0x0F0F0F0F, 0x33333333, 0x55555555};	
+	int pattern [N_PATT] = {0xF0F0F0F0,0xAAAAAAAA,0x00000000, 0x0000FFFF, 0x00FF00FF, 0x0F0F0F0F, 0x33333333, 0x55555555,0xFFFFFFFF,0xCAFFECAFFE};	
 	int i;
 	volatile int a;
 	volatile int c;	
 	// hint to the compiler for putting the variable into a register (ATTENTION it will not force it ) 
 	/*testing integer register file with differetnt pattern for each register */
-	for ( i=0;i<6;i++) {
+	for ( i=0;i<N_PATT;i++) {
 		register int x1 asm("x1");
 
 		a= pattern[i];	  
 		x1=a;
 		c=x1;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x1=a;
 		c=x1; 
 
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
 		x2=a;
 		c=x2;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x2=a;
 		c=x2; 
 		register int x3 asm("x3");
@@ -57,25 +57,30 @@ int main(int argc, char *argv[])
 		x3=a;
 		c=x3;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x3=a;
 		c=x3; 
 		register int x4 asm("x4");
 
 		a= pattern[i];	  
-		x4=a;
+		x4=x3=x2=x1=a;
+	
+		c=x1;
+		c=x2;
+		c=x3;
 		c=x4;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x4=a;
-		c=x4; 
+		c=x4;
+		 
 		register int x5 asm("x5");
 
 		a= pattern[i];	  
 		x5=a;
 		c=x5;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x5=a;
 		c=x5; 
 		register int x6 asm("x6");
@@ -84,7 +89,7 @@ int main(int argc, char *argv[])
 		x6=a;
 		c=x6;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x6=a;
 		c=x6; 
 		register int x7 asm("x7");
@@ -93,7 +98,7 @@ int main(int argc, char *argv[])
 		x7=a;
 		c=x7;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x7=a;
 		c=x7; 
 		register int x8 asm("x8");
@@ -102,7 +107,7 @@ int main(int argc, char *argv[])
 		x8=a;
 		c=x8;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x8=a;
 		c=x8; 
 		register int x9 asm("x9");
@@ -111,7 +116,7 @@ int main(int argc, char *argv[])
 		x9=a;
 		c=x9;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x9=a;
 		c=x9; 
 		register int x10 asm("x10");
@@ -120,7 +125,7 @@ int main(int argc, char *argv[])
 		x10=a;
 		c=x10;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x10=a;
 		c=x10; 
 		register int x11 asm("x11");
@@ -129,7 +134,7 @@ int main(int argc, char *argv[])
 		x11=a;
 		c=x11;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x11=a;
 		c=x11; 
 		register int x12 asm("x12");
@@ -138,7 +143,7 @@ int main(int argc, char *argv[])
 		x12=a;
 		c=x12;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x12=a;
 		c=x12; 
 		register int x13 asm("x13");
@@ -147,7 +152,7 @@ int main(int argc, char *argv[])
 		x13=a;
 		c=x13;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x13=a;
 		c=x13; 
 		register int x14 asm("x14");
@@ -156,7 +161,7 @@ int main(int argc, char *argv[])
 		x14=a;
 		c=x14;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x14=a;
 		c=x14; 
 		register int x15 asm("x15");
@@ -165,7 +170,7 @@ int main(int argc, char *argv[])
 		x15=a;
 		c=x15;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x15=a;
 		c=x15; 
 		register int x16 asm("x16");
@@ -174,7 +179,7 @@ int main(int argc, char *argv[])
 		x16=a;
 		c=x16;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x16=a;
 		c=x16; 
 		register int x17 asm("x17");
@@ -183,7 +188,7 @@ int main(int argc, char *argv[])
 		x17=a;
 		c=x17;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x17=a;
 		c=x17; 
 		register int x18 asm("x18");
@@ -192,7 +197,7 @@ int main(int argc, char *argv[])
 		x18=a;
 		c=x18;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x18=a;
 		c=x18; 
 		register int x19 asm("x19");
@@ -201,7 +206,7 @@ int main(int argc, char *argv[])
 		x19=a;
 		c=x19;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x19=a;
 		c=x19; 
 		register int x20 asm("x20");
@@ -210,7 +215,7 @@ int main(int argc, char *argv[])
 		x20=a;
 		c=x20;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x20=a;
 		c=x20; 
 		register int x21 asm("x21");
@@ -219,7 +224,7 @@ int main(int argc, char *argv[])
 		x21=a;
 		c=x21;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x21=a;
 		c=x21; 
 		register int x22 asm("x22");
@@ -228,7 +233,7 @@ int main(int argc, char *argv[])
 		x22=a;
 		c=x22;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x22=a;
 		c=x22; 
 		register int x23 asm("x23");
@@ -237,7 +242,7 @@ int main(int argc, char *argv[])
 		x23=a;
 		c=x23;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x23=a;
 		c=x23; 
 		register int x24 asm("x24");
@@ -246,7 +251,7 @@ int main(int argc, char *argv[])
 		x24=a;
 		c=x24;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x24=a;
 		c=x24; 
 		register int x25 asm("x25");
@@ -255,7 +260,7 @@ int main(int argc, char *argv[])
 		x25=a;
 		c=x25;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x25=a;
 		c=x25; 
 		register int x26 asm("x26");
@@ -264,7 +269,7 @@ int main(int argc, char *argv[])
 		x26=a;
 		c=x26;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x26=a;
 		c=x26; 
 		register int x27 asm("x27");
@@ -273,7 +278,7 @@ int main(int argc, char *argv[])
 		x27=a;
 		c=x27;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x27=a;
 		c=x27; 
 		register int x28 asm("x28");
@@ -282,7 +287,7 @@ int main(int argc, char *argv[])
 		x28=a;
 		c=x28;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x28=a;
 		c=x28; 
 		register int x29 asm("x29");
@@ -291,7 +296,7 @@ int main(int argc, char *argv[])
 		x29=a;
 		c=x29;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x29=a;
 		c=x29; 
 		register int x30 asm("x30");
@@ -300,7 +305,7 @@ int main(int argc, char *argv[])
 		x30=a;
 		c=x30;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x30=a;
 		c=x30; 
 		register int x31 asm("x31");
@@ -309,7 +314,7 @@ int main(int argc, char *argv[])
 		x31=a;
 		c=x31;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x31=a;
 		c=x31; 
 		register int x32 asm("x32");
@@ -318,7 +323,7 @@ int main(int argc, char *argv[])
 		x32=a;
 		c=x32;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x32=a;
 		c=x32; 
 		register  int x0 asm("x0");
@@ -327,19 +332,19 @@ int main(int argc, char *argv[])
 		x0=a;
 		c=x0;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x0=a;
 		c=x0; 	
 	}
 	/*testing floating point register file */
-	for( i=0;i<6;i++) {
+	for( i=0;i<N_PATT;i++) {
 		register int x1 asm("f1");
 
 		a= pattern[i];	  
 		x1=a;
 		c=x1;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x1=a;
 		c=x1; 
 
@@ -349,7 +354,7 @@ int main(int argc, char *argv[])
 		x2=a;
 		c=x2;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x2=a;
 		c=x2; 
 		register int x3 asm("f3");
@@ -358,7 +363,7 @@ int main(int argc, char *argv[])
 		x3=a;
 		c=x3;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x3=a;
 		c=x3; 
 		register int x4 asm("f4");
@@ -367,7 +372,7 @@ int main(int argc, char *argv[])
 		x4=a;
 		c=x4;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x4=a;
 		c=x4; 
 		register int x5 asm("f5");
@@ -376,7 +381,7 @@ int main(int argc, char *argv[])
 		x5=a;
 		c=x5;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x5=a;
 		c=x5; 
 		register int x6 asm("f6");
@@ -385,7 +390,7 @@ int main(int argc, char *argv[])
 		x6=a;
 		c=x6;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x6=a;
 		c=x6; 
 		register int x7 asm("f7");
@@ -394,7 +399,7 @@ int main(int argc, char *argv[])
 		x7=a;
 		c=x7;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x7=a;
 		c=x7; 
 		register int x8 asm("f8");
@@ -403,7 +408,7 @@ int main(int argc, char *argv[])
 		x8=a;
 		c=x8;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x8=a;
 		c=x8; 
 		register int x9 asm("f9");
@@ -412,7 +417,7 @@ int main(int argc, char *argv[])
 		x9=a;
 		c=x9;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x9=a;
 		c=x9; 
 		register int x10 asm("f10");
@@ -421,7 +426,7 @@ int main(int argc, char *argv[])
 		x10=a;
 		c=x10;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x10=a;
 		c=x10; 
 		register int x11 asm("f11");
@@ -430,7 +435,7 @@ int main(int argc, char *argv[])
 		x11=a;
 		c=x11;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x11=a;
 		c=x11; 
 		register int x12 asm("f12");
@@ -439,7 +444,7 @@ int main(int argc, char *argv[])
 		x12=a;
 		c=x12;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x12=a;
 		c=x12; 
 		register int x13 asm("f13");
@@ -448,7 +453,7 @@ int main(int argc, char *argv[])
 		x13=a;
 		c=x13;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x13=a;
 		c=x13; 
 		register int x14 asm("f14");
@@ -457,7 +462,7 @@ int main(int argc, char *argv[])
 		x14=a;
 		c=x14;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x14=a;
 		c=x14; 
 		register int x15 asm("f15");
@@ -466,7 +471,7 @@ int main(int argc, char *argv[])
 		x15=a;
 		c=x15;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x15=a;
 		c=x15; 
 		register int x16 asm("f16");
@@ -475,7 +480,7 @@ int main(int argc, char *argv[])
 		x16=a;
 		c=x16;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x16=a;
 		c=x16; 
 		register int x17 asm("f17");
@@ -484,7 +489,7 @@ int main(int argc, char *argv[])
 		x17=a;
 		c=x17;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x17=a;
 		c=x17; 
 		register int x18 asm("f18");
@@ -493,7 +498,7 @@ int main(int argc, char *argv[])
 		x18=a;
 		c=x18;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x18=a;
 		c=x18; 
 		register int x19 asm("f19");
@@ -502,7 +507,7 @@ int main(int argc, char *argv[])
 		x19=a;
 		c=x19;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x19=a;
 		c=x19; 
 		register int x20 asm("f20");
@@ -511,7 +516,7 @@ int main(int argc, char *argv[])
 		x20=a;
 		c=x20;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x20=a;
 		c=x20; 
 		register int x21 asm("f21");
@@ -520,7 +525,7 @@ int main(int argc, char *argv[])
 		x21=a;
 		c=x21;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x21=a;
 		c=x21; 
 		register int x22 asm("f22");
@@ -529,7 +534,7 @@ int main(int argc, char *argv[])
 		x22=a;
 		c=x22;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x22=a;
 		c=x22; 
 		register int x23 asm("f23");
@@ -538,7 +543,7 @@ int main(int argc, char *argv[])
 		x23=a;
 		c=x23;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x23=a;
 		c=x23; 
 		register int x24 asm("f24");
@@ -547,7 +552,7 @@ int main(int argc, char *argv[])
 		x24=a;
 		c=x24;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x24=a;
 		c=x24; 
 		register int x25 asm("f25");
@@ -556,7 +561,7 @@ int main(int argc, char *argv[])
 		x25=a;
 		c=x25;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x25=a;
 		c=x25; 
 		register int x26 asm("f26");
@@ -565,7 +570,7 @@ int main(int argc, char *argv[])
 		x26=a;
 		c=x26;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x26=a;
 		c=x26; 
 		register int x27 asm("f27");
@@ -574,7 +579,7 @@ int main(int argc, char *argv[])
 		x27=a;
 		c=x27;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x27=a;
 		c=x27; 
 		register int x28 asm("f28");
@@ -583,7 +588,7 @@ int main(int argc, char *argv[])
 		x28=a;
 		c=x28;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x28=a;
 		c=x28; 
 		register int x29 asm("f29");
@@ -592,7 +597,7 @@ int main(int argc, char *argv[])
 		x29=a;
 		c=x29;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x29=a;
 		c=x29; 
 		register int x30 asm("f30");
@@ -601,7 +606,7 @@ int main(int argc, char *argv[])
 		x30=a;
 		c=x30;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x30=a;
 		c=x30; 
 		register int x31 asm("f31");
@@ -610,7 +615,7 @@ int main(int argc, char *argv[])
 		x31=a;
 		c=x31;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x31=a;
 		c=x31; 
 		register int x32 asm("f32");
@@ -619,7 +624,7 @@ int main(int argc, char *argv[])
 		x32=a;
 		c=x32;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x32=a;
 		c=x32; 
 		register  int x0 asm("f0");
@@ -628,7 +633,7 @@ int main(int argc, char *argv[])
 		x0=a;
 		c=x0;	
 
-		a= !pattern[i];
+		a= ~pattern[i];
 		x0=a;
 		c=x0; 
 

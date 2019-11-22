@@ -2,6 +2,7 @@
 
 PATH_CORE="./../../../riscv_testing/"
 PATH_SBST="./"
+export EXE_N="1_1"
 #preparing tb
 "$PATH_CORE"compile_testbench.sh
 # compiling source file in eVCD extendent value change dumo
