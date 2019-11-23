@@ -26,185 +26,276 @@ int main(int argc, char *argv[])
 
 	/*testing integer ALU */
 
-	for ( i=0;i<6-1;i++) {
+		for ( i=0;i<6;i++) {
 		// addition 	
-		register int a asm("x1")=pattern[i];
-		register int b asm("x2")=pattern[i+1];
-		register int c asm("x3")=a+b;
+		register  int a asm("x1")=pattern[i];
+		register  int b asm("x2")=pattern[i];
+		register  int c asm("x3");
+		asm volatile("add  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
-		c=b+a;
+		asm volatile("add  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
+		//c=b+a;
 		res=c;
+		// immediate addition
+		asm volatile("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0x3));
+		res=c;
+
+
 		// subtraction
-		c=a-b; 
+		asm volatile ("sub  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
-		c=b-a;
+		asm volatile ("sub  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
+		//c=b-a;
 		res=c;
 
-
-		//not
-		c=~a; 
-		res=c;
-		c=~b;
-		res=c;
 
 		//and
-		c=a&b; 
+		asm volatile ("and %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		//	c=a&b; 
 		res=c;
-		c=b&a;
+		asm volatile("and %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
 
 		//or
-		c=a|b; 
+		asm("or %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b|a;
+		asm("or %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
 
 		//xor
-		c=a^b; 
+		asm("xor %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b^a;
+		asm("xor %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
 
-		//shift left	
-		c=a<<b; 
+		//shift left logic
+		asm("sll %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b<<a;
+		asm("sll %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
 
-		//shift right 
-		c=a>>b; 
+
+		//shift right logic 
+		asm("srl %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b>>a;
+		asm("srl %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
+
+
+
+		//shift left arithmetic
+		asm("slt %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
+		res=c;
+		asm("slt %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
+		res=c;
+
+
+		//shift right arithmetic
+		asm("sra %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
+		res=c;
+		asm("sra %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
+		res=c;
+
 
 		// integer mul 
-		c=a*b; 
+		asm("mul %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b*a;
+		asm("mul %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
-
-
-
 
 
 		// integer division
-		c=a/b; 
+			asm("div %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b/a;
+		asm("div %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
+		// integer unsigned division 
+			asm("divu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
+		res=c;
+		asm("divu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
+		res=c;
+
 
 
 		// integer module
-		c=a%b; 
+				asm("rem %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 		res=c;
-		c=b%a;
+		asm("rem %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 		res=c;
 
+		// integer unsigned module
+		asm("remu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		res=c;
+		asm("remu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		res=c;
+
+
+		// nope
+	asm("nop");	
+		res=c;
+
+
+		asm ("lui %0,%1": "=r" (c): "i" (0x000FF));
+		res=c;
+	
+
+		asm ("auipc %0,%1": "=r" (c): "i" (0x000FF));
+		res=c;
+	
+	// comparison 
+		
 		// comparison 
-		c=a>b;
-		res=c;
-		c=b>a;
-		res=c;
 		// comparison 
-		c=a<b;
-		res=c;
-		c=b<a;
-		res=c;
-		// comparison 
-		c=a==b;
-		res=c;
-		c=b==a;
-		res=c;
 	}
-	for ( i=0;i<6-1;i++) {
+for ( i=0;i<6;i++) {
 		// addition 	
-		register int a asm("x1")=~pattern[i];
-		register int b asm("x2")=~pattern[i+1];
-		register int c asm("x3")=a+b;
+		register  int a asm("x1")=~pattern[i];
+		register  int b asm("x2")=~pattern[i];
+		register  int c asm("x3");
+		asm("add  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
-		c=b+a;
+		asm("add  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
+		//c=b+a;
 		res=c;
+		// immediate addition
+		asm("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0x3));
+		res=c;
+
+
 		// subtraction
-		c=a-b; 
+		asm("sub  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
-		c=b-a;
+		asm("sub  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
+		//c=b-a;
 		res=c;
 
-
-		//not
-		c=~a; 
-		res=c;
-		c=~b;
-		res=c;
 
 		//and
-		c=a&b; 
+		asm("and %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		//	c=a&b; 
 		res=c;
-		c=b&a;
+		asm("and %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
 
 		//or
-		c=a|b; 
+		asm("or %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b|a;
+		asm("or %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
 
 		//xor
-		c=a^b; 
+		asm("xor %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b^a;
+		asm("xor %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
 
-		//shift left	
-		c=a<<b; 
+		//shift left logic
+		asm("sll %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b<<a;
+		asm("sll %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
 
-		//shift right 
-		c=a>>b; 
+
+		//shift right logic 
+		asm("srl %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b>>a;
+		asm("srl %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
+
+
+
+		//shift left arithmetic
+		asm("slt %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
+		res=c;
+		asm("slt %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
+		res=c;
+
+
+		//shift right arithmetic
+		asm("sra %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
+		res=c;
+		asm("sra %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
+		res=c;
+
 
 		// integer mul 
-		c=a*b; 
+		asm("mul %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b*a;
+		asm("mul %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
-
-
-
 
 
 		// integer division
-		c=a/b; 
+			asm("div %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
 		res=c;
-		c=b/a;
+		asm("div %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
 		res=c;
+		// integer unsigned division 
+			asm("divu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
+		res=c;
+		asm("divu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
+		res=c;
+
 
 
 		// integer module
-		c=a%b; 
+				asm("rem %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 		res=c;
-		c=b%a;
+		asm("rem %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 		res=c;
 
+		// integer unsigned module
+		asm("remu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+
+		res=c;
+		asm("remu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+
+		res=c;
+
+
+
+
 		// comparison 
-		c=a>b;
-		res=c;
-		c=b>a;
-		res=c;
 		// comparison 
-		c=a<b;
-		res=c;
-		c=b<a;
-		res=c;
 		// comparison 
-		c=a==b;
-		res=c;
-		c=b==a;
-		res=c;
 	}
 
 	return EXIT_SUCCESS;
