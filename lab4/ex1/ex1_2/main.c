@@ -28,137 +28,137 @@ int main(int argc, char *argv[])
 
 		for ( i=0;i<6;i++) {
 		// addition 	
-		register  int a asm("x1")=pattern[i];
-		register  int b asm("x2")=pattern[i];
-		register  int c asm("x3");
-		asm volatile("add  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
+		register  int a asm volatile(("x1")=pattern[i];
+		register  int b asm volatile(("x2")=pattern[i];
+		register  int c asm volatile(("x3");
+		asm volatile( volatile("add  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
-		asm volatile("add  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
+		asm volatile( volatile("add  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
 		//c=b+a;
 		res=c;
 		// immediate addition
-		asm volatile("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0x3));
+		asm volatile( volatile("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0x3));
 		res=c;
 
 
 		// subtraction
-		asm volatile ("sub  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
+		asm volatile( volatile ("sub  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
-		asm volatile ("sub  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
+		asm volatile( volatile ("sub  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
 		//c=b-a;
 		res=c;
 
 
 		//and
-		asm volatile ("and %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile( volatile ("and %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 		//	c=a&b; 
 		res=c;
-		asm volatile("and %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile( volatile("and %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 		//or
-		asm("or %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("or %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("or %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("or %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 		//xor
-		asm("xor %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("xor %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("xor %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("xor %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 		//shift left logic
-		asm("sll %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("sll %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("sll %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("sll %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 		//shift right logic 
-		asm("srl %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("srl %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("srl %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("srl %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 
 		//shift left arithmetic
-		asm("slt %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("slt %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("slt %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("slt %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 		//shift right arithmetic
-		asm("sra %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("sra %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("sra %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("sra %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 		// integer mul 
-		asm("mul %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("mul %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("mul %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("mul %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 		// integer division
-			asm("div %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+			asm volatile(("div %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("div %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("div %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 		// integer unsigned division 
-			asm("divu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+			asm volatile(("divu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("divu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("divu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 
 		// integer module
-				asm("rem %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+				asm volatile(("rem %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 		res=c;
-		asm("rem %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("rem %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 		res=c;
 
 		// integer unsigned module
-		asm("remu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("remu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 		res=c;
-		asm("remu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("remu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 		res=c;
 
 
 		// nope
-	asm("nop");	
+	asm volatile(("nop");	
 		res=c;
 
 
-		asm ("lui %0,%1": "=r" (c): "i" (0x000FF));
+		asm volatile( ("lui %0,%1": "=r" (c): "i" (0x000FF));
 		res=c;
 	
 
-		asm ("auipc %0,%1": "=r" (c): "i" (0x000FF));
+		asm volatile( ("auipc %0,%1": "=r" (c): "i" (0x000FF));
 		res=c;
 	
 	// comparison 
@@ -168,125 +168,125 @@ int main(int argc, char *argv[])
 	}
 for ( i=0;i<6;i++) {
 		// addition 	
-		register  int a asm("x1")=~pattern[i];
-		register  int b asm("x2")=~pattern[i];
-		register  int c asm("x3");
-		asm("add  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
+		register  int a asm volatile(("x1")=~pattern[i];
+		register  int b asm volatile(("x2")=~pattern[i];
+		register  int c asm volatile(("x3");
+		asm volatile(("add  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
-		asm("add  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
+		asm volatile(("add  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
 		//c=b+a;
 		res=c;
 		// immediate addition
-		asm("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0x3));
+		asm volatile(("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0x3));
 		res=c;
 
 
 		// subtraction
-		asm("sub  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
+		asm volatile(("sub  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
-		asm("sub  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
+		asm volatile(("sub  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
 		//c=b-a;
 		res=c;
 
 
 		//and
-		asm("and %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("and %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 		//	c=a&b; 
 		res=c;
-		asm("and %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("and %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 		//or
-		asm("or %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("or %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("or %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("or %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 		//xor
-		asm("xor %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("xor %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("xor %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("xor %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 		//shift left logic
-		asm("sll %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("sll %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("sll %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("sll %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 		//shift right logic 
-		asm("srl %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("srl %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("srl %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("srl %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 
 		//shift left arithmetic
-		asm("slt %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("slt %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("slt %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("slt %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 		//shift right arithmetic
-		asm("sra %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("sra %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("sra %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("sra %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 		// integer mul 
-		asm("mul %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("mul %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("mul %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("mul %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 		// integer division
-			asm("div %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+			asm volatile(("div %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("div %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("div %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 		// integer unsigned division 
-			asm("divu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+			asm volatile(("divu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("divu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("divu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
 
 
 		// integer module
-				asm("rem %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+				asm volatile(("rem %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 		res=c;
-		asm("rem %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("rem %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 		res=c;
 
 		// integer unsigned module
-		asm("remu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
+		asm volatile(("remu %0, %1 ,%2": "=r" (c): "r" (a), "r" (b));	
 
 		res=c;
-		asm("remu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
+		asm volatile(("remu %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));	
 
 		res=c;
 
