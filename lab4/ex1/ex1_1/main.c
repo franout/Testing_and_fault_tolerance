@@ -35,24 +35,6 @@ int main(int argc, char *argv[])
 
 
 		register int x ;
-/*
-		a= pattern[i];	  
-		asm volatile ("lw x0,%0": : "m" (a));
-		asm volatile ("sw x0,%0":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x0,%0":  : "m" (a));
-		asm volatile ("sw x0,%0": : "m" (c));
-	
-
-		a= pattern[i];	  
-		asm volatile ("lb x0,%0": : "m" (a));
-		asm volatile ("sb x0,%0":  :"m" (c));
-		a=~pattern[i];
-		asm volatile ("lb x0,%0":  : "m" (a));
-		asm volatile ("sb x0,%0": : "m" (c));
-*/	
-
-
 		a= pattern[i];	  
 		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
 		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
@@ -65,34 +47,37 @@ int main(int argc, char *argv[])
 		a=~pattern[i];
 		asm volatile ("lb %0,%1": "=r" (x) : "m" (a));
 		asm volatile ("sb %0,%1": "=r" (x) : "m" (c));
-	
-
-// special registers
-/*				a=pattern[i];
-		asm volatile ("csrrs x11, csr, x0");
-		asm volatile ("csrrw x0,csr,%0"::"i" (0x0));			
-		a=~pattern[i];
-		asm volatile ("csrrw x0,csr,%0":: "i" (0xf));			
-
-*/		/*csrrs rd, csr, x0 Read CSR
-		  csrw csr, rs csrrw x0, csr, rs Write CSR
-		  csrs csr, rs csrrs x0, csr, rs Set bits in CSR
-		  csrc csr, rs csrrc x0, csr, rs Clear bits in CSR
-		  csrwi csr, imm csrrwi x0, csr, imm Write CSR, immediate
-		  csrsi csr, imm csrrsi x0, csr, imm Set bits in CSR, immediate
-		  csrci csr, imm csrrci x0, csr, imm Clear bits in CSR, immediate
-		  */
-		// special load store instructions 
-		/*		a=pattern[i];
-				asm volatile ("la %0,%1" : "=r" (x): "g" (a));
-				a=~pattern[i];
-				asm volatile ("la x%0,%1" : "=r" (x): "g" (a));
 
 
-				a=pattern[i];
-				asm volatile ("lla %0,%1" : "=r" (x): "g" (a));
-				a=~pattern[i];
-				asm volatile ("lla %0,%1" : "=r" (x): "g" (a));  */
+		// several reading at time
+		a= pattern[i];	  
+		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
+		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
+		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
+		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
+		a=~pattern[i];	
+		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
+		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
+		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
+		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
 	}
+
+	// special operations 
+	asm volatile ("auipc x0,%0":: "i" (0x00f) );
+	asm volatile ("lui x0, %0" ::"i" (0x00f) );
+
+	asm volatile ("auipc %0,%1": "=r" (x): "i" (0x00f) );
+	c=x;
+	asm volatile ("lui %0, %1" : "=r" (x) :"i" (0x00f) );
+	c=x;
+
 	return EXIT_SUCCESS;
 }
