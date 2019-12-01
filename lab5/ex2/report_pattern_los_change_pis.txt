@@ -1,0 +1,313 @@
+ Pattern 0 (basic_scan-chain_test)
+ Time 0: load 1 =          001100110
+ Time 1: force_all_pis =   000011
+ Time 2: measure_all_pos = 110000
+ Time 3: unload 1 =        001100110
+ Pattern 1 (basic_scan)
+ Time 0: force_all_pis =   000101
+ Time 1: load 1 =          001100000
+ Time 2: force_all_pis =   100000
+ Time 3: measure_all_pos = 000000
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        111101101
+ Pattern 2 (basic_scan)
+ Time 0: force_all_pis =   000001
+ Time 1: load 1 =          110100100
+ Time 2: force_all_pis =   100110
+ Time 3: measure_all_pos = 101100
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        000100110
+ Pattern 3 (basic_scan)
+ Time 0: force_all_pis =   000101
+ Time 1: load 1 =          010000010
+ Time 2: force_all_pis =   000110
+ Time 3: measure_all_pos = 010100
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010010010
+ Pattern 4 (basic_scan)
+ Time 0: force_all_pis =   000101
+ Time 1: load 1 =          000111100
+ Time 2: force_all_pis =   100100
+ Time 3: measure_all_pos = 100010
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010110010
+ Pattern 5 (basic_scan)
+ Time 0: force_all_pis =   100111
+ Time 1: load 1 =          101110011
+ Time 2: force_all_pis =   100010
+ Time 3: measure_all_pos = 011001
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        000000000
+ Pattern 6 (basic_scan)
+ Time 0: force_all_pis =   000001
+ Time 1: load 1 =          011011100
+ Time 2: force_all_pis =   100000
+ Time 3: measure_all_pos = 100110
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        001001111
+ Pattern 7 (basic_scan)
+ Time 0: force_all_pis =   100011
+ Time 1: load 1 =          101010011
+ Time 2: force_all_pis =   000110
+ Time 3: measure_all_pos = 011001
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010010010
+ Pattern 8 (basic_scan)
+ Time 0: force_all_pis =   100001
+ Time 1: load 1 =          110111000
+ Time 2: force_all_pis =   100000
+ Time 3: measure_all_pos = 001110
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010111011
+ Pattern 9 (basic_scan)
+ Time 0: force_all_pis =   100011
+ Time 1: load 1 =          101000001
+ Time 2: force_all_pis =   000000
+ Time 3: measure_all_pos = 001001
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        111101101
+ Pattern 10 (basic_scan)
+ Time 0: force_all_pis =   000001
+ Time 1: load 1 =          101000000
+ Time 2: force_all_pis =   100000
+ Time 3: measure_all_pos = 001000
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        001001111
+ Pattern 11 (basic_scan)
+ Time 0: force_all_pis =   100111
+ Time 1: load 1 =          110011111
+ Time 2: force_all_pis =   000010
+ Time 3: measure_all_pos = 111111
+ Time 4: pulse clocks  reset (2)
+ Time 5: unload 1 =        000000000
+ Pattern 12 (basic_scan)
+ Time 0: force_all_pis =   100101
+ Time 1: load 1 =          001110110
+ Time 2: force_all_pis =   000010
+ Time 3: measure_all_pos = 110000
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        000000000
+ Pattern 13 (basic_scan)
+ Time 0: force_all_pis =   000011
+ Time 1: load 1 =          110011001
+ Time 2: force_all_pis =   100000
+ Time 3: measure_all_pos = 001111
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        000101111
+ Pattern 14 (basic_scan)
+ Time 0: force_all_pis =   100111
+ Time 1: load 1 =          111100001
+ Time 2: force_all_pis =   000000
+ Time 3: measure_all_pos = 001101
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010011011
+ Pattern 15 (basic_scan)
+ Time 0: force_all_pis =   100101
+ Time 1: load 1 =          011010000
+ Time 2: force_all_pis =   000010
+ Time 3: measure_all_pos = 000100
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010011011
+ Pattern 16 (basic_scan)
+ Time 0: force_all_pis =   100011
+ Time 1: load 1 =          111111111
+ Time 2: force_all_pis =   000111
+ Time 3: measure_all_pos = 111111
+ Time 4: unload 1 =        111111111
+ Pattern 17 (basic_scan)
+ Time 0: force_all_pis =   100101
+ Time 1: load 1 =          110010010
+ Time 2: force_all_pis =   000010
+ Time 3: measure_all_pos = 011100
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        011011101
+ Pattern 18 (basic_scan)
+ Time 0: force_all_pis =   000001
+ Time 1: load 1 =          101101100
+ Time 2: force_all_pis =   000100
+ Time 3: measure_all_pos = 101010
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010010010
+ Pattern 19 (basic_scan)
+ Time 0: force_all_pis =   000011
+ Time 1: load 1 =          100101011
+ Time 2: force_all_pis =   000110
+ Time 3: measure_all_pos = 011011
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010111011
+ Pattern 20 (basic_scan)
+ Time 0: force_all_pis =   100001
+ Time 1: load 1 =          110101100
+ Time 2: force_all_pis =   000110
+ Time 3: measure_all_pos = 101110
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010111011
+ Pattern 21 (basic_scan)
+ Time 0: force_all_pis =   000111
+ Time 1: load 1 =          101000111
+ Time 2: force_all_pis =   000110
+ Time 3: measure_all_pos = 111001
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        111100100
+ Pattern 22 (basic_scan)
+ Time 0: force_all_pis =   000101
+ Time 1: load 1 =          000101110
+ Time 2: force_all_pis =   000011
+ Time 3: measure_all_pos = 110010
+ Time 4: pulse clocks  reset (2)
+ Time 5: unload 1 =        000000000
+ Pattern 23 (basic_scan)
+ Time 0: force_all_pis =   100011
+ Time 1: load 1 =          001101011
+ Time 2: force_all_pis =   000011
+ Time 3: measure_all_pos = 010011
+ Time 4: pulse clocks  reset (2)
+ Time 5: unload 1 =        000000000
+ Pattern 24 (basic_scan)
+ Time 0: force_all_pis =   000111
+ Time 1: load 1 =          010000101
+ Time 2: force_all_pis =   100110
+ Time 3: measure_all_pos = 100101
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        010010010
+ Pattern 25 (basic_scan)
+ Time 0: force_all_pis =   100001
+ Time 1: load 1 =          111000010
+ Time 2: force_all_pis =   100110
+ Time 3: measure_all_pos = 011100
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        001000110
+ Pattern 26 (basic_scan)
+ Time 0: force_all_pis =   100101
+ Time 1: load 1 =          000011100
+ Time 2: force_all_pis =   100000
+ Time 3: measure_all_pos = 100010
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        000101111
+ Pattern 27 (basic_scan)
+ Time 0: force_all_pis =   000111
+ Time 1: load 1 =          011000011
+ Time 2: force_all_pis =   000100
+ Time 3: measure_all_pos = 010101
+ Time 4: pulse clocks  clock (1)
+ Time 5: unload 1 =        111100100
+ Pattern 28 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          110101000
+ Time 100: wft = wft_default
+ Time 100: force_all_pis = 000110
+ Time 200: wft = wft_launch_capture
+ Time 200: force_all_pis = 100001
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      101010000
+ Pattern 29 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          110110011
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 100101
+ Time 145: pulse clocks  reset (2)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 000100
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      010010010
+ Pattern 30 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          101010110
+ Time 100: wft = wft_default
+ Time 100: force_all_pis = 100100
+ Time 145: pulse clocks  reset (2)
+ Time 200: wft = wft_launch_capture
+ Time 200: force_all_pis = 000101
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      000000000
+ Pattern 31 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          010100101
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 000010
+ Time 145: pulse clocks  clock (1)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 100000
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      010111011
+ Pattern 32 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          100011011
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 000110
+ Time 145: pulse clocks  clock (1)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 100110
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      001000110
+ Pattern 33 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          101000000
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 000000
+ Time 145: pulse clocks  clock (1)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 100010
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      111101101
+ Pattern 34 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          001011001
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 100011
+ Time 145: pulse clocks  reset (2)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 100110
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      010010010
+ Pattern 35 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          110100000
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 100111
+ Time 145: pulse clocks  reset (2)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 100100
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      010010010
+ Pattern 36 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          111011010
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 100100
+ Time 145: pulse clocks  clock (1)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 100000
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      001001111
+ Pattern 37 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          010111000
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 000100
+ Time 145: pulse clocks  clock (1)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 100100
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      000100110
+ Pattern 38 (full_sequential)
+ Time 0: period = 100
+ Time 0: load 1 =          110100111
+ Time 100: wft = wft_launch
+ Time 100: force_all_pis = 000010
+ Time 145: pulse clocks  clock (1)
+ Time 200: wft = wft_capture
+ Time 200: force_all_pis = 000110
+ Time 245: pulse clocks  clock (1)
+ Time 300: wft = wft_default
+ Time 300: unload 1 =      010010010
