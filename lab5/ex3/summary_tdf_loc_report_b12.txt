@@ -2,22 +2,22 @@
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT       6664
+ Detected                         DT       6668
    detected_by_simulation         DS      (5678)
-   detected_by_implication        DI       (986)
+   detected_by_implication        DI       (990)
  Possibly detected                PT          0
  Undetectable                     UD          0
  ATPG untestable                  AU          0
  Not detected                     ND          0
  -----------------------------------------------
- total faults                              6664
+ total faults                              6668
  test coverage                           100.00%
  fault coverage                          100.00%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         105
-     #basic_scan patterns                   105
- #external patterns (b12_tdf_loc_scan_patterns.stil)    105
-     #basic_scan patterns                   105
+ #internal patterns                         103
+     #basic_scan patterns                   103
+ #external patterns (b12_tdf_loc_scan_patterns.stil)    103
+     #basic_scan patterns                   103
  -----------------------------------------------

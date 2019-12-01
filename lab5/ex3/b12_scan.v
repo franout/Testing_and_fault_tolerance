@@ -1,16 +1,16 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys Design Compiler(R)
 // Version   : O-2018.06-SP4
-// Date      : Sun Dec  1 19:15:26 2019
+// Date      : Sun Dec  1 19:57:41 2019
 /////////////////////////////////////////////////////////////
 
 
 module b12 ( clock, reset, start, k, nloss, nl, speaker, test_si1, test_so1, 
-        test_si2, test_so2, test_si3, test_se );
+        test_si2, test_so2, test_si3, test_so3, test_si4, test_se );
   input [3:0] k;
   output [3:0] nl;
-  input clock, reset, start, test_si1, test_si2, test_si3, test_se;
-  output nloss, speaker, test_so1, test_so2;
+  input clock, reset, start, test_si1, test_si2, test_si3, test_si4, test_se;
+  output nloss, speaker, test_so1, test_so2, test_so3;
   wire   s, play, N162, N213, N214, N215, N220, \memory[31][1] ,
          \memory[31][0] , \memory[30][1] , \memory[30][0] , \memory[29][1] ,
          \memory[29][0] , \memory[28][1] , \memory[28][0] , \memory[27][1] ,
@@ -123,8 +123,9 @@ module b12 ( clock, reset, start, k, nloss, nl, speaker, test_si1, test_so1,
   wire   [1:0] ind;
   wire   [5:0] timebase;
   wire   [4:0] gamma;
-  assign test_so2 = \memory[24][0] ;
-  assign test_so1 = \memory[4][0] ;
+  assign test_so3 = \memory[29][0] ;
+  assign test_so2 = \memory[14][0] ;
+  assign test_so1 = max[3];
 
   INV_GATE U7 ( .I1(reset), .O(n683) );
   INV_GATE U784 ( .I1(n1210), .O(n935) );
@@ -1027,7 +1028,7 @@ module b12 ( clock, reset, start, k, nloss, nl, speaker, test_si1, test_so1,
         test_se), .CK(clock), .RESET(n683), .Q(counter[1]) );
   FLIP_FLOP_D_RESET_SCAN \counter_reg[2]  ( .D(N215), .SI(counter[1]), .SE(
         test_se), .CK(clock), .RESET(n683), .Q(N162) );
-  FLIP_FLOP_D_RESET_SCAN \max_reg[4]  ( .D(n790), .SI(max[3]), .SE(test_se), 
+  FLIP_FLOP_D_RESET_SCAN \max_reg[4]  ( .D(n790), .SI(test_si2), .SE(test_se), 
         .CK(clock), .RESET(n683), .Q(max[4]) );
   FLIP_FLOP_D_RESET_SCAN \address_reg[4]  ( .D(n789), .SI(address[3]), .SE(
         test_se), .CK(clock), .RESET(n683), .Q(address[4]) );
@@ -1085,8 +1086,8 @@ module b12 ( clock, reset, start, k, nloss, nl, speaker, test_si1, test_so1,
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[15][1] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[14][0]  ( .D(n762), .SI(\memory[13][1] ), 
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[14][0] ) );
-  FLIP_FLOP_D_RESET_SCAN \memory_reg[14][1]  ( .D(n761), .SI(\memory[14][0] ), 
-        .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[14][1] ) );
+  FLIP_FLOP_D_RESET_SCAN \memory_reg[14][1]  ( .D(n761), .SI(test_si3), .SE(
+        test_se), .CK(clock), .RESET(n683), .Q(\memory[14][1] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[13][0]  ( .D(n760), .SI(\memory[12][1] ), 
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[13][0] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[13][1]  ( .D(n759), .SI(\memory[13][0] ), 
@@ -1126,8 +1127,8 @@ module b12 ( clock, reset, start, k, nloss, nl, speaker, test_si1, test_so1,
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[30][1] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[29][0]  ( .D(n741), .SI(\memory[28][1] ), 
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[29][0] ) );
-  FLIP_FLOP_D_RESET_SCAN \memory_reg[29][1]  ( .D(n740), .SI(\memory[29][0] ), 
-        .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[29][1] ) );
+  FLIP_FLOP_D_RESET_SCAN \memory_reg[29][1]  ( .D(n740), .SI(test_si4), .SE(
+        test_se), .CK(clock), .RESET(n683), .Q(\memory[29][1] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[28][0]  ( .D(n739), .SI(\memory[27][1] ), 
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[28][0] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[28][1]  ( .D(n738), .SI(\memory[28][0] ), 
@@ -1146,8 +1147,8 @@ module b12 ( clock, reset, start, k, nloss, nl, speaker, test_si1, test_so1,
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[25][1] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[24][0]  ( .D(n731), .SI(\memory[23][1] ), 
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[24][0] ) );
-  FLIP_FLOP_D_RESET_SCAN \memory_reg[24][1]  ( .D(n730), .SI(test_si3), .SE(
-        test_se), .CK(clock), .RESET(n683), .Q(\memory[24][1] ) );
+  FLIP_FLOP_D_RESET_SCAN \memory_reg[24][1]  ( .D(n730), .SI(\memory[24][0] ), 
+        .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[24][1] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[23][0]  ( .D(n729), .SI(\memory[22][1] ), 
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[23][0] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[23][1]  ( .D(n728), .SI(\memory[23][0] ), 
@@ -1194,8 +1195,8 @@ module b12 ( clock, reset, start, k, nloss, nl, speaker, test_si1, test_so1,
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[5][1] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[4][0]  ( .D(n707), .SI(\memory[3][1] ), 
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[4][0] ) );
-  FLIP_FLOP_D_RESET_SCAN \memory_reg[4][1]  ( .D(n706), .SI(test_si2), .SE(
-        test_se), .CK(clock), .RESET(n683), .Q(\memory[4][1] ) );
+  FLIP_FLOP_D_RESET_SCAN \memory_reg[4][1]  ( .D(n706), .SI(\memory[4][0] ), 
+        .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[4][1] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[3][0]  ( .D(n705), .SI(\memory[2][1] ), 
         .SE(test_se), .CK(clock), .RESET(n683), .Q(\memory[3][0] ) );
   FLIP_FLOP_D_RESET_SCAN \memory_reg[3][1]  ( .D(n704), .SI(\memory[3][0] ), 

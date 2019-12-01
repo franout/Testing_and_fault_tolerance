@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 export LIB_PATH="../library"
-
+export num_sc=4
 ############################################# 
 ## scan inserion done by design compiler ####
 #############################################

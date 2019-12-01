@@ -14,7 +14,7 @@ create_test_protocol -infer_asynch -infer_clock
 dft_drc
 
 ## adding 3 scan chain
-set_scan_configuration -chain_count 3
+set_scan_configuration -chain_count  $env(num_sc)
 preview_dft
 insert_dft
 dft_drc

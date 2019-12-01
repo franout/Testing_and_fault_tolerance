@@ -3,7 +3,7 @@ STIL 1.0 {
 }
 Header {
     Title "Minimal STIL for design `b12'";
-    Date "Sun Dec  1 19:15:23 2019";
+    Date "Sun Dec  1 19:57:38 2019";
     Source "DFT Compiler O-2018.06-SP4";
 }
 Signals {
@@ -25,44 +25,53 @@ Signals {
     "test_si2" In;
     "test_so2" Out;
     "test_si3" In;
+    "test_so3" Out;
+    "test_si4" In;
     "test_se" In;
 }
 SignalGroups {
-    "_si" = '"test_si1" + "test_si2" + "test_si3"' {
+    "_si" = '"test_si1" + "test_si2" + "test_si3" + "test_si4"' {
         ScanIn;
     }
-    "_so" = '"speaker" + "test_so1" + "test_so2"' {
+    "_so" = '"speaker" + "test_so1" + "test_so2" + "test_so3"' {
         ScanOut;
     }
     "_clk" = '"clock" + "reset"';
     "all_inputs" = '"clock" + "k[0]" + "k[1]" + "k[2]" + "k[3]" + "reset" + 
-    "start" + "test_si1" + "test_si2" + "test_si3" + "test_se"';
+    "start" + "test_si1" + "test_si2" + "test_si3" + "test_si4" + "test_se"';
     "all_outputs" = '"nl[0]" + "nl[1]" + "nl[2]" + "nl[3]" + "nloss" + "speaker" 
-    + "test_so1" + "test_so2"';
+    + "test_so1" + "test_so2" + "test_so3"';
     "all_ports" = '"all_inputs" + "all_outputs"';
     "_pi" = '"clock" + "k[0]" + "k[1]" + "k[2]" + "k[3]" + "reset" + "start" + 
-    "test_si1" + "test_si2" + "test_si3" + "test_se"';
+    "test_si1" + "test_si2" + "test_si3" + "test_si4" + "test_se"';
     "_po" = '"nl[0]" + "nl[1]" + "nl[2]" + "nl[3]" + "nloss" + "speaker" + 
-    "test_so1" + "test_so2"';
+    "test_so1" + "test_so2" + "test_so3"';
 }
 ScanStructures {
     ScanChain "1" {
-        ScanLength 41;
+        ScanLength 31;
         ScanIn "test_si1";
         ScanOut "test_so1";
         ScanEnable "test_se";
         ScanMasterClock "clock";
     }
     ScanChain "2" {
-        ScanLength 40;
+        ScanLength 30;
         ScanIn "test_si2";
         ScanOut "test_so2";
         ScanEnable "test_se";
         ScanMasterClock "clock";
     }
     ScanChain "3" {
-        ScanLength 40;
+        ScanLength 30;
         ScanIn "test_si3";
+        ScanOut "test_so3";
+        ScanEnable "test_se";
+        ScanMasterClock "clock";
+    }
+    ScanChain "4" {
+        ScanLength 30;
+        ScanIn "test_si4";
         ScanOut "speaker";
         ScanEnable "test_se";
         ScanMasterClock "clock";
@@ -389,52 +398,52 @@ Procedures {
     "multiclock_capture" {
         W "_multiclock_capture_WFT_";
         C {
-            "all_inputs" = 0NNNN0 \r5 N;
-            "all_outputs" = \r8 X;
+            "all_inputs" = 0NNNN0 \r6 N;
+            "all_outputs" = \r9 X;
         }
         V {
-            "_pi" = \r11 #;
-            "_po" = \r8 #;
+            "_pi" = \r12 #;
+            "_po" = \r9 #;
         }
     }
     "allclock_capture" {
         W "_allclock_capture_WFT_";
         C {
-            "all_inputs" = 0NNNN0 \r5 N;
-            "all_outputs" = \r8 X;
+            "all_inputs" = 0NNNN0 \r6 N;
+            "all_outputs" = \r9 X;
         }
         V {
-            "_pi" = \r11 #;
-            "_po" = \r8 #;
+            "_pi" = \r12 #;
+            "_po" = \r9 #;
         }
     }
     "allclock_launch" {
         W "_allclock_launch_WFT_";
         C {
-            "all_inputs" = 0NNNN0 \r5 N;
-            "all_outputs" = \r8 X;
+            "all_inputs" = 0NNNN0 \r6 N;
+            "all_outputs" = \r9 X;
         }
         V {
-            "_pi" = \r11 #;
-            "_po" = \r8 #;
+            "_pi" = \r12 #;
+            "_po" = \r9 #;
         }
     }
     "allclock_launch_capture" {
         W "_allclock_launch_capture_WFT_";
         C {
-            "all_inputs" = 0NNNN0 \r5 N;
-            "all_outputs" = \r8 X;
+            "all_inputs" = 0NNNN0 \r6 N;
+            "all_outputs" = \r9 X;
         }
         V {
-            "_pi" = \r11 #;
-            "_po" = \r8 #;
+            "_pi" = \r12 #;
+            "_po" = \r9 #;
         }
     }
     "load_unload" {
         W "_default_WFT_";
         C {
-            "all_inputs" = 0NNNN0 \r5 N;
-            "all_outputs" = \r8 X;
+            "all_inputs" = 0NNNN0 \r6 N;
+            "all_outputs" = \r9 X;
         }
         "Internal_scan_pre_shift" : V {
             "test_se" = 1;
@@ -442,8 +451,8 @@ Procedures {
         Shift {
             V {
                 "_clk" = P0;
-                "_si" = ###;
-                "_so" = ###;
+                "_si" = ####;
+                "_so" = ####;
             }
         }
     }
@@ -452,8 +461,8 @@ MacroDefs {
     "test_setup" {
         W "_default_WFT_";
         C {
-            "all_inputs" = \r11 N;
-            "all_outputs" = \r8 X;
+            "all_inputs" = \r12 N;
+            "all_outputs" = \r9 X;
         }
         V {
             "clock" = 0;

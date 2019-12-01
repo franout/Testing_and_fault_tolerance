@@ -1,17 +1,18 @@
 /////////////////////////////////////////////////////////////
 // Created by: Synopsys Design Compiler(R)
 // Version   : O-2018.06-SP4
-// Date      : Sun Dec  1 19:15:20 2019
+// Date      : Sun Dec  1 19:57:36 2019
 /////////////////////////////////////////////////////////////
 
 
 module b10 ( r_button, g_button, key, start, reset, test, cts, ctr, rts, rtr, 
-        clock, v_in, v_out, test_si1, test_si2, test_si3, test_se );
+        clock, v_in, v_out, test_si1, test_si2, test_so2, test_si3, test_si4, 
+        test_so4, test_se );
   input [3:0] v_in;
   output [3:0] v_out;
   input r_button, g_button, key, start, reset, test, rts, rtr, clock, test_si1,
-         test_si2, test_si3, test_se;
-  output cts, ctr;
+         test_si2, test_si3, test_si4, test_se;
+  output cts, ctr, test_so2, test_so4;
   wire   voto0, voto1, voto2, voto3, \sign[3] , last_g, last_r, n1, n2, n3, n4,
          n5, n6, n7, n8, n9, n10, n11, n12, n13, n14, n15, n16, n17, n18, n19,
          n20, n21, n22, n23, n24, n25, n26, n27, n28, n29, n30, n31, n32, n33,
@@ -26,6 +27,8 @@ module b10 ( r_button, g_button, key, start, reset, test, cts, ctr, rts, rtr,
          n136, n137, n138, n139, n140, n141, n142, n143, n144, n145, n146,
          n147, n148, n149, n150, n151, n152;
   wire   [3:0] stato;
+  assign test_so4 = voto3;
+  assign test_so2 = stato[3];
 
   NAND_GATE U3 ( .I1(n1), .I2(n2), .O(n139) );
   NAND_GATE U4 ( .I1(n3), .I2(n4), .O(n2) );
@@ -185,11 +188,10 @@ module b10 ( r_button, g_button, key, start, reset, test, cts, ctr, rts, rtr,
         .CK(clock), .RESET(n135), .Q(last_r) );
   FLIP_FLOP_D_RESET_SCAN voto2_reg ( .D(n151), .SI(voto1), .SE(test_se), .CK(
         clock), .RESET(n135), .Q(voto2) );
-  FLIP_FLOP_D_RESET_SCAN \stato_reg[0]  ( .D(n150), .SI(\sign[3] ), .SE(
-        test_se), .CK(clock), .RESET(n135), .Q(stato[0]) );
+  FLIP_FLOP_D_RESET_SCAN \stato_reg[0]  ( .D(n150), .SI(test_si2), .SE(test_se), .CK(clock), .RESET(n135), .Q(stato[0]) );
   FLIP_FLOP_D_RESET_SCAN \v_out_reg[2]  ( .D(n149), .SI(v_out[1]), .SE(test_se), .CK(clock), .RESET(n135), .Q(v_out[2]) );
   FLIP_FLOP_D_RESET_SCAN \stato_reg[3]  ( .D(n148), .SI(stato[2]), .SE(test_se), .CK(clock), .RESET(n135), .Q(stato[3]) );
-  FLIP_FLOP_D_RESET_SCAN \stato_reg[1]  ( .D(n147), .SI(test_si2), .SE(test_se), .CK(clock), .RESET(n135), .Q(stato[1]) );
+  FLIP_FLOP_D_RESET_SCAN \stato_reg[1]  ( .D(n147), .SI(stato[0]), .SE(test_se), .CK(clock), .RESET(n135), .Q(stato[1]) );
   FLIP_FLOP_D_RESET_SCAN \stato_reg[2]  ( .D(n146), .SI(stato[1]), .SE(test_se), .CK(clock), .RESET(n135), .Q(stato[2]) );
   FLIP_FLOP_D_RESET_SCAN last_g_reg ( .D(n145), .SI(ctr), .SE(test_se), .CK(
         clock), .RESET(n135), .Q(last_g) );
@@ -198,15 +200,14 @@ module b10 ( r_button, g_button, key, start, reset, test, cts, ctr, rts, rtr,
   FLIP_FLOP_D_RESET_SCAN \v_out_reg[1]  ( .D(n143), .SI(v_out[0]), .SE(test_se), .CK(clock), .RESET(n135), .Q(v_out[1]) );
   FLIP_FLOP_D_RESET_SCAN \sign_reg[3]  ( .D(n142), .SI(last_r), .SE(test_se), 
         .CK(clock), .RESET(n135), .Q(\sign[3] ) );
-  FLIP_FLOP_D_RESET_SCAN voto0_reg ( .D(n141), .SI(test_si3), .SE(test_se), 
+  FLIP_FLOP_D_RESET_SCAN voto0_reg ( .D(n141), .SI(test_si4), .SE(test_se), 
         .CK(clock), .RESET(n135), .Q(voto0) );
-  FLIP_FLOP_D_RESET_SCAN \v_out_reg[0]  ( .D(n140), .SI(stato[3]), .SE(test_se), .CK(clock), .RESET(n135), .Q(v_out[0]) );
+  FLIP_FLOP_D_RESET_SCAN \v_out_reg[0]  ( .D(n140), .SI(test_si3), .SE(test_se), .CK(clock), .RESET(n135), .Q(v_out[0]) );
   FLIP_FLOP_D_RESET_SCAN voto3_reg ( .D(n139), .SI(voto2), .SE(test_se), .CK(
         clock), .RESET(n135), .Q(voto3) );
-  FLIP_FLOP_D_RESET_SCAN \v_out_reg[3]  ( .D(n138), .SI(voto3), .SE(test_se), 
-        .CK(clock), .RESET(n135), .Q(v_out[3]) );
-  FLIP_FLOP_D_RESET_SCAN cts_reg ( .D(n137), .SI(stato[0]), .SE(test_se), .CK(
-        clock), .RESET(n135), .Q(cts) );
+  FLIP_FLOP_D_RESET_SCAN \v_out_reg[3]  ( .D(n138), .SI(v_out[2]), .SE(test_se), .CK(clock), .RESET(n135), .Q(v_out[3]) );
+  FLIP_FLOP_D_RESET_SCAN cts_reg ( .D(n137), .SI(\sign[3] ), .SE(test_se), 
+        .CK(clock), .RESET(n135), .Q(cts) );
   FLIP_FLOP_D_RESET_SCAN ctr_reg ( .D(n136), .SI(test_si1), .SE(test_se), .CK(
         clock), .RESET(n135), .Q(ctr) );
 endmodule
