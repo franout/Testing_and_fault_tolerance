@@ -1,0 +1,23 @@
+     Uncollapsed Stuck Fault Summary Report
+ -----------------------------------------------
+ fault class                     code   #faults
+ ------------------------------  ----  ---------
+ Detected                         DT       1200
+   detected_by_simulation         DS      (1046)
+   detected_by_implication        DI       (154)
+ Possibly detected                PT          0
+ Undetectable                     UD          0
+ ATPG untestable                  AU          0
+ Not detected                     ND          0
+ -----------------------------------------------
+ total faults                              1200
+ test coverage                           100.00%
+ fault coverage                          100.00%
+ -----------------------------------------------
+            Pattern Summary Report
+ -----------------------------------------------
+ #internal patterns                          49
+     #basic_scan patterns                    49
+ #external patterns (b10_saf_scan_patterns.stil)     49
+     #basic_scan patterns                    49
+ -----------------------------------------------

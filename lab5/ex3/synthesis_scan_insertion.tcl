@@ -1,7 +1,7 @@
-uplevel #0 source pdt2002.dc_setup.tcl
+uplevel #0 source ../library/pdt2002.dc_setup.tcl
 
-read_verilog b10.v
-current_design b10
+read_verilog $env(file)
+current_design $env(circuit)
 link
 check_design
 
@@ -13,7 +13,8 @@ create_test_protocol -infer_asynch -infer_clock
 
 dft_drc
 
-set_scan_configuration -chain_count 1
+## adding 3 scan chain
+set_scan_configuration -chain_count 3
 preview_dft
 insert_dft
 dft_drc
@@ -23,7 +24,7 @@ report_scan_path -view existing -cell all
 
 report_area
 
-write -hierarchy -format verilog -output b10_scan.v
-write_test_protocol -output b10_scan.spf
+write -hierarchy -format verilog -output $env(circuit)_scan.v
+write_test_protocol -output $env(circuit)_scan.spf
 
 quit
