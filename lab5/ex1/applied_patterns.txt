@@ -1,0 +1,23 @@
+ ------------------------------------------------------------------------------
+ Fault analysis performed for U50/I2 stuck at 0 (input 1 of OR gate 16).
+ Current fault classification = DS (detected_by_simulation).
+ ------------------------------------------------------------------------------
+ Connection data:  to=MASTER
+ Fault site control to 1 was successful (data placed in parallel pattern 0).
+ Observe_pt=66(DFF) test generation was successful (data placed in parallel pattern 1).
+ Test pattern stimulus:
+    Load 1-2: 66=1
+    Load 1-3: 68=1
+    Load 1-4: 65=1
+    Force PI: 0(eql)=1
+    Force PI: 1(clock)=0
+    Force PI: 2(reset)=0
+    Force PI: 5(test_se)=0
+    Pulse PI: 1(clock)=010
+ Test pattern detection path:
+    16(OR) 1/0
+    43(OR) 1/0
+    45(NAND) 0/1
+    46(MUX) 0/1
+    66(DFF) 1/X
+ The gate_report data is now set to "pattern:1".

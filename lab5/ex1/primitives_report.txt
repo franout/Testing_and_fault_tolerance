@@ -1,0 +1,15 @@
+             Gate Summary Report
+ -----------------------------------------------
+ #primitives                                 80
+ #primary_inputs                              6
+ #primary_outputs                             6
+ #DFFs                                        9
+    #scan                                     9
+ #BUFs                                        1
+ #INVs                                        9
+ #ANDs                                        5
+ #NANDs                                      27
+ #ORs                                         6
+ #NORs                                        2
+ #MUXs                                        9
+ -----------------------------------------------
