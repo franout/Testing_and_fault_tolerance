@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 {
 	int pattern [N_PATT] = {0xF0F0F0F0,0xAAAAAAAA,0x00000000, 0x0000FFFF, 0x00FF00FF, 0x0F0F0F0F, 0x33333333, 0x55555555,0xFFFFFFFF,0xCAFFECAFFE};	
 	int i;
+	int dummy[N_PATT];
 	volatile int a;
 	volatile int c;	
 	// hint to the compiler for putting the variable into a register (ATTENTION it will not force it ) 
@@ -35,241 +36,28 @@ int main(int argc, char *argv[])
 
 
 		register int x ;
-		/*a= pattern[i];	  
+		a= pattern[i];	  
+		// 32 btit	
 		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
 		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
 		a=~pattern[i];	
 		asm volatile ("lw %0,%1": "=r" (x) : "m" (a));
 		asm volatile ("sw %0,%1": "=r" (x) : "m" (c));
+		// 16 bit		
+		a= pattern[i];	  
+		asm volatile ("lh %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("sh %0,%1": "=r" (x)  :"m" (c));
+		a=~pattern[i];
+		asm volatile ("lh %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("sh %0,%1": "=r" (x) : "m" (c));
+		// 8 bit
 		a= pattern[i];	  
 		asm volatile ("lb %0,%1": "=r" (x) : "m" (a));
 		asm volatile ("sb %0,%1": "=r" (x)  :"m" (c));
 		a=~pattern[i];
 		asm volatile ("lb %0,%1": "=r" (x) : "m" (a));
 		asm volatile ("sb %0,%1": "=r" (x) : "m" (c));
-*/
 
-
-		a= pattern[i];	  
-		asm volatile ("lw x0,%1":  : "m" (a));
-		asm volatile ("sw x0,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x0,%1":  : "m" (a));
-		asm volatile ("sw x0,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x0,%1":  : "m" (a));
-		asm volatile ("sb x0,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x0,%1":  : "m" (a));
-		asm volatile ("sb x0,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x1,%1":  : "m" (a));
-		asm volatile ("sw x1,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x1,%1":  : "m" (a));
-		asm volatile ("sw x1,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x2,%1":  : "m" (a));
-		asm volatile ("sb x2,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x2,%1":  : "m" (a));
-		asm volatile ("sb x2,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x3,%1":  : "m" (a));
-		asm volatile ("sw x3,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x3,%1":  : "m" (a));
-		asm volatile ("sw x3,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x4,%1":  : "m" (a));
-		asm volatile ("sb x4,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x4,%1":  : "m" (a));
-		asm volatile ("sb x4,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x5,%1":  : "m" (a));
-		asm volatile ("sw x5,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x5,%1":  : "m" (a));
-		asm volatile ("sw x5,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x6,%1":  : "m" (a));
-		asm volatile ("sb x6,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x6,%1":  : "m" (a));
-		asm volatile ("sb x6,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x7,%1":  : "m" (a));
-		asm volatile ("sw x7,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x7,%1":  : "m" (a));
-		asm volatile ("sw x7,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x8,%1":  : "m" (a));
-		asm volatile ("sb x8,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x8,%1":  : "m" (a));
-		asm volatile ("sb x8,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x9,%1":  : "m" (a));
-		asm volatile ("sw x9,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x9,%1":  : "m" (a));
-		asm volatile ("sw x9,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x10,%1":  : "m" (a));
-		asm volatile ("sb x10,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x10,%1":  : "m" (a));
-		asm volatile ("sb x10,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x11,%1":  : "m" (a));
-		asm volatile ("sw x11,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x11,%1":  : "m" (a));
-		asm volatile ("sw x11,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x12,%1":  : "m" (a));
-		asm volatile ("sb x12,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x12,%1":  : "m" (a));
-		asm volatile ("sb x12,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x13,%1":  : "m" (a));
-		asm volatile ("sw x13,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x13,%1":  : "m" (a));
-		asm volatile ("sw x13,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x14,%1":  : "m" (a));
-		asm volatile ("sb x14,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x14,%1":  : "m" (a));
-		asm volatile ("sb x14,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x16,%1":  : "m" (a));
-		asm volatile ("sw x16,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x16,%1":  : "m" (a));
-		asm volatile ("sw x16,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x15,%1":  : "m" (a));
-		asm volatile ("sb x15,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x15,%1":  : "m" (a));
-		asm volatile ("sb x15,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x17,%1":  : "m" (a));
-		asm volatile ("sw x17,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x17,%1":  : "m" (a));
-		asm volatile ("sw x17,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x18,%1":  : "m" (a));
-		asm volatile ("sb x18,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x18,%1":  : "m" (a));
-		asm volatile ("sb x18,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x19,%1":  : "m" (a));
-		asm volatile ("sw x19,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x19,%1":  : "m" (a));
-		asm volatile ("sw x19,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x20,%1":  : "m" (a));
-		asm volatile ("sb x20,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x20,%1":  : "m" (a));
-		asm volatile ("sb x20,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x21,%1":  : "m" (a));
-		asm volatile ("sw x21,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x21,%1":  : "m" (a));
-		asm volatile ("sw x21,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x22,%1":  : "m" (a));
-		asm volatile ("sb x22,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x22,%1":  : "m" (a));
-		asm volatile ("sb x22,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x23,%1":  : "m" (a));
-		asm volatile ("sw x23,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x23,%1":  : "m" (a));
-		asm volatile ("sw x23,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x24,%1":  : "m" (a));
-		asm volatile ("sb x24,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x24,%1":  : "m" (a));
-		asm volatile ("sb x24,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x25,%1":  : "m" (a));
-		asm volatile ("sw x25,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x25,%1":  : "m" (a));
-		asm volatile ("sw x25,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x26,%1":  : "m" (a));
-		asm volatile ("sb x26,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x26,%1":  : "m" (a));
-		asm volatile ("sb x26,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x27,%1":  : "m" (a));
-		asm volatile ("sw x27,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x27,%1":  : "m" (a));
-		asm volatile ("sw x27,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x28,%1":  : "m" (a));
-		asm volatile ("sb x28,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x28,%1":  : "m" (a));
-		asm volatile ("sb x28,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x29,%1":  : "m" (a));
-		asm volatile ("sw x29,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x29,%1":  : "m" (a));
-		asm volatile ("sw x29,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x30,%1":  : "m" (a));
-		asm volatile ("sb x30,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x30,%1":  : "m" (a));
-		asm volatile ("sb x30,%1":  : "m" (c));
-
-		a= pattern[i];	  
-		asm volatile ("lw x31,%1":  : "m" (a));
-		asm volatile ("sw x31,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lw x31,%1":  : "m" (a));
-		asm volatile ("sw x31,%1":  : "m" (c));
-		a= pattern[i];	  
-		asm volatile ("lb x32,%1":  : "m" (a));
-		asm volatile ("sb x32,%1":  :"m" (c));
-		a=~pattern[i];	
-		asm volatile ("lb x32,%1":  : "m" (a));
-		asm volatile ("sb x32,%1":  : "m" (c));
 
 		// several reading at time
 		a= pattern[i];	  
@@ -290,8 +78,121 @@ int main(int argc, char *argv[])
 		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
 		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
 		asm volatile ("sw %0,%1": "=r" (x)  :"m" (c));
-	}
+		// compressed instruction 
+		a= pattern[i];	  
+		asm volatile ("c.lwsp %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("c.swsp %0,%1": "=r" (x)  :"m" (c));
+		a=~pattern[i];
+		asm volatile ("c.lwsp %0,%1": "=r" (x) : "m" (a));
+		asm volatile ("c.swsp %0,%1": "=r" (x) : "m" (c));
+		// misaligned access 
+		register int y=0;			
+	a=pattern[i];	
+		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "i" (0x00000001),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x)  :"i" (0x00000001), "r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "i" (0x00000001),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x) : "i" (0x00000001),"r" (y));
+		y=0;
 
+
+		
+		// post incrementing load store
+			a=pattern[i];	
+		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x)  :"i" (0x0000f), "r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		y=0;
+
+
+
+		a=pattern[i];	
+		asm volatile ("p.lbu %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x)  :"i" (0x0000f), "r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lbu %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		y=0;
+
+		a=pattern[i];	
+		 asm volatile ("p.lh %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		 asm volatile ("p.sh %0,%1(%2!)": "=r" (x)  : "i" (0x0000f) ,"r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lh %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sh %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		y=0;
+
+		a=pattern[i];	
+		asm volatile ("p.lhu %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sh %0,%1(%2!)": "=r" (x)  : "i" (0x0000f), "r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lhu %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sh %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		y=0;
+		a=pattern[i];	
+		asm volatile ("p.lw %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sw %0,%1(%2!)": "=r" (x)  : "i" (0x0000f), "r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lw %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sw %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		y=0;
+
+		// reg reg
+			a=pattern[i];	
+		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "r" (pattern),"r" (i));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x)  :"r" (pattern), "r" (i));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		y=0;
+
+
+
+		a=pattern[i];	
+		asm volatile ("p.lbu %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x)  :"i" (0x0000f), "r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lbu %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sb %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		y=0;
+
+		a=pattern[i];	
+		 asm volatile ("p.lh %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		 asm volatile ("p.sh %0,%1(%2!)": "=r" (x)  : "i" (0x0000f) ,"r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lh %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sh %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
+		y=0;
+
+		a=pattern[i];	
+		asm volatile ("p.lhu %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sh %0,%1(%2!)": "=r" (x)  : "i" (0x0000f), "r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lhu %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sh %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		y=0;
+		a=pattern[i];	
+		asm volatile ("p.lw %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sw %0,%1(%2!)": "=r" (x)  : "i" (0x0000f), "r" (y));
+		a=~pattern[i];	
+		y=0;
+		asm volatile ("p.lw %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		asm volatile ("p.sw %0,%1(%2!)": "=r" (x) :  "i" (0x0000f),"r" (y));
+		y=0;
+	}
+	register int x,y;
 	// special operations 
 	asm volatile ("auipc x0,%0":: "i" (0x00f) );
 	asm volatile ("lui x0, %0" ::"i" (0x00f) );
@@ -300,6 +201,8 @@ int main(int argc, char *argv[])
 	c=x;
 	asm volatile ("lui %0, %1" : "=r" (x) :"i" (0x00f) );
 	c=x;
-
+	asm volatile ("c.mv %0,%1": "=r" (x): "r" (y));
+	asm volatile ("li %0,%1": "=r" (x): "i" (0x00f));
+	c=x;
 	return EXIT_SUCCESS;
 }
