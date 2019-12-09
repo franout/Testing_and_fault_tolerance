@@ -84,21 +84,10 @@ int main(int argc, char *argv[])
 		a=~pattern[i];
 		asm volatile ("c.lwsp %0,%1": "=r" (x) : "m" (a));
 		asm volatile ("c.swsp %0,%1": "=r" (x) : "m" (c));
-		// misaligned access 
-		register int y=0;			
-	a=pattern[i];	
-		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "i" (0x00000001),"r" (y));
-		asm volatile ("p.sb %0,%1(%2!)": "=r" (x)  :"i" (0x00000001), "r" (y));
-		a=~pattern[i];	
-		y=0;
-		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "i" (0x00000001),"r" (y));
-		asm volatile ("p.sb %0,%1(%2!)": "=r" (x) : "i" (0x00000001),"r" (y));
-		y=0;
-
-
 		
 		// post incrementing load store
-			a=pattern[i];	
+		register int y =0;	
+		a=pattern[i];	
 		asm volatile ("p.lb %0,%1(%2!)": "=r" (x) : "i" (0x0000f),"r" (y));
 		asm volatile ("p.sb %0,%1(%2!)": "=r" (x)  :"i" (0x0000f), "r" (y));
 		a=~pattern[i];	
