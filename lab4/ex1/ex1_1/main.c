@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define N_PATT 10  // for integer and for floating point operation 
-
 /*The register file can be successfully tested by means of the March-C algorithm. 
  * In the following, the algorithm pseudo-code is reported:
  for each register REG do
