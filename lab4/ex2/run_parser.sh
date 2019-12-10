@@ -4,8 +4,8 @@ cd $(dirname $0)
 root_dir=${PWD}
 cd - &>/dev/null
 
-run_dir=${root_dir}/../riscv_testing/run
-sbst_dir=${root_dir}/../riscv_testing/sbst_asm
+run_dir=${root_dir}/
+sbst_dir=${root_dir}/
 
 cd ${run_dir}
 
