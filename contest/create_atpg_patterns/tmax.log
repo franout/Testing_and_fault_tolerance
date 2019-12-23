@@ -1,0 +1,7 @@
+## Build
+read_netlist ../gate/NangateOpenCellLibrary.tlib -library
+ Begin reading netlist ( ../gate/NangateOpenCellLibrary.tlib )...
+ Error: Unable to open read file "../gate/NangateOpenCellLibrary.tlib". (M5)
+ Information: script '/home/s262620/contest/create_atpg_patterns/tmax_automatic_patterns.tcl'
+	stopped at line 6 due to error. (CMD-081)
+
