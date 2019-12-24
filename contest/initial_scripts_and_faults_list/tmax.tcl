@@ -15,7 +15,10 @@ run_simulation -sequential
 
 ## Transition faults
 set_faults -model transition -fault_coverage -atpg_effectiveness -summary verbose
-set_delay -launch system_clock
+#based on fast sequential atpg processi
+#The -nopi_changes setting causes all primary inputs to be held constant between launch
+#and capture, thus preventing slow-to-transition primary inputs from affecting the transition test.
+set_delay -launch system_clock -nopi_changes
 
 ## Fault list (select one of the following)
 
@@ -26,19 +29,16 @@ read_faults ../initial_faults_exe.txt } else {
 read_faults ../initial_faults_cpu.txt
 
 }
-#add_faults ex_stage_i/alu_i
-#add_faults ex_stage_i/alu_i/int_div_div_i
-#add_faults ex_stage_i/mult_i
-#add_faults id_stage_i/registers_i/riscv_register_file_i
-#read_faults previous_fsim_faults.txt -force_retain_code -add
-
 ## Fault simulation
 run_fault_sim -sequential
 
 ## Reports
 set_faults -fault_coverage
 report_faults -level {5 100} > report_faults_hierarchy.txt
+if { $env(list_modules)=="y" } {
+report_modules -all -summary -verbose > ~/contest/modules_list.txt 
+}
 report_faults -level {100 1} -verbose > report_faults_verbose.txt
 report_summaries > report_summaries.txt
 write_faults fsim_faults.txt -replace -all
-quit
+#quit
