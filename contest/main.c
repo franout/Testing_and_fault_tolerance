@@ -1509,173 +1509,173 @@ int main ( void) {
 
 	asm volatile ("csrr %0,hpmcounter3": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter3,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter3,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter3": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter4": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter4,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter4,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter4": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter5": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter5,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter5,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter5": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter6": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter6,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter6,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter6": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter7": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter7,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter7,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter7": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter8": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter8,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter8,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter8": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter9": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter9,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter9,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter9": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter10": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter10,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter10,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter10": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter11": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter11,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter11,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter11": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter12": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter12,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter12,%0":: "i" (0xAAAAAAAA));
 
 	asm volatile ("csrr %0,hpmcounter13": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter13,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter13,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter13": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter14": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter14,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter14,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter14": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter15": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter15,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter15,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter15": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter16": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter16,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter16,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter16": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter17": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter17,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter17,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter17": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter18": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter18,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter18,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter18": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter19": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter19,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter19,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter19": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter20": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter20,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter20,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter20": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter21": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter21,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter21,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter21": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter22": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter22,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter22,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter22": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter23": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter23,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter23,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter23": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter24": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter24,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter24,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter24": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter25": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter25,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter25,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter25": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter26": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter26,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter26,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter26": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter27": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter27,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter27,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter27": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter28": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter28,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter28,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter28": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter29": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter29,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter29,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter29": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter30": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter30,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter30,%0":: "i" (0xAAAAAAAA));
 	asm volatile ("csrr %0,hpmcounter30": "=r" (c));
 	res =c;
 
 	asm volatile ("csrr %0,hpmcounter31": "=r" (c));
 	res =c;
-	asm volatile ("csrw hpmcounter31,%0":: "i" (0x0000ffff));
+	asm volatile ("csrw hpmcounter31,%0":: "i" (0x55555555));
 	asm volatile ("csrr %0,hpmcounter31": "=r" (c));
 	res =c;
 
@@ -1719,25 +1719,43 @@ int main ( void) {
 	asm volatile ("csrw 0x7B1,%0":: "r" (c));
 	asm volatile ("csrr %0,0x7B1":"=r" (c));
 	res=c;
-	;
+	
 	asm volatile ("csrr %0,0x7B2":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x7B2,%0":: "r" (c));
+	asm volatile ("csrr %0,0x7B2":"=r" (c));
+	res=c;
+
 	asm volatile ("csrr %0,0x7B3":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x7B3,%0":: "r" (c));
+	asm volatile ("csrr %0,0x7B3":"=r" (c));
+	res=c;
+
 	asm volatile ("csrr %0,0x7B4":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x7B4,%0":: "r" (c));
+	asm volatile ("csrr %0,0x7B4":"=r" (c));
+	res=c;
+
 	asm volatile ("csrr %0,0x7B5":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x7B5,%0":: "r" (c));
+	asm volatile ("csrr %0,0x7B5":"=r" (c));
+	res=c;
+
+
 	asm volatile ("csrr %0,0x7B6":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x7B6,%0":: "r" (c));
+	asm volatile ("csrr %0,0x7B6":"=r" (c));
+	res=c;
+
 	asm volatile ("csrr %0,0x7B7":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x7B7,%0":: "r" (c));
+asm volatile ("csrr %0,0x7B7":"=r" (c));
+	res=c;
 
 	// csr for priviledge level
 	asm volatile ("csrr %0,0xc10":"=r" (c));
@@ -1755,184 +1773,300 @@ int main ( void) {
 	asm volatile ("csrr %0,dcsr":"=r" (c));
 	res=c;
 	asm volatile ("csrw dcsr,%0":: "r" (c));
-
+asm volatile ("csrr %0,dcsr":"=r" (c));
+	res=c;
+	
 
 	asm volatile ("csrr %0,dpc":"=r" (c));
 	res=c;
 	asm volatile ("csrw dpc,%0":: "r" (c));
-
+asm volatile ("csrr %0,dpc":"=r" (c));
+	res=c;
+	
 	// csr for debug scrach 0
 	asm volatile ("csrr %0,0x7b2":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x7b2,%0":: "r" (c));
-
+asm volatile ("csrr %0,0x7b2":"=r" (c));
+	res=c;
 	// csr for debug scratch 1
 	asm volatile ("csrr %0,0x7b3":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x7b3,%0":: "r" (c));
-
+asm volatile ("csrr %0,0x7b3":"=r" (c));
+	res=c;
 
 	// user csr
 
 	asm volatile ("csrr %0,0x000": "=r" (c));	//user status register.
 	res=c;
 	asm volatile ("csrw 0x000,%0"::"r" (c));
+	asm volatile ("csrr %0,0x000": "=r" (c));	//user status register.
+	res=c;
+	
 	asm volatile ("csrr %0, 0x005": "=r" (c)); // User trap handler base address.
 	res=c;
 	asm volatile ("csrw 0x005,%0"::"r" (c));
-
+asm volatile ("csrr %0, 0x005": "=r" (c)); // User trap handler base address.
+	res=c;
+	
 	asm volatile ("csrr %0,0x040": "=r" (c)); // Scratch register for user trap handlers.
 	res=c;
 	asm volatile ("csrw 0x040,%0"::"r" (c));
+	asm volatile ("csrr %0,0x040": "=r" (c)); // Scratch register for user trap handlers.
+	res=c;
+	
 	asm volatile ("csrr %0,0x041": "=r" (c)); // User exception program counter.
 	res=c;
 	asm volatile ("csrw 0x041,%0":: "r" (c));
+	asm volatile ("csrr %0,0x041": "=r" (c)); // User exception program counter.
+	res=c;
+	
 	asm volatile ("csrr %0, 0x042": "=r" (c)); // User trap cause.
 	res=c;
 	asm volatile ("csrw 0x042,%0":: "r" (c));
+	asm volatile ("csrr %0, 0x042": "=r" (c)); // User trap cause.
+	res=c;
+	
 	asm volatile ("csrr %0, 0x043": "=r" (c)); // User bad address or instruction.
 	res=c;
 	asm volatile ("csrw 0x043,%0":: "r" (c));
+	asm volatile ("csrr %0, 0x043": "=r" (c)); // User bad address or instruction.
+	res=c;
+	
 	asm volatile ("csrr %0,0x044": "=r" (c)); // user interrupt pending
 	res=c;
 	asm volatile ("csrw 0x044,%0":: "r" (c));
+	asm volatile ("csrr %0,0x044": "=r" (c)); // user interrupt pending
+	res=c;
+	
 	// pmp configuration
 	asm volatile ("csrr %0,0x3a0 ":"=r" (c));
 	res=c;
 	asm volatile ("csrw 0x3a0,%0":: "r" (c));
+	asm volatile ("csrr %0,0x3a0 ":"=r" (c));
+	res=c;
+
+
 	asm volatile ("csrr %0,0x3a1 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3a1,%0":: "r" (c));
+	asm volatile ("csrw 0x3a1,%0":: "r" (c));asm volatile ("csrr %0,0x3a1 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3a2 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3a2,%0":: "r" (c));
+	asm volatile ("csrw 0x3a2,%0":: "r" (c));asm volatile ("csrr %0,0x3a2 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3a3 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3a3,%0":: "r" (c));
+	asm volatile ("csrw 0x3a3,%0":: "r" (c));asm volatile ("csrr %0,0x3a3 ":"=r" (c));
+	res=c;
+	
 	// pmp addresses
 	asm volatile ("csrr %0,0x3b0 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b0,%0":: "r" (c));
+	asm volatile ("csrw 0x3b0,%0":: "r" (c));asm volatile ("csrr %0,0x3b0 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b1 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b1,%0":: "r" (c));
+	asm volatile ("csrw 0x3b1,%0":: "r" (c));asm volatile ("csrr %0,0x3b1 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b2 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b2,%0":: "r" (c));
+	asm volatile ("csrw 0x3b2,%0":: "r" (c));asm volatile ("csrr %0,0x3b2 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b3 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b3,%0":: "r" (c));
+	asm volatile ("csrw 0x3b3,%0":: "r" (c));asm volatile ("csrr %0,0x3b3 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b4 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b4,%0":: "r" (c));
+	asm volatile ("csrw 0x3b4,%0":: "r" (c));asm volatile ("csrr %0,0x3b4 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b5 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b5,%0":: "r" (c));
+	asm volatile ("csrw 0x3b5,%0":: "r" (c));asm volatile ("csrr %0,0x3b5 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b6 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b6,%0":: "r" (c));
+	asm volatile ("csrw 0x3b6,%0":: "r" (c));asm volatile ("csrr %0,0x3b6 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b7 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b7,%0":: "r" (c));
+	asm volatile ("csrw 0x3b7,%0":: "r" (c));asm volatile ("csrr %0,0x3b7 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b8 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b8,%0":: "r" (c));
+	asm volatile ("csrw 0x3b8,%0":: "r" (c));asm volatile ("csrr %0,0x3b8 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3b9 ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3b9,%0":: "r" (c));
+	asm volatile ("csrw 0x3b9,%0":: "r" (c));asm volatile ("csrr %0,0x3b9 ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3ba ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3ba,%0":: "r" (c));
+	asm volatile ("csrw 0x3ba,%0":: "r" (c));asm volatile ("csrr %0,0x3ba ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3bb ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3bb,%0":: "r" (c));
+	asm volatile ("csrw 0x3bb,%0":: "r" (c));asm volatile ("csrr %0,0x3bb ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3bc ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3bc,%0":: "r" (c));
+	asm volatile ("csrw 0x3bc,%0":: "r" (c));asm volatile ("csrr %0,0x3bc ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3bd ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3bd,%0":: "r" (c));
+	asm volatile ("csrw 0x3bd,%0":: "r" (c));asm volatile ("csrr %0,0x3bd ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3be ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3be,%0":: "r" (c));
+	asm volatile ("csrw 0x3be,%0":: "r" (c));asm volatile ("csrr %0,0x3be ":"=r" (c));
+	res=c;
+	
 	asm volatile ("csrr %0,0x3bf ":"=r" (c));
 	res=c;
-	asm volatile ("csrw 0x3bf,%0":: "r" (c));
+	asm volatile ("csrw 0x3bf,%0":: "r" (c));asm volatile ("csrr %0,0x3bf ":"=r" (c));
+	res=c;
+	
 
 	// performancae counters
 	asm volatile ("csrr %0,0x7a0": "=r" (c));// performance counter enable
 	res=c;
-	asm volatile ("csrw 0x7a0,%0":: "r" (c));
+	asm volatile ("csrw 0x7a0,%0":: "r" (c));asm volatile ("csrr %0,0x7a0": "=r" (c));// performance counter enable
+	res=c;
+	
 	asm volatile("csrr %0,0x7a1 ": "=r" (c));	// performance counter mode
 	res=c;
-	asm volatile("csrw 0x7a1, %0":: "r" (c));
+	asm volatile("csrw 0x7a1, %0":: "r" (c));asm volatile("csrr %0,0x7a1 ": "=r" (c));	// performance counter mode
+	res=c;
+	
 	// perf counters from 0x780-0x79F
 	asm volatile("csrr %0,0x780 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x780, %0":: "r" (c));
+	asm volatile("csrw 0x780, %0":: "r" (c));asm volatile("csrr %0,0x780 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x781 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x781, %0":: "r" (c));
+	asm volatile("csrw 0x781, %0":: "r" (c));asm volatile("csrr %0,0x781 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x782 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x782, %0":: "r" (c));
+	asm volatile("csrw 0x782, %0":: "r" (c));asm volatile("csrr %0,0x782 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x783 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x783, %0":: "r" (c));
+	asm volatile("csrw 0x783, %0":: "r" (c));asm volatile("csrr %0,0x783 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x784 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x784, %0":: "r" (c));
+	asm volatile("csrw 0x784, %0":: "r" (c));asm volatile("csrr %0,0x784 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x785 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x785, %0":: "r" (c));
+	asm volatile("csrw 0x785, %0":: "r" (c));asm volatile("csrr %0,0x785 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x786 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x786, %0":: "r" (c));
+	asm volatile("csrw 0x786, %0":: "r" (c));asm volatile("csrr %0,0x786 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x787 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x787, %0":: "r" (c));
+	asm volatile("csrw 0x787, %0":: "r" (c));asm volatile("csrr %0,0x787 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x788 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x788, %0":: "r" (c));
+	asm volatile("csrw 0x788, %0":: "r" (c));asm volatile("csrr %0,0x788 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x789 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x789, %0":: "r" (c));
+	asm volatile("csrw 0x789, %0":: "r" (c));asm volatile("csrr %0,0x789 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x78a ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x78a, %0":: "r" (c));
+	asm volatile("csrw 0x78a, %0":: "r" (c));asm volatile("csrr %0,0x78a ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x78b ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x78b, %0":: "r" (c));
+	asm volatile("csrw 0x78b, %0":: "r" (c));asm volatile("csrr %0,0x78b ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x78c ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x78c, %0":: "r" (c));
+	asm volatile("csrw 0x78c, %0":: "r" (c));asm volatile("csrr %0,0x78c ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x78d ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x78d, %0":: "r" (c));
+	asm volatile("csrw 0x78d, %0":: "r" (c));asm volatile("csrr %0,0x78d ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x78e ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x78e, %0":: "r" (c));
+	asm volatile("csrw 0x78e, %0":: "r" (c));asm volatile("csrr %0,0x78e ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x78f ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x78f, %0":: "r" (c));
+	asm volatile("csrw 0x78f, %0":: "r" (c));asm volatile("csrr %0,0x78f ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x790 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x790, %0":: "r" (c));
+	asm volatile("csrw 0x790, %0":: "r" (c));asm volatile("csrr %0,0x790 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x791 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x791, %0":: "r" (c));
+	asm volatile("csrw 0x791, %0":: "r" (c));asm volatile("csrr %0,0x791 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x792 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x792, %0":: "r" (c));
+	asm volatile("csrw 0x792, %0":: "r" (c));asm volatile("csrr %0,0x792 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x793 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x793, %0":: "r" (c));
+	asm volatile("csrw 0x793, %0":: "r" (c));asm volatile("csrr %0,0x793 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x794 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x794, %0":: "r" (c));
+	asm volatile("csrw 0x794, %0":: "r" (c));asm volatile("csrr %0,0x794 ": "=r" (c));
+	res=c;
+	
 	asm volatile("csrr %0,0x79f ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x79f, %0":: "r" (c));
+	asm volatile("csrw 0x79f, %0":: "r" (c));asm volatile("csrr %0,0x79f ": "=r" (c));
+	res=c;
+	
 	// nope
 	asm volatile("nop");// converted into  addi x0,x0,0
 	res=c;
