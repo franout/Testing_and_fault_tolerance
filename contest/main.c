@@ -22,7 +22,7 @@ int main ( void) {
 	};
 	volatile int a, b, c ;
 	volatile int res;
-
+//COMPRESSED INSTRUCTIONS TODO
 	int i;
 	////////////////////////////////////////////////////
 	///////////// TESTING EXECUTION UNIT ///////////////
@@ -31,11 +31,15 @@ int main ( void) {
 		a =pattern[i];
 		// addition
 		b =~pattern[i];
-		asm volatile("add  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
+	// + ->reading and writing  , = -> overwrite an existing register
+		asm volatile("add  %0,%1,%2": "+r" (c): "r" (a),"r" (b) );
 		res=c;
 		asm volatile("add  %0,%1,%2": "=r" (c): "r" (b),"r" (a) );
 		res=c;
-
+		
+		asm volatile (".option rvc\n\t c.add %0,%1,%2": "+r" (c):"r" (a), "r" (b));
+		res=c;
+		asm volatile (".option norvc");
 		// subtraction
 		asm volatile("sub  %0,%1,%2": "=r" (c): "r" (a),"r" (b) );
 		res=c;
@@ -2290,8 +2294,6 @@ int main ( void) {
 	word = 0x0304;
 	asm volatile ("sh %[a], 3(%[addr])\n"
 			: : [addr] "r" (act), [a] "r" (word));
-	//	compressed instructions
-	//TODO
 
 	//load and store conditional ops ( from risc v spec )
 	asm volatile ("# a0 holds address of memory location\n\t
@@ -2384,7 +2386,9 @@ int main ( void) {
 	//-----------------------------------------------------------------
 	// RVC -> compressed instructions 
 	// no RVC
-	i = 0; j = 0;
+	i = 0;
+	int  j = 0;
+	int tmp=3;
 	asm volatile (
 			".option norvc;"
 			"lp.count x0, %[N];"
