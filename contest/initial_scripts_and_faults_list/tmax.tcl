@@ -7,6 +7,13 @@ read_netlist ../gate/NangateOpenCellLibrary.tlib -library
 read_netlist ../gate/riscv_core.v
 run_build_model riscv_core_0_128_1_16_1_1_0_0_0_0_0_0_0_0_0_3_6_15_5_1a110800
 add_clocks 1 clk_i
+# from tetramax manual ch.17
+# In the system_clock mode, the scan enable signal must be inactive between
+# launch and capture, so the add_pi_constraints command (or a constraint in the STIL
+# procedure file) must be used to set the scan enable signal to inactive. Otherwise, you might get
+# patterns in the system_clock mode with the scan enable signal is switching between
+# launch and capture
+add_pi_contraints 0 SE
 run_drc
 
 ## Load and check patterns
@@ -20,6 +27,7 @@ set_faults -model transition -fault_coverage -atpg_effectiveness -summary verbos
 #and capture, thus preventing slow-to-transition primary inputs from affecting the transition test.
 set_delay -launch system_clock -nopi_changes
 
+set_atpg -capture_cycles 2
 ## Fault list (select one of the following)
 
 if { $env(CUT)=="exe" } {
@@ -42,3 +50,7 @@ report_faults -level {100 1} -verbose > report_faults_verbose.txt
 report_summaries > report_summaries.txt
 write_faults fsim_faults.txt -replace -all
 #quit
+#
+#
+#   
+#
