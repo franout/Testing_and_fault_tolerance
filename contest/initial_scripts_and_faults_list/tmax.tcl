@@ -10,7 +10,7 @@ add_clocks 1 clk_i
 
 # constraints for testing 
 add_pi_constraint 1 fregfile_disable_i
-add_pi_constraints  1 clk_en_i	
+add_pi_constraints  1 clock_en_i	
 add_pi_constraints 1 test_en_i
 
 run_drc
@@ -50,7 +50,4 @@ report_faults -level {100 1} -verbose > report_faults_verbose.txt
 report_summaries > report_summaries.txt
 write_faults fsim_faults.txt -replace -all
 #quit
-#
-#
-#   
-#
+
