@@ -17,17 +17,17 @@ run_drc
 
 ## Load and check patterns
 set_patterns -external dumpports_gate.evcd.fixed  -sensitive -strobe_period { 10 ns } -strobe_offset { 4 ns } -vcd_clock auto
-run_simulation -sequential
-
-## Transition faults
-set_faults -model transition -fault_coverage -atpg_effectiveness -summary verbose
 #based on fast sequential atpg processi
 #The -nopi_changes setting causes all primary inputs to be held constant between launch
 #and capture, thus preventing slow-to-transition primary inputs from affecting the transition test.
 set_delay -launch system_clock 
 set_delay -nopi_changes
 
-set_atpg -capture_cycles 4
+run_simulation -sequential
+
+## Transition faults
+set_faults -model transition -fault_coverage -atpg_effectiveness -summary verbose
+set_atpg -capture_cycles 8
 ## Fault list (select one of the following)
 
 if { $env(CUT)=="exe" } {
