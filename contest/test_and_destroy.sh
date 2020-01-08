@@ -4,7 +4,7 @@ PATH_CORE="${HOME}/riscv_testing/"
 #######################################################################
 ##### full -> entire core , exe -> execution stage of the core ########
 #######################################################################
-export CUT="full"
+export CUT="exe"
 export list_modules="n"
 
 ############
