@@ -2290,57 +2290,6 @@ int main ( void) {
 	asm volatile ("csrw mcause,%0":: "r" (c));
 	asm volatile ("csrr %0,mcause":"=r" (c));
 	res=c;
-
-	// csr fpr hardware loops
-	/*asm volatile ("csrr %0,0x7B0":"=r" (c));
-	  res=c;
-	  asm volatile ("csrw 0x7B0,%0":: "r" (c));
-	  asm volatile ("csrr %0,0x7B0":"=r" (c));
-	  res=c;
-
-	  asm volatile ("csrr %0,0x7B1":"=r" (c));
-	  res=c;
-	  asm volatile ("csrw 0x7B1,%0":: "r" (c));
-	  asm volatile ("csrr %0,0x7B1":"=r" (c));
-	  res=c;
-
-	  asm volatile ("csrr %0,0x7B2":"=r" (c));
-	  res=c;
-	  asm volatile ("csrw 0x7B2,%0":: "r" (c));
-	  asm volatile ("csrr %0,0x7B2":"=r" (c));
-	  res=c;
-
-	  asm volatile ("csrr %0,0x7B3":"=r" (c));
-	  res=c;
-	  asm volatile ("csrw 0x7B3,%0":: "r" (c));
-	  asm volatile ("csrr %0,0x7B3":"=r" (c));
-	  res=c;
-
-	  asm volatile ("csrr %0,0x7B4":"=r" (c));
-	  res=c;
-	  asm volatile ("csrw 0x7B4,%0":: "r" (c));
-	  asm volatile ("csrr %0,0x7B4":"=r" (c));
-	  res=c;
-
-	  asm volatile ("csrr %0,0x7B5":"=r" (c));
-	  res=c;
-	  asm volatile ("csrw 0x7B5,%0":: "r" (c));
-	  asm volatile ("csrr %0,0x7B5":"=r" (c));
-	  res=c;
-
-
-	  asm volatile ("csrr %0,0x7B6":"=r" (c));
-	  res=c;
-	  asm volatile ("csrw 0x7B6,%0":: "r" (c));
-	  asm volatile ("csrr %0,0x7B6":"=r" (c));
-	  res=c;
-
-	  asm volatile ("csrr %0,0x7B7":"=r" (c));
-	  res=c;
-	  asm volatile ("csrw 0x7B7,%0":: "r" (c));
-	  asm volatile ("csrr %0,0x7B7":"=r" (c));
-	  res=c;
-	  */
 	// csr for priviledge level
 	asm volatile ("csrr %0,0xc10":"=r" (c));
 	res=c;
@@ -3038,6 +2987,18 @@ int main ( void) {
 	// write in a forbidden register
 	register int dummy_reg asm ("x0");
 	res=dummy_reg;
+	dummy_reg=res;
+	//TODO writig in all intger registers 
+	register int x1 asm ("x1");
+	x1=0xFFFFFFFF;
+	res=x1;
+	x1=0x00000000;
+	res=x1;
+
+
+
+
+
 
 	asm volatile ("li %0,%1": "=r" (c): "i" (0x3245));
 	res=c;
@@ -3329,7 +3290,7 @@ int main ( void) {
 		printf("TEST USER EXCEPTIONS OK :)\n" );
 
 	failed+=error;
-
+	// filling and generating the ivt TODO
 
 	// ecall and ret + saving regs on stack
 	f1();
