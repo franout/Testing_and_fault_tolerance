@@ -2988,15 +2988,214 @@ int main ( void) {
 	register int dummy_reg asm ("x0");
 	res=dummy_reg;
 	dummy_reg=res;
-	//TODO writig in all intger registers 
+	// writig in all intger registers 
 	register int x1 asm ("x1");
 	x1=0xFFFFFFFF;
 	res=x1;
 	x1=0x00000000;
 	res=x1;
 
+	register int x2 asm ("x2");
+	x2=0xFFFFFFFF;
+	res=x2;
+	x2=0x00000000;
+	res=x2;
 
 
+	register int x3 asm ("x3");
+	x3=0xFFFFFFFF;
+	res=x3;
+	x3=0x00000000;
+	res=x3;
+
+
+	register int x4 asm ("x4");
+	x4=0xFFFFFFFF;
+	res=x4;
+	x4=0x00000000;
+	res=x4;
+
+
+	register int x5 asm ("x5");
+	x5=0xFFFFFFFF;
+	res=x5;
+	x5=0x00000000;
+	res=x5;
+
+
+	register int x6 asm ("x6");
+	x6=0xFFFFFFFF;
+	res=x6;
+	x6=0x00000000;
+	res=x6;
+
+
+	register int x7 asm ("x7");
+	x7=0xFFFFFFFF;
+	res=x7;
+	x7=0x00000000;
+	res=x7;
+
+
+	register int x8 asm ("x8");
+	x8=0xFFFFFFFF;
+	res=x8;
+	x8=0x00000000;
+	res=x8;
+
+
+	register int x9 asm ("x9");
+	x9=0xFFFFFFFF;
+	res=x9;
+	x9=0x00000000;
+	res=x9;
+
+
+	register int x10 asm ("x10");
+	x10=0xFFFFFFFF;
+	res=x10;
+	x10=0x00000000;
+	res=x10;
+
+
+	register int x12 asm ("x12");
+	x12=0xFFFFFFFF;
+	res=x12;
+	x12=0x00000000;
+	res=x12;
+
+
+	register int x13 asm ("x13");
+	x13 0xFFFFFFFF;
+	res=x13 
+	x13 0x00000000;
+	res=x13 
+
+
+	register int x14 asm ("x14");
+	x14=0xFFFFFFFF;
+	res=x14;
+	x14=0x00000000;
+	res=x14;
+
+
+	register int x15 asm ("x15");
+	x15=0xFFFFFFFF;
+	res=x15;
+	x15=0x00000000;
+	res=x15;
+
+
+	register int x16 asm ("x16");
+	x16=0xFFFFFFFF;
+	res=x16;
+	x16=0x00000000;
+	res=x16;
+
+
+	register int x17 asm ("x17");
+	x17=0xFFFFFFFF;
+	res=x17;
+	x17=0x00000000;
+	res=x17;
+
+
+	register int x18 asm ("x18");
+	x18=0xFFFFFFFF;
+	res=x18;
+	x18=0x00000000;
+	res=x18;
+
+
+	register int x19 asm ("x19");
+	x19=0xFFFFFFFF;
+	res=x19;
+	x19=0x00000000;
+	res=x19;
+
+
+	register int x20 asm ("x20");
+	x20=0xFFFFFFFF;
+	res=x20;
+	x20=0x00000000;
+	res=x20;
+
+
+	register int x21 asm ("x21");
+	x21 =0xFFFFFFFF;
+	res=x21 
+	x21 =0x00000000;
+	res=x21 
+
+
+	register int x22 asm ("x22");
+	x22=0xFFFFFFFF;
+	res=x22;
+	x22=0x00000000;
+	res=x22;
+
+
+	register int x23 asm ("x23");
+	x23=0xFFFFFFFF;
+	res=x23;
+	x23=0x00000000;
+	res=x23;
+
+
+	register int x24 asm ("x24");
+	x24=0xFFFFFFFF;
+	res=x24;
+	x24=0x00000000;
+	res=x24;
+
+
+	register int x25 asm ("x25");
+	x25=0xFFFFFFFF;
+	res=x25;
+	x25=0x00000000;
+	res=x25;
+
+
+	register int x26 asm ("x26");
+	x26=0xFFFFFFFF;
+	res=x26;
+	x26=0x00000000;
+	res=x26;
+
+
+	register int x27 asm ("x27");
+	x27=0xFFFFFFFF;
+	res=x27;
+	x27=0x00000000;
+	res=x27;
+
+
+	register int x28 asm ("x28");
+	x28=0xFFFFFFFF;
+	res=x28;
+	x28=0x00000000;
+	res=x28;
+
+
+	register int x29 asm ("x29");
+	x29=0xFFFFFFFF;
+	res=x29;
+	x29=0x00000000;
+	res=x29;
+
+
+	register int x30 asm ("x30");
+	x30=0xFFFFFFFF;
+	res=x30;
+	x30=0x00000000;
+	res=x30;
+
+
+	register int x31 asm ("x31");
+	x31=0xFFFFFFFF;
+	res=x31;
+	x31=0x00000000;
+	res=x31;
 
 
 
@@ -3024,19 +3223,19 @@ int main ( void) {
 	asm volatile ("or x0,%0,%1"::"r" (a), "r" (b));
 	asm volatile ("xor x0,%0,%1"::"r" (a), "r" (b));
 
-	/*asm volatile ("sll x0,%0":: "i" (1024));
-	  asm volatile ("srl x0,%0":: "i" (1024));
-	  asm volatile ("sra x0,%0":: "i" (0x000ff));
-	  asm volatile ("fence x0,%0":: "i" (0x000ff));
-	  asm volatile ("slti x0,%0":: "i" (0x000ff));
-	  asm volatile ("sltiu x0,%0":: "i" (0x000ff));
-	  asm volatile ("slli x0,%0":: "i" (0x000ff));
-	  asm volatile ("srli x0,%0":: "i" (0x000ff));
-	  asm volatile ("srai x0,%0":: "i" (0x000ff));
-	  asm volatile ("slt x0,%0":: "i" (0x000ff));
-	  asm volatile ("sltu x0,%0":: "i" (0x000ff));*/
+	// enviromental call and breakpoints from risc v manual
+	asm volatile ( "slli x0, x0, 0x1f # Entry NOP"
+"ebreak # Break to debugger"
+"srai x0, x0, 7 # NOP encoding the semihosting call number 7");
+
 	// synchromize i/o and memory operations
-	asm volatile ("fence.I");
+	asm volatile ("fence.I"); // inputs
+	asm volatile ("fence.O"); // outputs
+	asm volatile ("fence.R"); // memory reads
+	asm volatile ("fence.W"); // memory write
+	asm volatile ("fence %0":: "i" (1));
+	asm volatile ("fence %0":: "i" (0));
+	asm volatile ("fence.tso");
 	// atomic memory operations
 	/*	asm volatile ("amoswap.w %0,%1,(%2) ": "=r" (c): "r" (a), "r" (pattern[3]) );
 		res=c;
