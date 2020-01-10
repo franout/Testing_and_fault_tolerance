@@ -27,7 +27,7 @@ run_simulation -sequential
 
 ## Transition faults
 set_faults -model transition -fault_coverage -atpg_effectiveness -summary verbose
-set_atpg -capture_cycles 8
+set_atpg -capture_cycles 3
 ## Fault list (select one of the following)
 
 if { $env(CUT)=="exe" } {
