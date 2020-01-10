@@ -4,7 +4,7 @@
 
 #define INT_MAX 0x7FFFFFF
 #define INT_MIN 0x1000001
-#define TEST_PATTERNS 9
+#define TEST_PATTERNS 16
 #define TEST_PATTERNS_DIV 5
 #define TEST_CORE 0 
 
@@ -75,8 +75,8 @@ int check_load_tor(void);
 int main ( void) {
 
 	int pattern[TEST_PATTERNS]= {
-		0x00000000, 0x00000001,/*0x11111111,0x22222222,0x33333333,0x444444444,*/
-		0x55555555,/* 0x66666666,0x77777777,0x88888888,0x999999999,*/
+		0x00000000, 0x00000001,0x11111111,0x22222222,0x33333333,0x444444444,
+		0x55555555, 0x66666666,0x77777777,0x88888888,0x999999999,
 		0xAAAAAAAA ,0xBBBBBBBB,0xCCCCCCCC,0xDDDDDDDD,0xEEEEEEEEE,
 		0xFFFFFFFF
 	};
@@ -87,8 +87,10 @@ int main ( void) {
 	////////////////////////////////////////////////////
 	///////////// TESTING EXECUTION UNIT ///////////////
 	///////////////////////////////////////////////////
-	a =INT_MAX-1;
+	
 	// addition
+	
+a =INT_MAX-1;
 	b =1;
 	// + ->reading and writing  , = -> overwrite an existing register
 	asm volatile("add  %0,%1,%2": "+r" (c): "r" (a),"r" (b) );
@@ -115,10 +117,10 @@ int main ( void) {
 	b=0;
 	asm volatile("and %0, %1 ,%2": "=r" (c): "r" (b), "r" (a));
 	res=c;
-
 	//or
 	a=1;
 	b =INT_MAX-1;
+
 	asm volatile("or %0, %1 ,%2": "+r" (c): "r" (a), "r" (b));
 
 	res=c;
@@ -253,7 +255,7 @@ int main ( void) {
 	for(i=0;i<TEST_PATTERNS;i++){
 		// integer division
 		b =~pattern[i];
-
+		a=pattern[i];
 		asm volatile("div %0, %1 ,%2": "+r" (c): "r" (a), "r" (b));
 		b =pattern[i];
 
@@ -361,98 +363,80 @@ int main ( void) {
 
 	// pulp extension
 	// bit manipulation
+	a=1:
+		for (j=0;j<33;j++){
+		b=j;
+			asm volatile ("p.extractu %0,%1,3,2": "=r" (c): "r" (a));
+		res=c;
+		
+		asm volatile ("p.extractr %0,%1,%2": "=r" (c): "r" (a),"r" (b));
+		res=c;
+		asm volatile ("p.extractur %0,%1,%2": "=r" (c): "r" (a),"r" (b));
+		res=c;
+
+		asm volatile ("p.insertr %0,%1,%2": "=r" (c): "r" (a),"r" (b));
+		res=c;
+		
+		asm volatile ("p.bclrr %0,%1,%2": "=r" (c): "r" (a),"r" (b));
+		res=c;
+		asm volatile ("p.bsetr %0,%1,%2": "=r" (c): "r" (a),"r" (b));
+		res=c;
+		asm volatile ("p.ff1 %0,%1": "=r" (c): "r" (1<<j));
+		res=c;
+			asm volatile ("p.fl1 %0,%1": "=r" (c): "r" (a));
+		res=c;
+		asm volatile ("p.ror %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+		res=c;
+		asm volatile ("p.clipur %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+		res=c;
+		asm volatile ("p.clipr %0,%1,%2": "=r" (c):"r" (a), "r" (b));
+		res=c;
+
+
+		}
+
+
+		
 
 	for(i=0;i<TEST_PATTERNS;i++) {
 		a=pattern[i];
 		b=~pattern[i];
-		asm volatile ("p.extract %0,%1,3,2": "=r" (c): "r" (a));
+	
+		asm volatile ("p.clipu %0,%1,0": "=r" (c): "r" (b));
+		res=c;
+		
+	asm volatile ("p.clipu %0,%1,5": "=r" (c): "r" (b));
+		res=c;
+		
+		asm volatile ("p.clip %0,%1,0": "=r" (c): "r" (a) );
+		res=c;
+		asm volatile ("p.clip %0,%1,5": "=r" (c): "r" (a) );
+		res=c;
+
+		asm volatile ("p.extract %0,%1,15,15": "=r" (c): "r" (a));
 		res=c;
 		a=~pattern[i];
-		asm volatile ("p.extract %0,%1,3,2": "=r" (c): "r" (a));
+		asm volatile ("p.extract %0,%1,16,16": "=r" (c): "r" (a));
 		res=c;
 
-		a=pattern[i];
-		asm volatile ("p.extractu %0,%1,3,2": "=r" (c): "r" (a));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.extractu %0,%1,3,2": "=r" (c): "r" (a));
-		res=c;
-
-
-		b=~pattern[i];
-		asm volatile ("p.extractr %0,%1,%2": "=r" (c): "r" (a),"r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.extractr %0,%1,%2": "=r" (c): "r" (b),"r" (a));
-		res=c;
-		b=~pattern[i];
-		asm volatile ("p.extractur %0,%1,%2": "=r" (c): "r" (a),"r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.extractur %0,%1,%2": "=r" (c): "r" (b),"r" (a));
-		res=c;
-		a=~pattern[i];
-		asm volatile ("p.insert %0,%1,3,2": "=r" (c): "r" (a));
+		asm volatile ("p.insert %0,%1,14,14": "=r" (c): "r" (a));
 		a=pattern[i];
 		res=c;
-		asm volatile ("p.insert %0,%1,3,2": "=r" (c): "r" (a));
-		res=c;
-
-		b=~pattern[i];
-		asm volatile ("p.insertr %0,%1,%2": "=r" (c): "r" (a),"r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.insertr %0,%1,%2": "=r" (c): "r" (b),"r" (a));
+		asm volatile ("p.insert %0,%1,13,13": "=r" (c): "r" (a));
 		res=c;
 
 		a=~pattern[i];
-		asm volatile ("p.bclr %0,%1,3,2": "=r" (c): "r" (a));
+		asm volatile ("p.bclr %0,%1,10,10": "=r" (c): "r" (a));
 		res=c;
 		a=pattern[i];
-		asm volatile ("p.bclr %0,%1,3,2": "=r" (c): "r" (a));
-		res=c;
-
-		b=~pattern[i];
-		asm volatile ("p.bclrr %0,%1,%2": "=r" (c): "r" (a),"r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.bclrr %0,%1,%2": "=r" (c): "r" (b),"r" (a));
+		asm volatile ("p.bclr %0,%1,11,11": "=r" (c): "r" (a));
 		res=c;
 
 		a=~pattern[i];
-		asm volatile ("p.bset %0,%1,3,2": "=r" (c): "r" (a));
+		asm volatile ("p.bset %0,%1,13,13": "=r" (c): "r" (a));
 		res=c;
 		a=pattern[i];
-		asm volatile ("p.bset %0,%1,3,2": "=r" (c): "r" (a));
-		res=c;
-
-		b=~pattern[i];
-		asm volatile ("p.bsetr %0,%1,%2": "=r" (c): "r" (a),"r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.bsetr %0,%1,%2": "=r" (c): "r" (b),"r" (a));
-		res=c;
-
-
-		asm volatile ("p.ff1 %0,%1": "=r" (c): "r" (a));
-		res=c;
-		a=~pattern[i];
-		asm volatile ("p.ff1 %0,%1": "=r" (c): "r" (a));
-		res=c;
-
-		a=pattern[i];
-		asm volatile ("p.fl1 %0,%1": "=r" (c): "r" (a));
-		res=c;
-		a=~pattern[i];
-		asm volatile ("p.fl1 %0,%1": "=r" (c): "r" (a));
-		res=c;
-
-
-		a=pattern[i];
-		asm volatile ("p.fl1 %0,%1": "=r" (c): "r" (a));
-		res=c;
-		a=~pattern[i];
-		asm volatile ("p.fl1 %0,%1": "=r" (c): "r" (a));
+		asm volatile ("p.bset %0,%1,9,9": "=r" (c): "r" (a));
 		res=c;
 
 		a=pattern[i];
@@ -469,12 +453,6 @@ int main ( void) {
 		asm volatile ("p.cnt %0,%1": "=r" (c): "r" (a));
 		res=c;
 
-
-		asm volatile ("p.ror %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.ror %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-		res=c;
 		// alu operations
 		b=~pattern[i];
 		asm volatile ("p.abs %0,%1": "=r" (c): "r" (a) );
@@ -487,7 +465,7 @@ int main ( void) {
 		asm volatile ("p.slet %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
 		b=~pattern[i];
-		asm volatile ("p.slet %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+		asm volatile ("p.sletu %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
 
 		b=~pattern[i];
@@ -545,38 +523,6 @@ int main ( void) {
 		asm volatile ("p.extbz %0,%1": "=r" (c): "r" (b) );
 		res=c;
 
-		a=pattern[i];
-		asm volatile ("p.clip %0,%1,4": "=r" (c): "r" (a) );
-		res=c;
-		a=~pattern[i];
-		asm volatile ("p.clip %0,%1,4": "=r" (c): "r" (a) );
-		res=c;
-
-		b=~pattern[i];
-		asm volatile ("p.clipr %0,%1,%2": "=r" (c):"r" (a), "r" (b));
-		res=c;
-		b=pattern[i];
-
-		asm volatile ("p.clipr %0,%1,%2": "=r" (c):"r" (b), "r" (a));
-		res=c;
-
-		b=~pattern[i];
-		asm volatile ("p.clipu %0,%1,4": "=r" (c): "r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.clipu %0,%1,4": "=r" (c): "r" (b));
-		res=c;
-		b=~pattern[i];
-		asm volatile ("p.clipu %0,%1,4": "=r" (c): "r" (b));
-		res=c;
-
-
-		asm volatile ("p.clipur %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("p.clipur %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-		res=c;
-
 		// arithmetic pulp extentions
 		b=~pattern[i];
 		asm volatile ("p.addN %0,%1,%2,3": "=r" (c): "r" (a) , "r" (b));
@@ -586,8 +532,6 @@ int main ( void) {
 
 		b=~pattern[i];
 		asm volatile ("p.addN %0,%1,%2,2": "=r" (c): "r" (a) , "r" (b));
-		res=c;b=pattern[i];
-		asm volatile ("p.addN %0,%1,%2,2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
 
 		b=~pattern[i];
@@ -687,6 +631,8 @@ int main ( void) {
 		res=c;b=pattern[i];
 		asm volatile ("p.subuRNr %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
+
+
 		// multiplications and mac ops
 		b=~pattern[i];
 		asm volatile ("p.mac %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
@@ -821,85 +767,235 @@ int main ( void) {
 		asm volatile ("p.machhuRN %0,%1,%2,3": "=r" (c): "r" (b) , "r" (a));
 		res=c;
 
-
+}
 		// vectorial instrucctions
 		// alu instructions
-		b=~pattern[i];
-		asm volatile ("pv.add.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+		a =INT_MAX-1;
+	b =1;
+	asm volatile ("pv.add.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
-		b=pattern[i];
-		asm volatile ("pv.add.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			asm volatile ("pv.add.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
-
-		b=~pattern[i];
-		asm volatile ("pv.add.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-		res=c;b=pattern[i];
-		asm volatile ("pv.add.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+	asm volatile ("pv.add.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
 
-		b=~pattern[i];
-		asm volatile ("pv.add.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-		res=c;b=pattern[i];
-		asm volatile ("pv.add.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-		res=c;
-
-		b=~pattern[i];
 		asm volatile ("pv.add.sc.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-		res=c;b=pattern[i];
-		asm volatile ("pv.add.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
 
-		b=~pattern[i];
-		asm volatile ("pv.add.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
+		asm volatile ("pv.add.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
 		res=c;
-		b=pattern[i];
 		asm volatile ("pv.add.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
 		res=c;
-
-		b=~pattern[i];
-		asm volatile ("pv.add.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
+		asm volatile ("pv.add.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
 		res=c;
-		b=pattern[i];
 		asm volatile ("pv.add.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
 		res=c;
 
-		b=~pattern[i];
-		asm volatile ("pv.sub.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+	a=INT_MAX;
+	b=1;
+		asm volatile ("pv.add.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-		b=pattern[i];
-		asm volatile ("pv.sub.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+
+		
+		asm volatile ("pv.add.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-		b=~pattern[i];
+
+		
+		asm volatile ("pv.add.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+		res=c;
+
+		asm volatile ("pv.add.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+		res=c;
+
+		asm volatile ("pv.add.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+		res=c;
+		asm volatile ("pv.add.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+		res=c;
+
+		asm volatile ("pv.add.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+		res=c;
+		asm volatile ("pv.add.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+		res=c;
+
+a=INT_MAX;
+	b=0xFFFFFFFF;
+asm volatile ("pv.sub.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+		res=c;
+asm volatile ("pv.sub.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+		res=c;
 		asm volatile ("pv.sub.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
-		b=pattern[i];
-		asm volatile ("pv.sub.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+
+asm volatile ("pv.sub.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-		b=~pattern[i];
-		asm volatile ("pv.sub.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-		res=c;
-		b=pattern[i];
-		asm volatile ("pv.sub.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-		res=c;
-		b=~pattern[i];
 		asm volatile ("pv.sub.sc.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
-		b=pattern[i];
-		asm volatile ("pv.sub.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+
+		asm volatile ("pv.sub.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
 		res=c;
-		b=~pattern[i];
-		asm volatile ("pv.sub.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
-		res=c;
-		b=pattern[i];
 		asm volatile ("pv.sub.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
 		res=c;
-		b=~pattern[i];
-		asm volatile ("pv.sub.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
+		asm volatile ("pv.sub.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
 		res=c;
-		b=pattern[i];
 		asm volatile ("pv.sub.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
 		res=c;
 
+
+	a=INT_MAX;
+	b=0;
+		asm volatile ("pv.sub.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+		res=c;
+		
+		asm volatile ("pv.sub.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+		res=c;
+		
+		asm volatile ("pv.sub.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+		res=c;
+		asm volatile ("pv.sub.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+		res=c;
+		asm volatile ("pv.sub.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+		res=c;
+		asm volatile ("pv.sub.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+		res=c;
+		asm volatile ("pv.sub.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+		res=c;
+
+
+
+a=1;
+	b =INT_MAX-1;
+asm volatile ("pv.or.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+asm volatile ("pv.or.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+
+asm volatile ("pv.or.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+			asm volatile ("pv.or.sc.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+						asm volatile ("pv.or.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.or.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+			asm volatile ("pv.or.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.or.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+			b =INT_MAX;
+			asm volatile ("pv.or.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.or.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.or.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.or.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.or.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.or.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+			asm volatile ("pv.or.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.or.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+
+
+
+	a=b=INT_MAX;
+			asm volatile ("pv.xor.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.xor.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+				asm volatile ("pv.xor.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+				asm volatile ("pv.xor.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+				asm volatile ("pv.xor.sc.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+						asm volatile ("pv.xor.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.xor.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+			asm volatile ("pv.xor.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.xor.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+	b =0;
+
+
+			asm volatile ("pv.xor.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+			
+			asm volatile ("pv.xor.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.xor.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.xor.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.xor.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.xor.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+			asm volatile ("pv.xor.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.xor.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+
+
+
+
+a=INT_MAX;
+	b=INT_MAX;
+
+			asm volatile ("pv.and.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.and.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+				asm volatile ("pv.and.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+		asm volatile ("pv.and.sc.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+			
+			asm volatile ("pv.and.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.and.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+			asm volatile ("pv.and.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.and.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+	b=0;
+			asm volatile ("pv.and.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
+			res=c;
+			asm volatile ("pv.and.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.and.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+			asm volatile ("pv.and.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
+			res=c;
+
+
+			asm volatile ("pv.and.sci.b %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.and.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+			asm volatile ("pv.and.sci.h %0,%1,%2": "=r" (c): "r" (a) , "i" (0x00F));
+			res=c;
+			asm volatile ("pv.and.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
+			res=c;
+
+	for(i=0;i<TEST_PATTERNS;i++){
+
+		a=pattern[i];
 		b=~pattern[i];
 		asm volatile ("pv.avg.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;b=pattern[i];
@@ -1197,143 +1293,10 @@ int main ( void) {
 			res=c;
 		}
 
-//TODO refactor
+
 		for(i=0;i<TEST_PATTERNS;i++) {
-			a=pattern[i];
-			b=~pattern[i];
-			asm volatile ("pv.or.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.or.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.or.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.or.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.or.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.or.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.or.sc.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.or.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-
-			b=~pattern[i];
-			asm volatile ("pv.or.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.or.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.or.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.or.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
-			res=c;
-
-
-
-			b=~pattern[i];
-			asm volatile ("pv.xor.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.xor.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.xor.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.xor.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.xor.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.xor.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.xor.sc.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.xor.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-
-			b=~pattern[i];
-			asm volatile ("pv.xor.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.xor.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.xor.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.xor.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
-			res=c;
-
-
-			b=~pattern[i];
-			asm volatile ("pv.and.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.and.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.and.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.and.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.and.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.and.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.and.sc.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.and.sc.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
-			res=c;
-
-
-			b=~pattern[i];
-			asm volatile ("pv.and.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.and.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
-			res=c;
-
-			b=~pattern[i];
-			asm volatile ("pv.and.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
-			res=c;
-			b=pattern[i];
-			asm volatile ("pv.and.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x000));
-			res=c;
-
-
-
+ 					a=pattern[i];
+ 					b=~pattern[i];
 			asm volatile ("pv.insert.b %0,%1,%2": "=r" (c):"r" (a), "i" (2));
 			res=c;
 			a=~pattern[i];
@@ -1352,10 +1315,6 @@ int main ( void) {
 			a=~pattern[i];
 			asm volatile ("pv.extractu.h %0,%1,%2": "=r" (c): "r" (a), "i" (0));
 			res=c;
-
-
-
-
 
 			// dot products
 			b=~pattern[i];
@@ -1858,7 +1817,9 @@ int main ( void) {
 			res=c;b=pattern[i];
 			asm volatile("pv.cmpleu.sci.b %0,%1,%2": "=r" (c) : "r" (b) , "i" (0x05)  );
 			res=c;
+}
 
+			a=1;
 			// immediat instructions
 			asm volatile("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0));
 			res=c;
@@ -1888,7 +1849,7 @@ int main ( void) {
 			res=c;
 			a=res;
 
-		}
+		
 
 		// division special test
 		for(i=0;i<TEST_PATTERNS_DIV;i++) {
@@ -2877,6 +2838,17 @@ int main ( void) {
 		asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
 		asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
 		asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+		b=0;
+		asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+		asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+		asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+		b=INT_MAX;
+		asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+		asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+		asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
 
 		// jump unconditional instruction
 		asm volatile ("j here_we_go\n\there_we_go:");
