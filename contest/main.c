@@ -4,7 +4,7 @@
 
 #define INT_MAX 0x7FFFFFF
 #define INT_MIN 0x1000001
-#define TEST_PATTERNS 16
+#define TEST_PATTERNS 20
 #define TEST_PATTERNS_DIV 5
 #define TEST_CORE 0 
 
@@ -75,9 +75,10 @@ int check_load_tor(void);
 int main ( void) {
 
 int pattern[TEST_PATTERNS]= {
-0x00000000, 0x00000001,0x11111111,0x22222222,0x33333333,0x444444444,
+0x00000000, 0x00000001,/*0x11111111,0x22222222,0x33333333,0x444444444,
 0x55555555, 0x66666666,0x77777777,0x88888888,0x999999999,
-0xAAAAAAAA ,0xBBBBBBBB,0xCCCCCCCC,0xDDDDDDDD,0xEEEEEEEEE,
+0xAAAAAAAA ,0xBBBBBBBB,0xCCCCCCCC,0xDDDDDDDD,0xEEEEEEEEE,*/
+0xbd4a28d,0x33eda22f,0x4e39cb17,0x511f12b3,0xcb571e2,0x99529ac0,0x183739e,0x40d7f8f6,0xf2840739,0x247c7e57,0x733c683e,0x8a0000c5,0x71a5c69e,0x7af4a2a6,0x711a3fcd,0xd5fe519b,0xc066d0a,
 0xFFFFFFFF
 };
 int pattern_div[TEST_PATTERNS_DIV]={0,-1,0x0FFFFFFF,0x80000001,1};
@@ -88,6 +89,9 @@ int j;
 ////////////////////////////////////////////////////
 ///////////// TESTING EXECUTION UNIT ///////////////
 ///////////////////////////////////////////////////
+
+asm(".include \"atpg_patterns.S\"");
+
 
 // addition
 
@@ -1885,6 +1889,100 @@ res=c;
 
 }
 
+
+int dummy_vector[100];
+int dummy_vector_2[100];
+
+// initialize data structure
+for(i=0;i<100;i++) {
+dummy_vector[i]=i;
+dummy_vector_2[i]=i;
+}
+
+// load and store instructions (pulp extension)
+//Register-Immediate Loads with Post-Increment
+b=dummy_vector;
+asm volatile ("p.lb %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sb %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+b=dummy_vector;
+asm volatile ("p.lbu %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sb %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+b=dummy_vector;
+asm volatile ("p.lh %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sh %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+b=dummy_vector;
+asm volatile ("p.lhu %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sh %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+b=dummy_vector;
+asm volatile ("p.lw %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sw %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
+//Register-Register Loads with Post-Increment
+b=0;
+asm volatile ("p.lb %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sb %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+b=0;
+asm volatile ("p.lbu %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sb %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+b=0;
+asm volatile ("p.lh %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sh %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+b=0;
+asm volatile ("p.lhu %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sh %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+b=0;
+asm volatile ("p.lw %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sw %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
+//Register-Register Loads
+b=0;
+asm volatile ("p.lb %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sb %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+asm volatile ("p.lbu %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sb %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+asm volatile ("p.lh %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sh %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+asm volatile ("p.lhu %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sh %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+b=0;
+asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+b=INT_MAX;
+asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
+asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
+
+
+// jump unconditional instruction
+asm volatile ("j here_we_go\n\there_we_go:");
+// nope
+asm volatile("nop");// converted into  addi x0,x0,0
+//////////////////////////////////////////////////
+//////////// TESTING REST OF CORE /////////////////
+///////////////////////////////////////////////////
+#if TEST_CORE
 // csr instructions
 asm volatile ("rdcycle %0":"=r" (c));
 res=c;
@@ -2765,100 +2863,6 @@ res=c;
 asm volatile("csrw 0x79F, %0":: "i" (0x00000000));
 asm volatile("csrr %0,0x79F ": "=r" (c));
 res=c;
-
-int dummy_vector[100];
-int dummy_vector_2[100];
-
-// initialize data structure
-for(i=0;i<100;i++) {
-dummy_vector[i]=i;
-dummy_vector_2[i]=i;
-}
-
-// load and store instructions (pulp extension)
-//Register-Immediate Loads with Post-Increment
-b=dummy_vector;
-asm volatile ("p.lb %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sb %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-b=dummy_vector;
-asm volatile ("p.lbu %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sb %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-b=dummy_vector;
-asm volatile ("p.lh %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sh %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-b=dummy_vector;
-asm volatile ("p.lhu %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sh %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-b=dummy_vector;
-asm volatile ("p.lw %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sw %0,%1(%2!)": "=r" (c): "i" (0x4), "r" (b));
-//Register-Register Loads with Post-Increment
-b=0;
-asm volatile ("p.lb %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sb %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-b=0;
-asm volatile ("p.lbu %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sb %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-b=0;
-asm volatile ("p.lh %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sh %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-b=0;
-asm volatile ("p.lhu %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sh %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-b=0;
-asm volatile ("p.lw %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sw %0,%1(%2!)": "=r" (c): "r" (dummy_vector), "r" (b));
-//Register-Register Loads
-b=0;
-asm volatile ("p.lb %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sb %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-
-asm volatile ("p.lbu %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sb %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-
-asm volatile ("p.lh %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sh %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-
-asm volatile ("p.lhu %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sh %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-
-asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-
-b=0;
-asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-
-b=INT_MAX;
-asm volatile ("p.lw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-asm volatile ("addi %0,%1, 1":"=r" (c): "r" (c));
-asm volatile ("p.sw %0,%1(%2)": "=r" (c): "r" (dummy_vector), "r" (b));
-
-
-// jump unconditional instruction
-asm volatile ("j here_we_go\n\there_we_go:");
-// nope
-asm volatile("nop");// converted into  addi x0,x0,0
-//////////////////////////////////////////////////
-//////////// TESTING REST OF CORE /////////////////
-///////////////////////////////////////////////////
-#if TEST_CORE
 //-----------------------------------------------------------------
 // Check HWLOOP with lp.starti/lp.endi/lp.count
 //-----------------------------------------------------------------
