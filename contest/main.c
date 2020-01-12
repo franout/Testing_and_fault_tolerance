@@ -2439,29 +2439,29 @@ int main ( void) {
 	// perf counters from 0x780-0x79F
 	asm volatile("csrr %0,0x780 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x780, %0":: "i" (0xFFFFFFFF));
+	asm volatile("csrw 0x780, %0":: "i" (0xCAFECAFE));
 	asm volatile("csrr %0,0x780 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x780, %0":: "i" (0x00000000));
+	asm volatile("csrw 0x780, %0":: "i" (0xabcdef12));
 	asm volatile("csrr %0,0x780 ": "=r" (c));
 	res=c;
 
 	asm volatile("csrr %0,0x781 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x781, %0":: "i" (0xFFFFFFFF));
+	asm volatile("csrw 0x781, %0":: "i" (0x12345678));
 	asm volatile("csrr %0,0x781 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x781, %0":: "i" (0x00000000));
+	asm volatile("csrw 0x781, %0":: "i" (0x76543210));
 	asm volatile("csrr %0,0x781 ": "=r" (c));
 	res=c;
 
 
 	asm volatile("csrr %0,0x782 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x782, %0":: "i" (0xFFFFFFFF));
+	asm volatile("csrw 0x782, %0":: "i" (0xabcdabcd));
 	asm volatile("csrr %0,0x782 ": "=r" (c));
 	res=c;
-	asm volatile("csrw 0x782, %0":: "i" (0x00000000));
+	asm volatile("csrw 0x782, %0":: "i" (0xdef2def2));
 	asm volatile("csrr %0,0x782 ": "=r" (c));
 	res=c;
 
@@ -2937,52 +2937,127 @@ register int x29 asm ("x29");
 
 
 
-	for(i=0;i<TEST_PATTERNS;i++){
+	for(i=0;i<TEST_PATTERNS/2;i++){
 		x1=pattern[i];
 		res=x1;
 
-		x1=pattern[i];
-		res=x1;
+		x2=pattern[i];
+		res=x2;
 
-x1=pattern[i];
-		res=x1;
+		x3=pattern[i];
+		res=x3;
 
-x1=pattern[i];
-		res=x1;
+		x4=pattern[i];
+		res=x4;
 
-x1=pattern[i];
-		res=x1;
+		x5=pattern[i];
+		res=x5;
 
-x1=pattern[i];
-		res=x1;
+		x6=pattern[i];
+		res=x6;
 
-x1=pattern[i];
-		res=x1;
+		
+		x7=pattern[i];
+		res=x7;
 
-x1=pattern[i];
-		res=x1;
+		
+		x8=pattern[i];
+		res=x8;
 
-x1=pattern[i];
-		res=x1;
+		
+		x9=pattern[i];
+		res=x9;
 
-x1=pattern[i];
-		res=x1;
+		
+		x10=pattern[i];
+		res=x10;
 
-x1=pattern[i];
-		res=x1;
+		
+		x11=pattern[i];
+		res=x11;
 
-x1=pattern[i];
-		res=x1;
+		
+		x12=pattern[i];
+		res=x12;
 
-x1=pattern[i];
-		res=x1;
+		
+		x13=pattern[i];
+		res=x13;
 
-x1=pattern[i];
-		res=x1;
+		
+		x14=pattern[i];
+		res=x14;
 
+		
+		x15=pattern[i];
+		res=x15;
 
+		
+		x16=pattern[i];
+		res=x16;
 
-			}
+		
+		x17=pattern[i];
+		res=x17;
+
+		
+		x18=pattern[i];
+		res=x18;
+
+		
+		x19=pattern[i];
+		res=x19;
+
+		
+		x20=pattern[i];
+		res=x20;
+
+		
+		x21=pattern[i];
+		res=x21;
+
+		
+		x22=pattern[i];
+		res=x22;
+
+		
+		x23=pattern[i];
+		res=x23;
+
+		
+		x24=pattern[i];
+		res=x24;
+
+		
+		x25=pattern[i];
+		res=x25;
+
+		
+		x26=pattern[i];
+		res=x26;
+
+		
+		x27=pattern[i];
+		res=x27;
+
+		
+		x28=pattern[i];
+		res=x28;
+
+		
+		x29=pattern[i];
+		res=x29;
+
+		
+		x30=pattern[i];
+		res=x30;
+
+		
+		x31=pattern[i];
+		res=x31;
+
+		
+		}
 
 	asm volatile ("li %0,%1": "=r" (c): "i" (0x3245));
 	res=c;
@@ -2990,18 +3065,18 @@ x1=pattern[i];
 	asm volatile ("mv %0,%1":"=r" (c): "r" (a));
 	res=c;
 	a=c;
-	asm volatile ("auipc %0,%1": "=r" (c): "n" (0x000FF));
+	asm volatile ("auipc %0,%1": "=r" (c): "n" (0x000aF));
 	res=c;
 	a=c;
-	asm volatile ("lui %0,%1": "=r" (c): "n" (0x000FF));
+	asm volatile ("lui %0,%1": "=r" (c): "n" (0x000bF));
 	res=c;
 	a=c;
 	// hint instructions
-	asm volatile ("lui x0,%0": : "i" (0x000ff));
-	asm volatile ("auipc x0,%0":: "i" (0x000ff));
-	asm volatile ("andi x0,%0,%1"::"r" (a), "i" (0x000ff));
-	asm volatile ("ori x0,%0,%1":: "r" (a),"i" (0x000ff));
-	asm volatile ("xori x0,%0,%1"::"r" (a), "i" (0x000ff));
+	asm volatile ("lui x0,%0": : "i" (0x000f1));
+	asm volatile ("auipc x0,%0":: "i" (0x0003f));
+	asm volatile ("andi x0,%0,%1"::"r" (a), "i" (0x0005f));
+	asm volatile ("ori x0,%0,%1":: "r" (a),"i" (0x000f4));
+	asm volatile ("xori x0,%0,%1"::"r" (a), "i" (0x0001f));
 	asm volatile ("add x0,%0,%1"::"r" (a), "r" (b));
 	asm volatile ("sub x0,%0,%1"::"r" (a), "r" (b));
 	asm volatile ("and x0,%0,%1"::"r" (a), "r" (b));
@@ -3171,7 +3246,7 @@ x1=pattern[i];
 		}
 	}
 	// pmp
-	int error = 0;
+	/*int error = 0;
 	int failed = 0;
 
 	for(int i=0;i<64;i++)
@@ -3205,7 +3280,7 @@ x1=pattern[i];
 		printf("TEST USER EXCEPTIONS OK :)\n" );
 
 	failed+=error;
-
+*/
 
 	// ecall and ret + saving regs on stack
 	f1();
