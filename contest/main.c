@@ -73,7 +73,7 @@ int main ( void) {
 //randon random test patterns
 int pattern[TEST_PATTERNS]= {
 0x0023A592, 0x1EC63DAA,0xbd4a28d,0x33eda22f,0x4e39cb17,0x511f12b3,0xcb571e2,0x99529ac0,0x183739e,0x40d7f8f6,0xf2840739,0x247c7e57,0x733c683e,0x8a0000c5,0x71a5c69e,0x7af4a2a6,0x711a3fcd,0xd5fe519b,0xc066d0a,
-0xFFFFFFFF
+0xCAECEE54
 };
 int pattern_a[TEST_PATTERNS]= {0x8936A496, 0xAA32A8B2,0x930A71A2,0x5FE54EA4,0xE620102B,0x21DDFBC5,0x75910F2B,0x151626B0,0xB626CD74,0x640C9BCD,0x24A64EA4,0xE6D0D939,0x2324B25C,0xA21E630C,0xB46A2062,0x5ED924EC,0x1C0036BE,0x8F07E7EA,0xC01E22F5,0x8C09B8E4};
 volatile int a, b, c ;
@@ -1759,9 +1759,7 @@ res=c;b=pattern[i];
 asm volatile("pv.cmpleu.sci.b %0,%1,%2": "=r" (c) : "r" (b) , "i" (0x05)  );
 res=c;
 
-}
 
-a=1;
 // immediat instructions
 asm volatile("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0));
 res=c;
@@ -1791,7 +1789,7 @@ asm volatile("srai %0,%1,%2": "=r" (c): "r" (a), "i" (13));
 res=c;
 a=res;
 
-
+}
 
 // load and store instructions (pulp extension)
 //Register-Immediate Loads with Post-Increment
