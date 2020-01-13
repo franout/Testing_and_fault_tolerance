@@ -1763,7 +1763,6 @@ int main ( void) {
 		// immediat instructions
 		asm volatile("addi %0 , %1, %2": "=r" (c) : "r" (a) , "i" (0));
 		res=c;
-		a=res;
 		asm volatile ("slti %0,%1,%2": "=r" (c): "r" (a), "i" (15));
 		res=c;
 		a=res;
@@ -2882,7 +2881,7 @@ int main ( void) {
 	res=dummy_reg;
 	dummy_reg=res;
 	// writig in all intger registers
-		register int x1 asm ("x1");
+	register int x1 asm ("x1");
 
 	register int x2 asm ("x2");
 
@@ -2899,7 +2898,7 @@ int main ( void) {
 	register int x9 asm ("x9");
 
 	register int x10 asm ("x10");
-
+	register int x11 asm ("x11");
 	register int x12 asm ("x12");
 	register int x13 asm ("x13");
 
@@ -2928,8 +2927,8 @@ int main ( void) {
 
 	register int x27 asm ("x27");
 
-			register int x28 asm ("x28");
-register int x29 asm ("x29");
+	register int x28 asm ("x28");
+	register int x29 asm ("x29");
 
 	register int x30 asm ("x30");
 
@@ -2956,108 +2955,108 @@ register int x29 asm ("x29");
 		x6=pattern[i];
 		res=x6;
 
-		
+
 		x7=pattern[i];
 		res=x7;
 
-		
+
 		x8=pattern[i];
 		res=x8;
 
-		
+
 		x9=pattern[i];
 		res=x9;
 
-		
+
 		x10=pattern[i];
 		res=x10;
 
-		
+
 		x11=pattern[i];
 		res=x11;
 
-		
+
 		x12=pattern[i];
 		res=x12;
 
-		
+
 		x13=pattern[i];
 		res=x13;
 
-		
+
 		x14=pattern[i];
 		res=x14;
 
-		
+
 		x15=pattern[i];
 		res=x15;
 
-		
+
 		x16=pattern[i];
 		res=x16;
 
-		
+
 		x17=pattern[i];
 		res=x17;
 
-		
+
 		x18=pattern[i];
 		res=x18;
 
-		
+
 		x19=pattern[i];
 		res=x19;
 
-		
+
 		x20=pattern[i];
 		res=x20;
 
-		
+
 		x21=pattern[i];
 		res=x21;
 
-		
+
 		x22=pattern[i];
 		res=x22;
 
-		
+
 		x23=pattern[i];
 		res=x23;
 
-		
+
 		x24=pattern[i];
 		res=x24;
 
-		
+
 		x25=pattern[i];
 		res=x25;
 
-		
+
 		x26=pattern[i];
 		res=x26;
 
-		
+
 		x27=pattern[i];
 		res=x27;
 
-		
+
 		x28=pattern[i];
 		res=x28;
 
-		
+
 		x29=pattern[i];
 		res=x29;
 
-		
+
 		x30=pattern[i];
 		res=x30;
 
-		
+
 		x31=pattern[i];
 		res=x31;
 
-		
-		}
+
+	}
 
 	asm volatile ("li %0,%1": "=r" (c): "i" (0x3245));
 	res=c;
@@ -3083,7 +3082,7 @@ register int x29 asm ("x29");
 	asm volatile ("or x0,%0,%1"::"r" (a), "r" (b));
 	asm volatile ("xor x0,%0,%1"::"r" (a), "r" (b));
 
-		//TODO
+	//TODO
 	// synchromize i/o and memory operations
 	//asm volatile ("fence.I"); // inputs
 	/*asm volatile ("fence.O"); // outputs
@@ -3114,13 +3113,13 @@ register int x29 asm ("x29");
 		asm volatile ("amominu.w.rl %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[3]) );
 		res=c;
 		*/
-/*	asm volatile ("li t0, 1 # Initialize swap value."
-			"again:"
-			"amoswap.w.aq t0, t0, (a0) # Attempt to acquire lock."
-			"			bnez t0, again # Retry if held."
-			"# Critical section."
-			"	addi %0,%0,1"
-			"amoswap.w.rl x0, x0, (a0) # Release lock by storing 0.": "=r" (c));*/
+	/*	asm volatile ("li t0, 1 # Initialize swap value."
+		"again:"
+		"amoswap.w.aq t0, t0, (a0) # Attempt to acquire lock."
+		"			bnez t0, again # Retry if held."
+		"# Critical section."
+		"	addi %0,%0,1"
+		"amoswap.w.rl x0, x0, (a0) # Release lock by storing 0.": "=r" (c));*/
 	res=c;
 	// access to dummy vector increasing the stall due to cache miss
 	int index=0;
@@ -3246,41 +3245,41 @@ register int x29 asm ("x29");
 		}
 	}
 	// pmp
-	/*int error = 0;
+	int error = 0;
 	int failed = 0;
 
-	for(int i=0;i<64;i++)
-		protected_data[i] = 0;
-
+	for(int i=0;i<64;i++){
+		protected_data[i] = pattern[i%TEST_PATTERNS];
+	}
 	// Check if the PMP can prevent X, R and W from protected regions
 	error = check_xrw_tor();
-
-	if(error != 0)
-		printf("TEST XRW FAILED :( - errors %d \n", error);
-	else
-		printf("TEST XRW OK :)\n" );
-
+	/*
+	   if(error != 0)
+	   printf("TEST XRW FAILED :( - errors %d \n", error);
+	   else
+	   printf("TEST XRW OK :)\n" );
+	   */
 	failed+=error;
 
 	error = check_special_case();
-
-	if(error != 0)
-		printf("TEST SPECIAL FAILED :( - errors %d \n", error);
-	else
-		printf("TEST SPECIAL OK :)\n" );
-
+	/*
+	   if(error != 0)
+	   printf("TEST SPECIAL FAILED :( - errors %d \n", error);
+	   else
+	   printf("TEST SPECIAL OK :)\n" );
+	   */
 	failed+=error;
 
 	// Check if writing to Machine CSRs or executing Machine instructions is causing exceptions
 	error = check_user_exceptions();
-
-	if(error != 0)
-		printf("TEST USER EXCEPTIONS FAILED :( - errors %d \n", error);
-	else
-		printf("TEST USER EXCEPTIONS OK :)\n" );
-
+	/*
+	   if(error != 0)
+	   printf("TEST USER EXCEPTIONS FAILED :( - errors %d \n", error);
+	   else
+	   printf("TEST USER EXCEPTIONS OK :)\n" );
+	   */
 	failed+=error;
-*/
+
 
 	// ecall and ret + saving regs on stack
 	f1();
