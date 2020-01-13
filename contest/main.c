@@ -1185,7 +1185,7 @@ int main ( void) {
 		b=~pattern[i];
 		asm volatile ("pv.srl.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
-				b=pattern[i];
+		b=pattern[i];
 
 		asm volatile ("pv.srl.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;		b=~pattern[i];
@@ -1195,27 +1195,27 @@ int main ( void) {
 
 		asm volatile ("pv.srl.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 
 		asm volatile ("pv.srl.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;		b=pattern[i];
 
 		asm volatile ("pv.srl.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 
 		asm volatile ("pv.srl.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
 		res=c;
-				b=pattern[i];
+		b=pattern[i];
 
 		asm volatile ("pv.srl.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 		asm volatile ("pv.srl.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00A));
 		res=c;
 
-		
-b=~pattern[i];
+
+		b=~pattern[i];
 		asm volatile ("pv.sra.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
 		b=pattern[i];
@@ -1224,7 +1224,7 @@ b=~pattern[i];
 		b=~pattern[i];
 		asm volatile ("pv.sra.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
-				b=pattern[i];
+		b=pattern[i];
 
 		asm volatile ("pv.sra.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;		b=~pattern[i];
@@ -1234,22 +1234,22 @@ b=~pattern[i];
 
 		asm volatile ("pv.sra.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 
 		asm volatile ("pv.sra.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;		b=pattern[i];
 
 		asm volatile ("pv.sra.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 
 		asm volatile ("pv.sra.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
 		res=c;
-				b=pattern[i];
+		b=pattern[i];
 
 		asm volatile ("pv.sra.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 		asm volatile ("pv.sra.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00A));
 		res=c;
 
@@ -1262,7 +1262,7 @@ b=~pattern[i];
 		b=~pattern[i];
 		asm volatile ("pv.sll.h %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;
-				b=pattern[i];
+		b=pattern[i];
 
 		asm volatile ("pv.sll.h %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;		b=~pattern[i];
@@ -1272,22 +1272,22 @@ b=~pattern[i];
 
 		asm volatile ("pv.sll.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 
 		asm volatile ("pv.sll.sc.b %0,%1,%2": "=r" (c): "r" (a) , "r" (b));
 		res=c;		b=pattern[i];
 
 		asm volatile ("pv.sll.sc.b %0,%1,%2": "=r" (c): "r" (b) , "r" (a));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 
 		asm volatile ("pv.sll.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
 		res=c;
-				b=pattern[i];
+		b=pattern[i];
 
 		asm volatile ("pv.sll.sci.b %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00F));
 		res=c;
-				b=~pattern[i];
+		b=~pattern[i];
 		asm volatile ("pv.sll.sci.h %0,%1,%2": "=r" (c): "r" (b) , "i" (0x00A));
 		res=c;
 		a=pattern_a[i];
@@ -3136,44 +3136,16 @@ b=~pattern[i];
 	asm volatile ("or x0,%0,%1"::"r" (a), "r" (b));
 	asm volatile ("xor x0,%0,%1"::"r" (a), "r" (b));
 
-	//TODO
 	// synchromize i/o and memory operations
-	//asm volatile ("fence.I"); // inputs
-	/*asm volatile ("fence.O"); // outputs
-	  asm volatile ("fence.R"); // memory reads
-	  asm volatile ("fence.W"); // memory write
-	  asm volatile ("fence %0":: "i" (1));
-	  asm volatile ("fence %0":: "i" (0));
-	  asm volatile ("fence.tso");*/
-	// atomic memory operations
-	/*	asm volatile ("amoswap.w %0,%1,(%2) ": "=r" (c): "r" (a), "r" (pattern[3]) );
-		res=c;
-		asm volatile ("amoadd.w.rl %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[3]) );
-		res=c;
-		asm volatile ("amoand.w.aq %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[20]) );
-		res=c;
-		asm volatile ("amoor.w.rl %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[15]) );
-		res=c;
-		asm volatile ("amoxor.w.aq %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[3]) );
-		res=c;
-		asm volatile ("amomax.w.rl %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[8]) );
-		res=c;
-		asm volatile ("amomaxu.w.aq %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[3]) );
-		res=c;
-		asm volatile ("amomin.w.rl %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[0]) );
-		res=c;
-		asm volatile ("amominu.w.aq %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[3]) );
-		res=c;
-		asm volatile ("amominu.w.rl %0,%1,%2 ": "=r" (c): "r" (a), "o" (pattern[3]) );
-		res=c;
-		*/
-	/*	asm volatile ("li t0, 1 # Initialize swap value."
+	asm volatile ("fence.I"); // inputs
+	// from risc-v manual atomic memory swap operation 
+		asm volatile ("li t0, 1 # Initialize swap value."
 		"again:"
 		"amoswap.w.aq t0, t0, (a0) # Attempt to acquire lock."
 		"			bnez t0, again # Retry if held."
 		"# Critical section."
 		"	addi %0,%0,1"
-		"amoswap.w.rl x0, x0, (a0) # Release lock by storing 0.": "=r" (c));*/
+		"amoswap.w.rl x0, x0, (a0) # Release lock by storing 0.": "=r" (c));
 	res=c;
 	// access to dummy vector increasing the stall due to cache miss
 	int index=0;
