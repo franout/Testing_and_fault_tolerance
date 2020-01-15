@@ -21,13 +21,12 @@ set_patterns -external dumpports_gate.evcd.fixed  -sensitive -strobe_period { 10
 #The -nopi_changes setting causes all primary inputs to be held constant between launch
 #and capture, thus preventing slow-to-transition primary inputs from affecting the transition test.
 set_delay -launch system_clock 
-#set_delay -nopi_changes
+set_delay -nopi_changes
 
 run_simulation -sequential
 
 ## Transition faults
 set_faults -model transition -fault_coverage -atpg_effectiveness -summary verbose
-#set_atpg -capture_cycles 3
 ## Fault list (select one of the following)
 
 if { $env(CUT)=="exe" } {
