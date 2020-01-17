@@ -14,6 +14,7 @@ add_pi_constraints  1 clock_en_i
 add_pi_constraints 1 test_en_i
 
 run_drc
+#set_atpg -capture_cycle 4 not affect the FC
 
 ## Load and check patterns
 set_patterns -external dumpports_gate.evcd.fixed  -sensitive -strobe_period { 10 ns } -strobe_offset { 4 ns } -vcd_clock auto
@@ -28,7 +29,6 @@ run_simulation -sequential
 ## Transition faults
 set_faults -model transition -fault_coverage -atpg_effectiveness -summary verbose
 ## Fault list (select one of the following)
-
 if { $env(CUT)=="exe" } {
 #execution stage
 	read_faults ../initial_faults_exe.txt } else {
