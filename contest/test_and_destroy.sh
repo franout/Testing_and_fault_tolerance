@@ -33,8 +33,6 @@ cp ./initial_scripts_and_faults_list/initial_faults_cpu.txt $PATH_CORE/initial_f
 "$PATH_CORE"compile_testbench.sh
 
 mv ./main.c ~/riscv_testing/sbst_c/main.c
-cp ./vectors.S ~/riscv_testing/sbst_c/vectors.S
-cp ./atpg_patterns.S ~/riscv_testing/sbst_c/atpg_patterns.S
 # compiling source file in eVCD extendent value change dump
 "$PATH_CORE"compile_sbst_c.sh sbst_c/main.c
 
